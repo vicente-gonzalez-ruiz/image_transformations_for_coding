@@ -10,7 +10,7 @@ lena-gray.png:	lena.png
 
 2D-DWT.svg:	2D-DWT.fig lena-gray.png lena.S*.png
 
-orderers-and-scalabilities.svg:	progresion-LR.pdf progresion-RL.pdf
+orderers-and-scalabilities.pdf:	progresion-LR.pdf progresion-RL.pdf
 
 default: all
 
