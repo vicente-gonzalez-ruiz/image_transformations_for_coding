@@ -1,6 +1,6 @@
-include $(HOME)/Makefile_templates/05-tex2pdf/Makefile
-include $(HOME)/Makefile_templates/10-fig2pdf/Makefile
-include $(HOME)/Makefile_templates/20-pdf2svg/Makefile
+include $(HOME)/Makefile_templates/tex2pdf_rule/Makefile
+include $(HOME)/Makefile_templates/fig2pdf/Makefile
+include $(HOME)/Makefile_templates/pdf2svg/Makefile
 
 lena.png:
 	wget http://www.hpca.ual.es/~vruiz/images/lena.png
