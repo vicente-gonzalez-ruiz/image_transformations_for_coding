@@ -1,1 +1,3 @@
-[Click me](https://cdn.rawgit.com/vicente-gonzalez-ruiz/transform_coding/master/index.html).
+# Image transformations for coding
+
+[Click me](https://vicente-gonzalez-ruiz.github.io/image_transformations_for_coding/).
