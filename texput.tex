@@ -67,36 +67,36 @@
 
   \begin{equation}
     \{C_u\}_{u=0}^{B-1} = \sum_{n=0}^{B-1}a_{u,n}c_n.
-    \tag{forward_transform}
+    \tag{forward\_transform}
   \end{equation}
 \item
   The backward (inverse) transform restores the original samples
 
   \begin{equation}
     \{c_n\}_{n=0}^{B-1} = \sum_{u=0}^{B-1}b_{n,u}C_u.
-    \tag{inverse_transform}
+    \tag{inverse\_transform}
   \end{equation}
 \item
   These equations can be written in matrix form as
 
   \begin{equation}
     C=Ac
-    \tag{forward_transform_matrix_form}
+    \tag{forward\_transform\_matrix\_form}
   \end{equation}
 
   \begin{equation}
     c=BC,
-    \tag{inverse_transform_matrix_form}
+    \tag{inverse\_transform\_matrix\_form}
   \end{equation}
 
   where \(A\) and \(B\) are matrices, being
-
   \begin{equation}
     \begin{array}{l}
-    [A]_{u,n} = a_{u,n} \\
+    [A]_{u,n} = a_{u,n} \\\relax
     [B]_{n,u} = b_{n,u}.
     \end{array}
   \end{equation}
+
 \item
   In transform coding, \(A\) and \(B\) must be inverses of each other
   (\(B=A^{-1}\)), i.e.
@@ -190,6 +190,7 @@
 
 \iframe{1200}{https://nbviewer.jupyter.org/github/vicente-gonzalez-ruiz/image_transformations_for_coding/blob/master/color_redundancy.ipynb}
 \end{document}
+
 \subsubsection{Chrominance subsampling}\label{chrominance-subsampling}}
 
 \href{https://en.wikipedia.org/wiki/Chroma_subsampling}{The human visual
