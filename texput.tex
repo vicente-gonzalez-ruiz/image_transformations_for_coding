@@ -480,13 +480,10 @@ When \(T()\) can be expressed by a matrix \(X\), we get
 
 \iframe{1200}{1200}{https://nbviewer.jupyter.org/github/vicente-gonzalez-ruiz/image_transformations_for_coding/blob/master/DCT.ipynb}
 
-\end{document}
-
 \section{Dyadic discrete wavelet transform (DWT)}
 Key features:
 
 \begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
   \textbf{High spectral compaction}, specially when transient signals
@@ -494,13 +491,10 @@ Key features:
 \item
   \textbf{Multiresolution representation}: it is easy to recover a
   reduced version of the original image if only a sub-set of the
-  coeﬃcients is proccesed.
+  coefficients is proccesed.
 \end{enumerate}
 
-    \hypertarget{filters-bank-implementation}{%
-\subsubsection{Filters bank
-implementation}\label{filters-bank-implementation}}
-
+\section{Filters bank implementation}
 Where: \begin{equation}
   s = (\uparrow^2(L)*{\text s}_L) + (\uparrow^2(H)*{\text s}_H)
 \end{equation} and \begin{equation}
@@ -513,7 +507,6 @@ Where: \begin{equation}
 Comments:
 
 \begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
 \item
   \({\text a}_L\) and \({\text a}_H\) are the transfer function (the
   transfer function of a filter is the response of that filter to the
@@ -527,10 +520,8 @@ Comments:
   In the wavelet theory, \({\text s}_L\) is named the \emph{scale
   function} and \({\text s}_H\) the \emph{mother function} or
   \emph{wavelet basis function}. The coefficients of \(L\) are also
-  knwon as the \emph{scale coeffients} and the coeffcientes of \(H\) the
-  \emph{wavelet coefficients}
-  \href{https://scholar.google.es/scholar?hl=en\&as_sdt=0\%2C5\&q=Ana+Sovic+and+Damir+Sersic.+Signal+decomposition+methods+for+reducind+drawbacks+of+the+dwt\&btnG=}{{[}Sovic
-  \& Sersic, 2012{]}}.
+  known as the \emph{scale coeffients} and the coeffcientes of \(H\) the
+  \emph{wavelet coefficients}~\cite{sovic2012signal}.
 \item
   \(\downarrow^2(\cdot)\) and \(\uparrow^2(\cdot)\) donote the
   subsampling and oversampling operations:
@@ -555,7 +546,6 @@ and
 where \(s_i\) if the \(i\)-th sample of \(s\).
 
 \begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
 \setcounter{enumi}{3}
 \item
   \(*\) is the convolution operator.
@@ -563,16 +553,10 @@ where \(s_i\) if the \(i\)-th sample of \(s\).
   Notice that half of the filtered samples are wasted.
 \end{enumerate}
 
-    \hypertarget{lifting-implementation-sweldens-schruxf6der-2000}{%
-\subsubsection{\texorpdfstring{Lifting implementation
-\href{https://scholar.google.es/scholar?hl=es\&as_sdt=0\%2C5\&q=building+wavelets+at+home\&btnG=}{{[}Sweldens
-\& Schröder,
-2000){]}}}{Lifting implementation {[}Sweldens \& Schröder, 2000){]}}}\label{lifting-implementation-sweldens-schruxf6der-2000}}
-
+\section{Lifting implementation~\cite{sweldens1997building}}
 Comments:
 
 \begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
   \begin{equation}
@@ -589,7 +573,6 @@ Comments:
 \end{equation}
 
 \begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
 \setcounter{enumi}{1}
 \tightlist
 \item
@@ -610,7 +593,6 @@ and
 where \(Z^{-1}\) represents the one sample delay function.
 
 \begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
 \setcounter{enumi}{2}
 \tightlist
 \item
@@ -620,6 +602,10 @@ where \(Z^{-1}\) represents the one sample delay function.
   \(L\) has less aliasing than \(\{s_{2i}\}\) (notice that \(L\) has not
   been low-pass filtered before subsampling it).
 \end{enumerate}
+
+\bibliography{DWT}
+
+\end{document}
 
     \hypertarget{t-levels-1d-dwt}{%
 \subsubsection{\texorpdfstring{\(T\)-levels
