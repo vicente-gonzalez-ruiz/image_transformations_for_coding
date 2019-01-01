@@ -39,6 +39,8 @@ href="#x1-50003" id="QQ2-1-5">Splitting</a></span>
 href="#x1-60004" id="QQ2-1-6">Transform of a block</a></span>
 <br />   <span class="sectionToc" >5 <a 
 href="#x1-70005" id="QQ2-1-7">A color transform</a></span>
+<br />   <span class="sectionToc" >6 <a 
+href="#x1-100006" id="QQ2-1-10">Chrominance subsampling</a></span>
    </div>
    <h3 class="sectionHead"><span class="titlemark">1   </span> <a 
  id="x1-10001"></a>Insights</h3>
@@ -54,11 +56,11 @@ href="#x1-70005" id="QQ2-1-7">A color transform</a></span>
      <li class="itemize">This property can be interesting for increasing the coding eﬃciency.</li></ul>
 <!--l. 26--><p class="noindent" >
 </p>
-   <h3 class="sectionHead"><span class="titlemark">2   </span> <a 
- id="x1-20002"></a>Basic coding steps</h3>
                                                                   
 
                                                                   
+   <h3 class="sectionHead"><span class="titlemark">2   </span> <a 
+ id="x1-20002"></a>Basic coding steps</h3>
 <!--l. 27--><p class="noindent" >
 </p>
    <h4 class="subsectionHead"><span class="titlemark">2.1   </span> <a 
@@ -141,6 +143,9 @@ class="MathClass-open">⌈</mo><mrow><mi
 class="MathClass-bin">∕</mo><mi 
 >B</mi></mrow><mo 
 class="MathClass-close">⌉</mo></mrow></mrow></math>
+                                                                  
+
+                                                                  
      blocks <!--l. 59--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mrow 
@@ -169,9 +174,6 @@ display="inline" ><mrow
 ><mi 
 >B</mi></mrow></math>
      samples.</li></ol>
-                                                                  
-
-                                                                  
 <!--l. 62--><p class="noindent" >
 </p>
    <h3 class="sectionHead"><span class="titlemark">4   </span> <a 
@@ -281,13 +283,13 @@ class="MathClass-punc">.</mo>
    id="x1-6005r0"  class="label" ></mstyle><!--endlabel-->
 </math></td><td class="eq-no">(inverse_transform)<a 
  id="x1-6006r0"></a></td></tr></table>
+                                                                  
+
+                                                                  
      </li>
      <li class="itemize">These equations can be written in matrix form as
      <table class="equation"><tr><td> <a 
  id="x1-6007r1"></a>
-                                                                  
-
-                                                                  
      <!--l. 82--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="block" class="equation">
@@ -371,6 +373,9 @@ class="MathClass-punc">,</mo><mi
 ><mo 
 class="MathClass-punc">.</mo> </mtd></mtr><!--l--></mtable>
 </math></td><td class="eq-no">(1)</td></tr></table>
+                                                                  
+
+                                                                  
      </li>
      <li class="itemize">In transform coding, <!--l. 101--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
@@ -396,9 +401,6 @@ class="MathClass-bin">−</mo><mn>1</mn></mrow></msup
      i.e.
      <table class="equation"><tr><td> <a 
  id="x1-6014r2"></a>
-                                                                  
-
-                                                                  
      <!--l. 104--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="block" class="equation">
@@ -437,6 +439,9 @@ href="https://en.wikipedia.org/wiki/Chrominance" >Chrominance</a> (or chroma) is
 href="https://en.wikipedia.org/wiki/YUV" >YUV</a>).</li></ul>
    <table class="equation"><tr><td> <a 
  id="x1-8001r3"></a>
+                                                                  
+
+                                                                  
 <!--l. 126--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="block" class="equation">
@@ -489,9 +494,6 @@ class="text"><mtext  >B</mtext></mstyle>  </mtd></mtr> <!--c--></mtable>        
 </math></td><td class="eq-no">(3)</td></tr></table>
    <table class="equation"><tr><td> <a 
  id="x1-8002r4"></a>
-                                                                  
-
-                                                                  
 <!--l. 150--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="block" class="equation">
@@ -559,7 +561,22 @@ display="inline" ><mrow
 ><mstyle 
 class="text"><mtext  >YUV</mtext></mstyle></mrow></math>
      domain</a>:</li></ul>
-<!--l. 191--><p class="noindent" > <iframe width=1200 src="https://nbviewer.jupyter.org/github/vicente-gonzalez-ruiz/image_transformations_for_coding/blob/master/color_redundancy.ipynb"></iframe>  </p> 
+<!--l. 191--><p class="noindent" > <iframe width=1200 src="https://nbviewer.jupyter.org/github/vicente-gonzalez-ruiz/image_transformations_for_coding/blob/master/color_redundancy.ipynb"></iframe> 
+                                                                  
+
+                                                                  
+</p><!--l. 193--><p class="noindent" >
+</p>
+   <h3 class="sectionHead"><span class="titlemark">6   </span> <a 
+ id="x1-100006"></a>Chrominance subsampling</h3>
+<!--l. 195--><p class="noindent" ><a 
+href="https://en.wikipedia.org/wiki/Chroma_subsampling" >The human visual system is more sensitive to the luma (Y) than to the chroma (UV)</a>.
+This means than the chroma can be subsampled without a signiﬁcant loss of quality
+in the images.
+</p><!--l. 199--><p class="indent" >    <div style="text-align:center;"> <img width=600 src="graphics/color_subsampling.svg" /> </div> 
+</p><!--l. 201--><p class="indent" >    <iframe width=1200 src="https://nbviewer.jupyter.org/github/vicente-gonzalez-ruiz/image_transformations_for_coding/blob/master/chroma_subsampling.ipynb"></iframe> 
+</p>
+    
 </body> 
 </html>
                                                                   

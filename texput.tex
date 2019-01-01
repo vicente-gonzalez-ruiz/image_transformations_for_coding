@@ -189,134 +189,19 @@
 \end{itemize}
 
 \iframe{1200}{https://nbviewer.jupyter.org/github/vicente-gonzalez-ruiz/image_transformations_for_coding/blob/master/color_redundancy.ipynb}
-\end{document}
 
-\subsubsection{Chrominance subsampling}\label{chrominance-subsampling}}
-
+\section{Chrominance subsampling}
 \href{https://en.wikipedia.org/wiki/Chroma_subsampling}{The human visual
 system is more sensitive to the luma (Y) than to the chroma (UV)}. This
-means than the chroma can be subsampled without a signiﬁcant loss of
+means than the chroma can be subsampled without a significant loss of
 quality in the images.
 
-    
+\img{600}{graphics/color_subsampling.svg}
 
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}25}]:} \PY{c+c1}{\PYZsh{} pip install PyWavelets}
-         \PY{k+kn}{import} \PY{n+nn}{pywt}
-\end{Verbatim}
+\iframe{1200}{https://nbviewer.jupyter.org/github/vicente-gonzalez-ruiz/image_transformations_for_coding/blob/master/chroma_subsampling.ipynb}
 
+\end{document}
 
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}26}]:} \PY{k}{def} \PY{n+nf}{subsample\PYZus{}chroma}\PY{p}{(}\PY{n}{image}\PY{p}{,} \PY{n}{levels}\PY{p}{)}\PY{p}{:}
-             \PY{n}{subsampled} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{ndarray}\PY{p}{(}\PY{p}{(}\PY{n}{image}\PY{o}{.}\PY{n}{shape}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{,} \PY{n}{image}\PY{o}{.}\PY{n}{shape}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{,} \PY{l+m+mi}{3}\PY{p}{)}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{uint8}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-             
-             \PY{c+c1}{\PYZsh{} Luma}
-             \PY{n}{subsampled}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{p}{:}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{]} \PY{o}{=} \PY{n}{image}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{p}{:}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{]} \PY{c+c1}{\PYZsh{} Copy only first component}
-         
-             \PY{c+c1}{\PYZsh{} Chroma U}
-             \PY{n}{DWT\PYZus{}coeffs} \PY{o}{=} \PY{n}{pywt}\PY{o}{.}\PY{n}{wavedec2}\PY{p}{(}\PY{n}{image}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{p}{:}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{bior3.5}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{level}\PY{o}{=}\PY{n}{levels}\PY{p}{)}
-             \PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{n}{levels}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{:}
-                 \PY{n}{DWT\PYZus{}coeffs}\PY{p}{[}\PY{n}{i}\PY{o}{+}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{p}{:}\PY{p}{]} \PY{o}{=} \PY{l+m+mf}{0.0} \PY{c+c1}{\PYZsh{} \PYZdq{}Delete\PYZdq{} LH subbands}
-                 \PY{n}{DWT\PYZus{}coeffs}\PY{p}{[}\PY{n}{i}\PY{o}{+}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{p}{:}\PY{p}{]} \PY{o}{=} \PY{l+m+mf}{0.0} \PY{c+c1}{\PYZsh{} \PYZdq{}Delete\PYZdq{} HL subbands}
-                 \PY{n}{DWT\PYZus{}coeffs}\PY{p}{[}\PY{n}{i}\PY{o}{+}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{p}{:}\PY{p}{]} \PY{o}{=} \PY{l+m+mf}{0.0} \PY{c+c1}{\PYZsh{} \PYZdq{}Delete\PYZdq{} HH subbands}
-         
-             \PY{n}{subsampled}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{p}{:}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{]} \PY{o}{=} \PY{n}{pywt}\PY{o}{.}\PY{n}{waverec2}\PY{p}{(}\PY{n}{DWT\PYZus{}coeffs}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{bior3.5}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-                           
-             \PY{c+c1}{\PYZsh{} Chroma V}
-             \PY{n}{DWT\PYZus{}coeffs} \PY{o}{=} \PY{n}{pywt}\PY{o}{.}\PY{n}{wavedec2}\PY{p}{(}\PY{n}{image}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{p}{:}\PY{p}{,}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{bior3.5}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{level}\PY{o}{=}\PY{n}{levels}\PY{p}{)}
-             \PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{n}{levels}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{:}
-                 \PY{n}{DWT\PYZus{}coeffs}\PY{p}{[}\PY{n}{i}\PY{o}{+}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{p}{:}\PY{p}{]} \PY{o}{=} \PY{l+m+mf}{0.0} \PY{c+c1}{\PYZsh{} \PYZdq{}Delete\PYZdq{} LH subbands}
-                 \PY{n}{DWT\PYZus{}coeffs}\PY{p}{[}\PY{n}{i}\PY{o}{+}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{p}{:}\PY{p}{]} \PY{o}{=} \PY{l+m+mf}{0.0} \PY{c+c1}{\PYZsh{} \PYZdq{}Delete\PYZdq{} HL subbands}
-                 \PY{n}{DWT\PYZus{}coeffs}\PY{p}{[}\PY{n}{i}\PY{o}{+}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{p}{:}\PY{p}{]} \PY{o}{=} \PY{l+m+mf}{0.0} \PY{c+c1}{\PYZsh{} \PYZdq{}Delete\PYZdq{} HH subbands}
-             \PY{n}{subsampled}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{p}{:}\PY{p}{,}\PY{l+m+mi}{2}\PY{p}{]} \PY{o}{=} \PY{n}{pywt}\PY{o}{.}\PY{n}{waverec2}\PY{p}{(}\PY{n}{DWT\PYZus{}coeffs}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{bior3.5}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-         
-             \PY{k}{return} \PY{p}{(}\PY{n}{subsampled}\PY{p}{,} \PY{p}{(}\PY{n}{subsampled}\PY{o}{.}\PY{n}{shape}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{,} \PY{n}{subsampled}\PY{o}{.}\PY{n}{shape}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{)}\PY{p}{,} \PY{n}{DWT\PYZus{}coeffs}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{o}{.}\PY{n}{shape}\PY{p}{)}
-\end{Verbatim}
-
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}27}]:} \PY{n}{chroma\PYZus{}subsampled\PYZus{}YUV}\PY{p}{,} \PY{n}{luma\PYZus{}shape}\PY{p}{,} \PY{n}{chroma\PYZus{}shape} \PY{o}{=} \PY{n}{subsample\PYZus{}chroma}\PY{p}{(}\PY{n}{YUV}\PY{p}{,} \PY{l+m+mi}{5}\PY{p}{)}
-         \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Luma shape =}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{luma\PYZus{}shape}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{pixels}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{Chroma shape =}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{chroma\PYZus{}shape}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{coefficients}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
-\end{Verbatim}
-
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-Luma shape = (1024, 512) pixels
-Chroma shape = (42, 26) coefficients
-
-    \end{Verbatim}
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}28}]:} \PY{n}{fig} \PY{o}{=} \PY{n}{plt}\PY{o}{.}\PY{n}{figure}\PY{p}{(}\PY{n}{figsize}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{24}\PY{p}{,}\PY{l+m+mi}{16}\PY{p}{)}\PY{p}{)}
-         
-         \PY{n}{a} \PY{o}{=} \PY{n}{fig}\PY{o}{.}\PY{n}{add\PYZus{}subplot}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mi}{3}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{)} \PY{c+c1}{\PYZsh{} Rows, cols, subfigure}
-         \PY{n}{a}\PY{o}{.}\PY{n}{set\PYZus{}title}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Y}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
-         \PY{n}{imgplot} \PY{o}{=} \PY{n}{plt}\PY{o}{.}\PY{n}{imshow}\PY{p}{(}\PY{n}{chroma\PYZus{}subsampled\PYZus{}YUV}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{p}{:}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{,} \PY{n}{cmap}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{gray}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-         
-         \PY{n}{a} \PY{o}{=} \PY{n}{fig}\PY{o}{.}\PY{n}{add\PYZus{}subplot}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mi}{3}\PY{p}{,}\PY{l+m+mi}{2}\PY{p}{)}
-         \PY{n}{a}\PY{o}{.}\PY{n}{set\PYZus{}title}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{U (480:1)}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
-         \PY{n}{imgplot} \PY{o}{=} \PY{n}{plt}\PY{o}{.}\PY{n}{imshow}\PY{p}{(}\PY{n}{chroma\PYZus{}subsampled\PYZus{}YUV}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{p}{:}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{,} \PY{n}{cmap}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{gray}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-         
-         \PY{n}{a} \PY{o}{=} \PY{n}{fig}\PY{o}{.}\PY{n}{add\PYZus{}subplot}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mi}{3}\PY{p}{,}\PY{l+m+mi}{3}\PY{p}{)}
-         \PY{n}{a}\PY{o}{.}\PY{n}{set\PYZus{}title}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{V (480:1)}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
-         \PY{n}{imgplot} \PY{o}{=} \PY{n}{plt}\PY{o}{.}\PY{n}{imshow}\PY{p}{(}\PY{n}{chroma\PYZus{}subsampled\PYZus{}YUV}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{p}{:}\PY{p}{,}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{,} \PY{n}{cmap}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{gray}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-         
-         \PY{n}{plt}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
-         \PY{c+c1}{\PYZsh{}plt.imshow(chroma\PYZus{}subsampled\PYZus{}YUV[:,:,1], cmap=\PYZsq{}gray\PYZsq{} \PYZsh{} Shows U}
-         \PY{c+c1}{\PYZsh{}plt.show()}
-\end{Verbatim}
-
-
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_38_0.png}
-    \end{center}
-    { \hspace*{\fill} \\}
-    
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}29}]:} \PY{n}{chroma\PYZus{}subsampled\PYZus{}RGB} \PY{o}{=} \PY{n}{cv2}\PY{o}{.}\PY{n}{cvtColor}\PY{p}{(}\PY{n}{chroma\PYZus{}subsampled\PYZus{}YUV}\PY{p}{,} \PY{n}{cv2}\PY{o}{.}\PY{n}{COLOR\PYZus{}YUV2RGB}\PY{p}{)}
-\end{Verbatim}
-
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}30}]:} \PY{n}{fig} \PY{o}{=} \PY{n}{plt}\PY{o}{.}\PY{n}{figure}\PY{p}{(}\PY{n}{figsize}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{24}\PY{p}{,}\PY{l+m+mi}{16}\PY{p}{)}\PY{p}{)}
-         
-         \PY{n}{a} \PY{o}{=} \PY{n}{fig}\PY{o}{.}\PY{n}{add\PYZus{}subplot}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mi}{2}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{)} \PY{c+c1}{\PYZsh{} Rows, cols, subfigure}
-         \PY{n}{a}\PY{o}{.}\PY{n}{set\PYZus{}title}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Original}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
-         \PY{n}{plt}\PY{o}{.}\PY{n}{imshow}\PY{p}{(}\PY{n}{RGB}\PY{p}{)}
-         
-         \PY{n}{a} \PY{o}{=} \PY{n}{fig}\PY{o}{.}\PY{n}{add\PYZus{}subplot}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mi}{2}\PY{p}{,}\PY{l+m+mi}{2}\PY{p}{)} \PY{c+c1}{\PYZsh{} Rows, cols, subfigure}
-         \PY{n}{a}\PY{o}{.}\PY{n}{set\PYZus{}title}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Chroma subsampled (3:1)}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
-         \PY{n}{plt}\PY{o}{.}\PY{n}{imshow}\PY{p}{(}\PY{n}{chroma\PYZus{}subsampled\PYZus{}RGB}\PY{p}{)}
-         
-         \PY{n}{plt}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
-\end{Verbatim}
-
-
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_40_0.png}
-    \end{center}
-    { \hspace*{\fill} \\}
-    
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}31}]:} \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{The original image uses }\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PYZbs{}
-               \PY{n}{luma\PYZus{}shape}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{o}{*}\PY{n}{luma\PYZus{}shape}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]} \PY{o}{*} \PY{l+m+mi}{3}\PY{p}{,}
-               \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{bytes}\PY{l+s+s2}{\PYZdq{}}
-              \PY{p}{)}
-         \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{The subsampled image uses}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PYZbs{}
-               \PY{n}{luma\PYZus{}shape}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{o}{*}\PY{n}{luma\PYZus{}shape}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]} \PY{o}{+}
-               \PY{n}{chroma\PYZus{}shape}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{o}{*}\PY{n}{chroma\PYZus{}shape}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]} \PY{o}{*} \PY{l+m+mi}{2}\PY{p}{,}
-               \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{bytes}\PY{l+s+s2}{\PYZdq{}}
-              \PY{p}{)}
-\end{Verbatim}
-
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-The original image uses  1572864 bytes
-The subsampled image uses 526472 bytes
-
-    \end{Verbatim}
-
-    \hypertarget{orthogonal-transform}{%
 \subsection{Orthogonal transform}\label{orthogonal-transform}}
 
 \begin{itemize}
