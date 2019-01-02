@@ -188,7 +188,9 @@
   \href{https://en.wikipedia.org/wiki/YUV}{\(\text{YUV}\) domain}:
 \end{itemize}
 
-\iframe{1200}{1200}{https://nbviewer.jupyter.org/github/vicente-gonzalez-ruiz/image_transformations_for_coding/blob/master/color_redundancy.ipynb}
+%\iframe{1200}{1200}{https://nbviewer.jupyter.org/github/vicente-gonzalez-ruiz/image_transformations_for_coding/blob/master/color_redundancy.ipynb}
+\href{https://nbviewer.jupyter.org/github/vicente-gonzalez-ruiz/image_transformations_for_coding/blob/master/color_redundancy.ipynb}{Color
+  redundancy~\cite{barr__image, gouillart__scikit, solem__programming}}.
 
 \section{Chrominance subsampling}
 \href{https://en.wikipedia.org/wiki/Chroma_subsampling}{The human visual
@@ -198,7 +200,8 @@ quality in the images.
 
 \img{600}{graphics/color_subsampling.svg}
 
-\iframe{1200}{1200}{https://nbviewer.jupyter.org/github/vicente-gonzalez-ruiz/image_transformations_for_coding/blob/master/chroma_subsampling.ipynb}
+%\iframe{1200}{1200}{https://nbviewer.jupyter.org/github/vicente-gonzalez-ruiz/image_transformations_for_coding/blob/master/chroma_subsampling.ipynb}
+\href{https://nbviewer.jupyter.org/github/vicente-gonzalez-ruiz/image_transformations_for_coding/blob/master/chroma_subsampling.ipynb}{Chroma subsampling}.
 
 \section{Orthogonal transform}
 \begin{itemize}
@@ -478,7 +481,8 @@ When \(T()\) can be expressed by a matrix \(X\), we get
   unitary) and therefore, DCT coefficients are uncorrelated.
 \end{enumerate}
 
-\iframe{1200}{1200}{https://nbviewer.jupyter.org/github/vicente-gonzalez-ruiz/image_transformations_for_coding/blob/master/DCT.ipynb}
+%\iframe{1200}{1200}{https://nbviewer.jupyter.org/github/vicente-gonzalez-ruiz/image_transformations_for_coding/blob/master/DCT.ipynb}
+\img{https://nbviewer.jupyter.org/github/vicente-gonzalez-ruiz/image_transformations_for_coding/blob/master/DCT.ipynb}{DCT}.
 
 \section{Dyadic discrete wavelet transform (DWT)}
 Key features:
@@ -554,6 +558,8 @@ where \(s_i\) if the \(i\)-th sample of \(s\).
 \end{enumerate}
 
 \section{Lifting implementation~\cite{sweldens1997building}}
+\img{1000}{graphics/lifting.svg}
+
 Comments:
 
 \begin{enumerate}
@@ -603,17 +609,10 @@ where \(Z^{-1}\) represents the one sample delay function.
   been low-pass filtered before subsampling it).
 \end{enumerate}
 
-\bibliography{DWT}
+\section{\(T\)-levels 1D-DWT}
+\img{1000}{graphics/n_levels_dwt1d.svg}
 
-\end{document}
-
-    \hypertarget{t-levels-1d-dwt}{%
-\subsubsection{\texorpdfstring{\(T\)-levels
-1D-DWT}{T-levels 1D-DWT}}\label{t-levels-1d-dwt}}
-
-    \hypertarget{d-dwt}{%
-\subsubsection{2D-DWT}\label{d-dwt}}
-
+\section{2D-DWT}    
 \begin{itemize}
 \tightlist
 \item
@@ -622,19 +621,21 @@ where \(Z^{-1}\) represents the one sample delay function.
   and next, to all the columns, or viceversa.
 \end{itemize}
 
+\img{800}{graphics/2D-DWT.svg}
+
 \begin{itemize}
 \tightlist
 \item
-  The contribution of a coefficient of a subband \(b\) is determined by
-  the DWT basis fuction \({s_H}^b\) asociated to that coefficient, which
-  can be empirically determined by applying the inverse DWT to the Dirac
-  Impulse function localized in that coefficient (notice that
-  \({s_H}^b\) does not depend on the coefficient because we are
+  The contribution of a coefficient of a subband \(b\) is determined
+  by the DWT basis fuction \({s_H}^b\) asociated to that coefficient,
+  which can be empirically determined by applying the inverse DWT to
+  the Dirac Impulse function localized in that coefficient (notice
+  that \({s_H}^b\) does not depend on the coefficient because we are
   supposing that all the coefficients of a subband have the same
-  contribution, the same basis fuction)
-  \href{https://scholar.google.es/scholar?hl=es\&as_sdt=0\%2C5\&q=Majid+Rabban\%2C+Rajan+L.+Joshi\%2C+and+Paul+W.+Jones.+The+JPEG+2000+Suite\%2C+chapter+JPEG+2000+Core+Coding+System+\%28Part+1\%29.+WILEY\%2C+2009\&btnG=}{{[}Rabbani,
-  Joshi \& Jones, 2009{]}}. Therefore, the L\(_2\)-norm for the subband
-  \(b\) is computed as the energy of a basis function of that subband as
+  contribution, the same basis
+  fuction)~\cite{rabbani2009jpeg}. Therefore, the L\(_2\)-norm for the
+  subband \(b\) is computed as the energy of a basis function of that
+  subband as
 \end{itemize}
 
 \begin{equation}
@@ -642,12 +643,9 @@ where \(Z^{-1}\) represents the one sample delay function.
 \end{equation}
 
 In the case of the 5/3-DWT, the L\(_2\)-norms of the DWT subbands are:
+\img{800}{graphics/2D-DWT.svg}
 
-    \hypertarget{haar-filters-haar-1910}{%
-\subsubsection{\texorpdfstring{Haar filters
-\href{https://scholar.google.es/scholar?hl=es\&as_sdt=0\%2C5\&q=A.+Haar.+Zur+Theorie+der+orthogolanen+Funktionen-Systeme.+Mathematische+Annalen\%2C+69\%3A331\%E2\%80\%93371\%2C+1910\&btnG=}{{[}Haar,
-1910{]}}}{Haar filters {[}Haar, 1910{]}}}\label{haar-filters-haar-1910}}
-
+\section{Haar filters~\cite{haar1910theorie}}
 The \(i\)-th sample of the low-frequency subband is computed (using a
 filter plus subsampling) as
 
@@ -679,541 +677,11 @@ the length (taps or number of coefficients) of the low-pass and the
 high-pass (convolution) filters of the filter bank implementation (not
 Lifting), respectively.
 
-    \hypertarget{d-basis-functions}{%
-\paragraph{2D basis functions}\label{d-basis-functions}}
+%\iframe{1200}{1200}{https://nbviewer.jupyter.org/github/vicente-gonzalez-ruiz/image_transformations_for_coding/blob/master/Haar_2d_basis.ipynb}
+\href{https://nbviewer.jupyter.org/github/vicente-gonzalez-ruiz/image_transformations_for_coding/blob/master/Haar_2d_basis.ipynb}{Haar basis}.
 
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}40}]:} \PY{c+c1}{\PYZsh{} pip install pywavelets}
-         \PY{k+kn}{import} \PY{n+nn}{pywt}
-         \PY{k+kn}{from} \PY{n+nn}{matplotlib} \PY{k}{import} \PY{n}{pyplot} \PY{k}{as} \PY{n}{plt}
-         \PY{o}{\PYZpc{}}\PY{k}{matplotlib} inline
-         \PY{k+kn}{import} \PY{n+nn}{numpy} \PY{k}{as} \PY{n+nn}{np}
-         
-         \PY{n}{fig} \PY{o}{=} \PY{n}{plt}\PY{o}{.}\PY{n}{figure}\PY{p}{(}\PY{n}{figsize}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{16}\PY{p}{,} \PY{l+m+mi}{16}\PY{p}{)}\PY{p}{)}
-         \PY{n}{wavelet\PYZus{}}\PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{haar}\PY{l+s+s1}{\PYZsq{}}
-         
-         \PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{4}\PY{p}{)}\PY{p}{:}
-             \PY{k}{for} \PY{n}{j} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{4}\PY{p}{)}\PY{p}{:}
-         
-                 \PY{n}{pixels} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{zeros}\PY{p}{(}\PY{p}{(}\PY{l+m+mi}{32}\PY{p}{,} \PY{l+m+mi}{32}\PY{p}{)}\PY{p}{)}
-                 \PY{c+c1}{\PYZsh{} http://pywavelets.readthedocs.io/en/latest/ref/2d\PYZhy{}dwt\PYZhy{}and\PYZhy{}idwt.html\PYZsh{}d\PYZhy{}multilevel\PYZhy{}decomposition\PYZhy{}using\PYZhy{}wavedec2}
-                 \PY{c+c1}{\PYZsh{}coeffs = pywt.wavedec2(pixels, wavelet=wavelet\PYZus{}, mode=\PYZsq{}per\PYZsq{}, level=3)}
-                 \PY{n}{coeffs} \PY{o}{=} \PY{n}{pywt}\PY{o}{.}\PY{n}{wavedec2}\PY{p}{(}\PY{n}{pixels}\PY{p}{,} \PY{n}{wavelet}\PY{o}{=}\PY{n}{wavelet\PYZus{}}\PY{p}{,} \PY{n}{level}\PY{o}{=}\PY{l+m+mi}{3}\PY{p}{)}
-                 \PY{n}{coeffs}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{[}\PY{n}{i}\PY{p}{,} \PY{n}{j}\PY{p}{]} \PY{o}{=} \PY{l+m+mf}{1.0} \PY{c+c1}{\PYZsh{} Subband LL4}
-                 \PY{c+c1}{\PYZsh{} http://pywavelets.readthedocs.io/en/latest/ref/2d\PYZhy{}dwt\PYZhy{}and\PYZhy{}idwt.html\PYZsh{}d\PYZhy{}multilevel\PYZhy{}reconstruction\PYZhy{}using\PYZhy{}waverec2}
-                 \PY{n}{recons} \PY{o}{=} \PY{n}{pywt}\PY{o}{.}\PY{n}{waverec2}\PY{p}{(}\PY{n}{coeffs}\PY{p}{,} \PY{n}{wavelet}\PY{o}{=}\PY{n}{wavelet\PYZus{}}\PY{p}{)}
-                 \PY{n+nb}{max} \PY{o}{=} \PY{n}{recons}\PY{o}{.}\PY{n}{max}\PY{p}{(}\PY{p}{)}
-                 \PY{n+nb}{min} \PY{o}{=} \PY{n}{recons}\PY{o}{.}\PY{n}{min}\PY{p}{(}\PY{p}{)}
-                 \PY{k}{if}\PY{p}{(}\PY{n+nb}{max}\PY{o}{!=}\PY{n+nb}{min}\PY{p}{)}\PY{p}{:}
-                     \PY{n}{recons} \PY{o}{=} \PY{p}{(}\PY{n}{recons}\PY{o}{\PYZhy{}}\PY{n+nb}{min}\PY{p}{)}\PY{o}{/}\PY{p}{(}\PY{n+nb}{max}\PY{o}{\PYZhy{}}\PY{n+nb}{min}\PY{p}{)}\PY{o}{*}\PY{l+m+mi}{255}
-                     
-                 \PY{n}{plt}\PY{o}{.}\PY{n}{subplot}\PY{p}{(}\PY{l+m+mi}{8}\PY{p}{,} \PY{l+m+mi}{8}\PY{p}{,} \PY{l+m+mi}{8}\PY{o}{*}\PY{n}{i}\PY{o}{+}\PY{n}{j}\PY{o}{+}\PY{l+m+mi}{1}\PY{p}{)}
-                 \PY{n}{plt}\PY{o}{.}\PY{n}{imshow}\PY{p}{(}\PY{n}{recons}\PY{p}{,} \PY{n}{cmap}\PY{o}{=}\PY{n}{plt}\PY{o}{.}\PY{n}{cm}\PY{o}{.}\PY{n}{gray}\PY{p}{)}
-                 \PY{n}{plt}\PY{o}{.}\PY{n}{grid}\PY{p}{(}\PY{k+kc}{False}\PY{p}{)}\PY{p}{;}
-                 \PY{n}{plt}\PY{o}{.}\PY{n}{xticks}\PY{p}{(}\PY{p}{[}\PY{p}{]}\PY{p}{)}\PY{p}{;}
-                 \PY{n}{plt}\PY{o}{.}\PY{n}{yticks}\PY{p}{(}\PY{p}{[}\PY{p}{]}\PY{p}{)}\PY{p}{;}
-\end{Verbatim}
-
-
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_74_0.png}
-    \end{center}
-    { \hspace*{\fill} \\}
-    
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}41}]:} \PY{c+c1}{\PYZsh{} pip install pywavelets}
-         \PY{k+kn}{import} \PY{n+nn}{pywt}
-         \PY{k+kn}{from} \PY{n+nn}{matplotlib} \PY{k}{import} \PY{n}{pyplot} \PY{k}{as} \PY{n}{plt}
-         \PY{o}{\PYZpc{}}\PY{k}{matplotlib} inline
-         \PY{k+kn}{import} \PY{n+nn}{numpy} \PY{k}{as} \PY{n+nn}{np}
-         
-         \PY{n}{fig} \PY{o}{=} \PY{n}{plt}\PY{o}{.}\PY{n}{figure}\PY{p}{(}\PY{n}{figsize}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{16}\PY{p}{,} \PY{l+m+mi}{16}\PY{p}{)}\PY{p}{)}
-         \PY{n}{wavelet\PYZus{}}\PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{haar}\PY{l+s+s1}{\PYZsq{}}
-         
-         \PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{4}\PY{p}{)}\PY{p}{:}
-             \PY{k}{for} \PY{n}{j} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{4}\PY{p}{)}\PY{p}{:}
-         
-                 \PY{n}{pixels} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{zeros}\PY{p}{(}\PY{p}{(}\PY{l+m+mi}{32}\PY{p}{,} \PY{l+m+mi}{32}\PY{p}{)}\PY{p}{)}
-                 \PY{n}{coeffs} \PY{o}{=} \PY{n}{pywt}\PY{o}{.}\PY{n}{wavedec2}\PY{p}{(}\PY{n}{pixels}\PY{p}{,} \PY{n}{wavelet}\PY{o}{=}\PY{n}{wavelet\PYZus{}}\PY{p}{,} \PY{n}{level}\PY{o}{=}\PY{l+m+mi}{3}\PY{p}{)}
-                 \PY{n}{coeffs}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{[}\PY{n}{i}\PY{p}{,} \PY{n}{j}\PY{p}{]} \PY{o}{=} \PY{l+m+mf}{1.0} \PY{c+c1}{\PYZsh{} Subband LH4}
-                 \PY{n}{recons} \PY{o}{=} \PY{n}{pywt}\PY{o}{.}\PY{n}{waverec2}\PY{p}{(}\PY{n}{coeffs}\PY{p}{,} \PY{n}{wavelet}\PY{o}{=}\PY{n}{wavelet\PYZus{}}\PY{p}{)}
-                 \PY{n+nb}{max} \PY{o}{=} \PY{n}{recons}\PY{o}{.}\PY{n}{max}\PY{p}{(}\PY{p}{)}
-                 \PY{n+nb}{min} \PY{o}{=} \PY{n}{recons}\PY{o}{.}\PY{n}{min}\PY{p}{(}\PY{p}{)}
-                 \PY{k}{if}\PY{p}{(}\PY{n+nb}{max}\PY{o}{!=}\PY{n+nb}{min}\PY{p}{)}\PY{p}{:}
-                     \PY{n}{recons} \PY{o}{=} \PY{p}{(}\PY{n}{recons}\PY{o}{\PYZhy{}}\PY{n+nb}{min}\PY{p}{)}\PY{o}{/}\PY{p}{(}\PY{n+nb}{max}\PY{o}{\PYZhy{}}\PY{n+nb}{min}\PY{p}{)}\PY{o}{*}\PY{l+m+mi}{255}
-                     
-                 \PY{n}{plt}\PY{o}{.}\PY{n}{subplot}\PY{p}{(}\PY{l+m+mi}{8}\PY{p}{,} \PY{l+m+mi}{8}\PY{p}{,} \PY{l+m+mi}{8}\PY{o}{*}\PY{n}{i}\PY{o}{+}\PY{n}{j}\PY{o}{+}\PY{l+m+mi}{1}\PY{p}{)}
-                 \PY{n}{plt}\PY{o}{.}\PY{n}{imshow}\PY{p}{(}\PY{n}{recons}\PY{p}{,} \PY{n}{cmap}\PY{o}{=}\PY{n}{plt}\PY{o}{.}\PY{n}{cm}\PY{o}{.}\PY{n}{gray}\PY{p}{)}
-                 \PY{n}{plt}\PY{o}{.}\PY{n}{grid}\PY{p}{(}\PY{k+kc}{False}\PY{p}{)}\PY{p}{;}
-                 \PY{n}{plt}\PY{o}{.}\PY{n}{xticks}\PY{p}{(}\PY{p}{[}\PY{p}{]}\PY{p}{)}\PY{p}{;}
-                 \PY{n}{plt}\PY{o}{.}\PY{n}{yticks}\PY{p}{(}\PY{p}{[}\PY{p}{]}\PY{p}{)}\PY{p}{;}
-\end{Verbatim}
-
-
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_75_0.png}
-    \end{center}
-    { \hspace*{\fill} \\}
-    
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}42}]:} \PY{k+kn}{import} \PY{n+nn}{pywt} \PY{c+c1}{\PYZsh{} pip install pywavelets}
-         \PY{k+kn}{from} \PY{n+nn}{matplotlib} \PY{k}{import} \PY{n}{pyplot} \PY{k}{as} \PY{n}{plt}
-         \PY{o}{\PYZpc{}}\PY{k}{matplotlib} inline
-         \PY{k+kn}{import} \PY{n+nn}{numpy} \PY{k}{as} \PY{n+nn}{np}
-         
-         \PY{n}{fig} \PY{o}{=} \PY{n}{plt}\PY{o}{.}\PY{n}{figure}\PY{p}{(}\PY{n}{figsize}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{16}\PY{p}{,} \PY{l+m+mi}{16}\PY{p}{)}\PY{p}{)}
-         \PY{n}{wavelet\PYZus{}}\PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{haar}\PY{l+s+s1}{\PYZsq{}}
-         
-         \PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{4}\PY{p}{)}\PY{p}{:}
-             \PY{k}{for} \PY{n}{j} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{4}\PY{p}{)}\PY{p}{:}
-         
-                 \PY{n}{pixels} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{zeros}\PY{p}{(}\PY{p}{(}\PY{l+m+mi}{32}\PY{p}{,} \PY{l+m+mi}{32}\PY{p}{)}\PY{p}{)}
-                 \PY{n}{coeffs} \PY{o}{=} \PY{n}{pywt}\PY{o}{.}\PY{n}{wavedec2}\PY{p}{(}\PY{n}{pixels}\PY{p}{,} \PY{n}{wavelet}\PY{o}{=}\PY{n}{wavelet\PYZus{}}\PY{p}{,} \PY{n}{level}\PY{o}{=}\PY{l+m+mi}{3}\PY{p}{)}
-                 \PY{n}{coeffs}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{[}\PY{n}{i}\PY{p}{,} \PY{n}{j}\PY{p}{]} \PY{o}{=} \PY{l+m+mf}{1.0} \PY{c+c1}{\PYZsh{} Subband HL4}
-                 \PY{n}{recons} \PY{o}{=} \PY{n}{pywt}\PY{o}{.}\PY{n}{waverec2}\PY{p}{(}\PY{n}{coeffs}\PY{p}{,} \PY{n}{wavelet}\PY{o}{=}\PY{n}{wavelet\PYZus{}}\PY{p}{)}
-                 \PY{n+nb}{max} \PY{o}{=} \PY{n}{recons}\PY{o}{.}\PY{n}{max}\PY{p}{(}\PY{p}{)}
-                 \PY{n+nb}{min} \PY{o}{=} \PY{n}{recons}\PY{o}{.}\PY{n}{min}\PY{p}{(}\PY{p}{)}
-                 \PY{k}{if}\PY{p}{(}\PY{n+nb}{max}\PY{o}{!=}\PY{n+nb}{min}\PY{p}{)}\PY{p}{:}
-                     \PY{n}{recons} \PY{o}{=} \PY{p}{(}\PY{n}{recons}\PY{o}{\PYZhy{}}\PY{n+nb}{min}\PY{p}{)}\PY{o}{/}\PY{p}{(}\PY{n+nb}{max}\PY{o}{\PYZhy{}}\PY{n+nb}{min}\PY{p}{)}\PY{o}{*}\PY{l+m+mi}{255}
-         
-                 \PY{n}{plt}\PY{o}{.}\PY{n}{subplot}\PY{p}{(}\PY{l+m+mi}{8}\PY{p}{,} \PY{l+m+mi}{8}\PY{p}{,} \PY{l+m+mi}{8}\PY{o}{*}\PY{n}{i}\PY{o}{+}\PY{n}{j}\PY{o}{+}\PY{l+m+mi}{1}\PY{p}{)}
-                 \PY{n}{plt}\PY{o}{.}\PY{n}{imshow}\PY{p}{(}\PY{n}{recons}\PY{p}{,} \PY{n}{cmap}\PY{o}{=}\PY{n}{plt}\PY{o}{.}\PY{n}{cm}\PY{o}{.}\PY{n}{gray}\PY{p}{)}
-                 \PY{n}{plt}\PY{o}{.}\PY{n}{grid}\PY{p}{(}\PY{k+kc}{False}\PY{p}{)}\PY{p}{;}
-                 \PY{n}{plt}\PY{o}{.}\PY{n}{xticks}\PY{p}{(}\PY{p}{[}\PY{p}{]}\PY{p}{)}\PY{p}{;}
-                 \PY{n}{plt}\PY{o}{.}\PY{n}{yticks}\PY{p}{(}\PY{p}{[}\PY{p}{]}\PY{p}{)}\PY{p}{;}
-\end{Verbatim}
-
-
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_76_0.png}
-    \end{center}
-    { \hspace*{\fill} \\}
-    
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}43}]:} \PY{k+kn}{import} \PY{n+nn}{pywt} \PY{c+c1}{\PYZsh{} pip install pywavelets}
-         \PY{k+kn}{from} \PY{n+nn}{matplotlib} \PY{k}{import} \PY{n}{pyplot} \PY{k}{as} \PY{n}{plt}
-         \PY{o}{\PYZpc{}}\PY{k}{matplotlib} inline
-         \PY{k+kn}{import} \PY{n+nn}{numpy} \PY{k}{as} \PY{n+nn}{np}
-         
-         \PY{n}{fig} \PY{o}{=} \PY{n}{plt}\PY{o}{.}\PY{n}{figure}\PY{p}{(}\PY{n}{figsize}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{16}\PY{p}{,} \PY{l+m+mi}{16}\PY{p}{)}\PY{p}{)}
-         \PY{n}{wavelet\PYZus{}}\PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{haar}\PY{l+s+s1}{\PYZsq{}}
-         
-         \PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{4}\PY{p}{)}\PY{p}{:}
-             \PY{k}{for} \PY{n}{j} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{4}\PY{p}{)}\PY{p}{:}
-         
-                 \PY{n}{pixels} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{zeros}\PY{p}{(}\PY{p}{(}\PY{l+m+mi}{32}\PY{p}{,} \PY{l+m+mi}{32}\PY{p}{)}\PY{p}{)}
-                 \PY{n}{coeffs} \PY{o}{=} \PY{n}{pywt}\PY{o}{.}\PY{n}{wavedec2}\PY{p}{(}\PY{n}{pixels}\PY{p}{,} \PY{n}{wavelet}\PY{o}{=}\PY{n}{wavelet\PYZus{}}\PY{p}{,} \PY{n}{level}\PY{o}{=}\PY{l+m+mi}{3}\PY{p}{)}
-                 \PY{n}{coeffs}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{[}\PY{n}{i}\PY{p}{,} \PY{n}{j}\PY{p}{]} \PY{o}{=} \PY{l+m+mf}{1.0} \PY{c+c1}{\PYZsh{} Subband HH4}
-                 \PY{n}{recons} \PY{o}{=} \PY{n}{pywt}\PY{o}{.}\PY{n}{waverec2}\PY{p}{(}\PY{n}{coeffs}\PY{p}{,} \PY{n}{wavelet}\PY{o}{=}\PY{n}{wavelet\PYZus{}}\PY{p}{)}
-                 \PY{n+nb}{max} \PY{o}{=} \PY{n}{recons}\PY{o}{.}\PY{n}{max}\PY{p}{(}\PY{p}{)}
-                 \PY{n+nb}{min} \PY{o}{=} \PY{n}{recons}\PY{o}{.}\PY{n}{min}\PY{p}{(}\PY{p}{)}
-                 \PY{k}{if}\PY{p}{(}\PY{n+nb}{max}\PY{o}{!=}\PY{n+nb}{min}\PY{p}{)}\PY{p}{:}
-                     \PY{n}{recons} \PY{o}{=} \PY{p}{(}\PY{n}{recons}\PY{o}{\PYZhy{}}\PY{n+nb}{min}\PY{p}{)}\PY{o}{/}\PY{p}{(}\PY{n+nb}{max}\PY{o}{\PYZhy{}}\PY{n+nb}{min}\PY{p}{)}\PY{o}{*}\PY{l+m+mi}{255}
-                     
-                 \PY{n}{plt}\PY{o}{.}\PY{n}{subplot}\PY{p}{(}\PY{l+m+mi}{8}\PY{p}{,} \PY{l+m+mi}{8}\PY{p}{,} \PY{l+m+mi}{8}\PY{o}{*}\PY{n}{i}\PY{o}{+}\PY{n}{j}\PY{o}{+}\PY{l+m+mi}{1}\PY{p}{)}
-                 \PY{n}{plt}\PY{o}{.}\PY{n}{imshow}\PY{p}{(}\PY{n}{recons}\PY{p}{,} \PY{n}{cmap}\PY{o}{=}\PY{n}{plt}\PY{o}{.}\PY{n}{cm}\PY{o}{.}\PY{n}{gray}\PY{p}{)}
-                 \PY{n}{plt}\PY{o}{.}\PY{n}{grid}\PY{p}{(}\PY{k+kc}{False}\PY{p}{)}\PY{p}{;}
-                 \PY{n}{plt}\PY{o}{.}\PY{n}{xticks}\PY{p}{(}\PY{p}{[}\PY{p}{]}\PY{p}{)}\PY{p}{;}
-                 \PY{n}{plt}\PY{o}{.}\PY{n}{yticks}\PY{p}{(}\PY{p}{[}\PY{p}{]}\PY{p}{)}\PY{p}{;}
-\end{Verbatim}
-
-
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_77_0.png}
-    \end{center}
-    { \hspace*{\fill} \\}
-    
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}44}]:} \PY{k+kn}{import} \PY{n+nn}{pywt} \PY{c+c1}{\PYZsh{} pip install pywavelets}
-         \PY{k+kn}{from} \PY{n+nn}{matplotlib} \PY{k}{import} \PY{n}{pyplot} \PY{k}{as} \PY{n}{plt}
-         \PY{o}{\PYZpc{}}\PY{k}{matplotlib} inline
-         \PY{k+kn}{import} \PY{n+nn}{numpy} \PY{k}{as} \PY{n+nn}{np}
-         
-         \PY{n}{fig} \PY{o}{=} \PY{n}{plt}\PY{o}{.}\PY{n}{figure}\PY{p}{(}\PY{n}{figsize}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{16}\PY{p}{,} \PY{l+m+mi}{16}\PY{p}{)}\PY{p}{)}
-         \PY{n}{wavelet\PYZus{}}\PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{haar}\PY{l+s+s1}{\PYZsq{}}
-         
-         \PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{8}\PY{p}{)}\PY{p}{:}
-             \PY{k}{for} \PY{n}{j} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{8}\PY{p}{)}\PY{p}{:}
-         
-                 \PY{n}{pixels} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{zeros}\PY{p}{(}\PY{p}{(}\PY{l+m+mi}{32}\PY{p}{,} \PY{l+m+mi}{32}\PY{p}{)}\PY{p}{)}
-                 \PY{n}{coeffs} \PY{o}{=} \PY{n}{pywt}\PY{o}{.}\PY{n}{wavedec2}\PY{p}{(}\PY{n}{pixels}\PY{p}{,} \PY{n}{wavelet}\PY{o}{=}\PY{n}{wavelet\PYZus{}}\PY{p}{,} \PY{n}{level}\PY{o}{=}\PY{l+m+mi}{3}\PY{p}{)}
-                 \PY{n}{coeffs}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{[}\PY{n}{i}\PY{p}{,} \PY{n}{j}\PY{p}{]} \PY{o}{=} \PY{l+m+mf}{1.0} \PY{c+c1}{\PYZsh{} Subband HL3}
-                 \PY{n}{recons} \PY{o}{=} \PY{n}{pywt}\PY{o}{.}\PY{n}{waverec2}\PY{p}{(}\PY{n}{coeffs}\PY{p}{,} \PY{n}{wavelet}\PY{o}{=}\PY{n}{wavelet\PYZus{}}\PY{p}{)}
-                 \PY{n+nb}{max} \PY{o}{=} \PY{n}{recons}\PY{o}{.}\PY{n}{max}\PY{p}{(}\PY{p}{)}
-                 \PY{n+nb}{min} \PY{o}{=} \PY{n}{recons}\PY{o}{.}\PY{n}{min}\PY{p}{(}\PY{p}{)}
-                 \PY{k}{if}\PY{p}{(}\PY{n+nb}{max}\PY{o}{!=}\PY{n+nb}{min}\PY{p}{)}\PY{p}{:}
-                     \PY{n}{recons} \PY{o}{=} \PY{p}{(}\PY{n}{recons}\PY{o}{\PYZhy{}}\PY{n+nb}{min}\PY{p}{)}\PY{o}{/}\PY{p}{(}\PY{n+nb}{max}\PY{o}{\PYZhy{}}\PY{n+nb}{min}\PY{p}{)}\PY{o}{*}\PY{l+m+mi}{255}
-                     
-                 \PY{n}{plt}\PY{o}{.}\PY{n}{subplot}\PY{p}{(}\PY{l+m+mi}{16}\PY{p}{,} \PY{l+m+mi}{16}\PY{p}{,} \PY{l+m+mi}{16}\PY{o}{*}\PY{n}{i}\PY{o}{+}\PY{n}{j}\PY{o}{+}\PY{l+m+mi}{1}\PY{p}{)}
-                 \PY{n}{plt}\PY{o}{.}\PY{n}{imshow}\PY{p}{(}\PY{n}{recons}\PY{p}{,} \PY{n}{cmap}\PY{o}{=}\PY{n}{plt}\PY{o}{.}\PY{n}{cm}\PY{o}{.}\PY{n}{gray}\PY{p}{)}
-                 \PY{n}{plt}\PY{o}{.}\PY{n}{grid}\PY{p}{(}\PY{k+kc}{False}\PY{p}{)}\PY{p}{;}
-                 \PY{n}{plt}\PY{o}{.}\PY{n}{xticks}\PY{p}{(}\PY{p}{[}\PY{p}{]}\PY{p}{)}\PY{p}{;}
-                 \PY{n}{plt}\PY{o}{.}\PY{n}{yticks}\PY{p}{(}\PY{p}{[}\PY{p}{]}\PY{p}{)}\PY{p}{;}
-\end{Verbatim}
-
-
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_78_0.png}
-    \end{center}
-    { \hspace*{\fill} \\}
-    
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}45}]:} \PY{c+c1}{\PYZsh{} Load lena}
-         
-         \PY{k+kn}{import} \PY{n+nn}{urllib}\PY{n+nn}{.}\PY{n+nn}{request}
-         \PY{k+kn}{from} \PY{n+nn}{matplotlib} \PY{k}{import} \PY{n}{pyplot} \PY{k}{as} \PY{n}{plt}
-         \PY{k+kn}{import} \PY{n+nn}{numpy} \PY{k}{as} \PY{n+nn}{np}
-         \PY{k+kn}{import} \PY{n+nn}{cv2} \PY{c+c1}{\PYZsh{} pip install opencv\PYZhy{}python}
-         
-         \PY{o}{\PYZpc{}}\PY{k}{matplotlib} inline
-         \PY{n}{HTTP\PYZus{}response} \PY{o}{=} \PY{n}{urllib}\PY{o}{.}\PY{n}{request}\PY{o}{.}\PY{n}{urlopen}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{http://www.hpca.ual.es/\PYZti{}vruiz/images/lena.png}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-         \PY{n}{arr} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{asarray}\PY{p}{(}\PY{n+nb}{bytearray}\PY{p}{(}\PY{n}{HTTP\PYZus{}response}\PY{o}{.}\PY{n}{read}\PY{p}{(}\PY{p}{)}\PY{p}{)}\PY{p}{,} \PY{n}{dtype}\PY{o}{=}\PY{n}{np}\PY{o}{.}\PY{n}{uint8}\PY{p}{)}
-         \PY{n}{BRG} \PY{o}{=} \PY{n}{cv2}\PY{o}{.}\PY{n}{imdecode}\PY{p}{(}\PY{n}{arr}\PY{p}{,}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{)}
-         \PY{n}{pixels} \PY{o}{=} \PY{n}{cv2}\PY{o}{.}\PY{n}{cvtColor}\PY{p}{(}\PY{n}{BRG}\PY{p}{,} \PY{n}{cv2}\PY{o}{.}\PY{n}{COLOR\PYZus{}BGR2RGB}\PY{p}{)}
-         \PY{n}{plt}\PY{o}{.}\PY{n}{imshow}\PY{p}{(}\PY{n}{pixels}\PY{p}{)}
-\end{Verbatim}
-
-
-\begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}45}]:} <matplotlib.image.AxesImage at 0x7fa1841db9e8>
-\end{Verbatim}
-            
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_79_1.png}
-    \end{center}
-    { \hspace*{\fill} \\}
-    
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}46}]:} \PY{c+c1}{\PYZsh{} Color 2D\PYZhy{}DWT is the 2D\PYZhy{}DWT of each component}
-         \PY{n}{components} \PY{o}{=} \PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{r}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{g}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{b}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-         \PY{n}{coeffs} \PY{o}{=} \PY{p}{[}\PY{k+kc}{None}\PY{p}{]}\PY{o}{*}\PY{l+m+mi}{3}
-         \PY{n}{wavelet\PYZus{}}\PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{haar}\PY{l+s+s1}{\PYZsq{}}
-         \PY{n}{levels\PYZus{}} \PY{o}{=} \PY{l+m+mi}{5}
-         \PY{k}{for} \PY{n}{i}\PY{p}{,}\PY{n}{com} \PY{o+ow}{in} \PY{n+nb}{enumerate}\PY{p}{(}\PY{n}{components}\PY{p}{)}\PY{p}{:}
-             \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+s2}{ }\PY{l+s+s2}{\PYZdq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{n}{i}\PY{p}{)}\PY{p}{,} \PY{n}{end}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-             \PY{n}{coeffs}\PY{p}{[}\PY{n}{i}\PY{p}{]} \PY{o}{=} \PY{n}{pywt}\PY{o}{.}\PY{n}{wavedec2}\PY{p}{(}\PY{n}{pixels}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{p}{:}\PY{p}{,}\PY{n}{i}\PY{p}{]}\PY{p}{,} \PY{n}{wavelet}\PY{o}{=}\PY{n}{wavelet\PYZus{}}\PY{p}{,} \PY{n}{level}\PY{o}{=}\PY{n}{levels\PYZus{}}\PY{p}{)}
-\end{Verbatim}
-
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-0 1 2 
-    \end{Verbatim}
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}47}]:} \PY{c+c1}{\PYZsh{} View DWT coefs}
-         
-         \PY{n}{fig} \PY{o}{=} \PY{n}{plt}\PY{o}{.}\PY{n}{figure}\PY{p}{(}\PY{n}{figsize}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{16}\PY{p}{,} \PY{l+m+mi}{16}\PY{p}{)}\PY{p}{)}
-         
-         \PY{n}{view} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{empty}\PY{p}{(}\PY{n}{pixels}\PY{o}{.}\PY{n}{shape}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{uint8}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-         
-         \PY{c+c1}{\PYZsh{} LL subband}
-         \PY{k}{for} \PY{n}{i}\PY{p}{,}\PY{n}{com} \PY{o+ow}{in} \PY{n+nb}{enumerate}\PY{p}{(}\PY{n}{components}\PY{p}{)}\PY{p}{:}
-             \PY{n}{x} \PY{o}{=} \PY{n}{coeffs}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{p}{:}\PY{p}{]}
-             \PY{n}{y} \PY{o}{=} \PY{p}{(}\PY{p}{(}\PY{n}{x} \PY{o}{\PYZhy{}} \PY{n}{x}\PY{o}{.}\PY{n}{min}\PY{p}{(}\PY{p}{)}\PY{p}{)} \PY{o}{/} \PY{p}{(}\PY{n}{x}\PY{o}{.}\PY{n}{max}\PY{p}{(}\PY{p}{)} \PY{o}{\PYZhy{}} \PY{n}{x}\PY{o}{.}\PY{n}{min}\PY{p}{(}\PY{p}{)}\PY{p}{)}\PY{o}{*}\PY{l+m+mi}{255}\PY{p}{)}\PY{o}{.}\PY{n}{astype}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{uint8}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-             \PY{n}{view}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{:}\PY{n}{coeffs}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{o}{.}\PY{n}{shape}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{,}
-                  \PY{l+m+mi}{0}\PY{p}{:}\PY{n}{coeffs}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{o}{.}\PY{n}{shape}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{,}
-                  \PY{n}{i}\PY{p}{]} \PY{o}{=} \PY{n}{y}
-         
-         \PY{k}{for} \PY{n}{l} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{n}{levels\PYZus{}}\PY{p}{)}\PY{p}{:}
-         
-             \PY{c+c1}{\PYZsh{} LH}
-             \PY{k}{for} \PY{n}{i}\PY{p}{,}\PY{n}{com} \PY{o+ow}{in} \PY{n+nb}{enumerate}\PY{p}{(}\PY{n}{components}\PY{p}{)}\PY{p}{:}
-                 \PY{n}{x} \PY{o}{=} \PY{n}{coeffs}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{[}\PY{n}{l}\PY{o}{+}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{p}{:}\PY{p}{]}
-                 \PY{n}{y} \PY{o}{=} \PY{p}{(}\PY{p}{(}\PY{n}{x} \PY{o}{\PYZhy{}} \PY{n}{x}\PY{o}{.}\PY{n}{min}\PY{p}{(}\PY{p}{)}\PY{p}{)} \PY{o}{/} \PY{p}{(}\PY{n}{x}\PY{o}{.}\PY{n}{max}\PY{p}{(}\PY{p}{)} \PY{o}{\PYZhy{}} \PY{n}{x}\PY{o}{.}\PY{n}{min}\PY{p}{(}\PY{p}{)}\PY{p}{)}\PY{o}{*}\PY{l+m+mi}{255}\PY{p}{)}\PY{o}{.}\PY{n}{astype}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{uint8}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-                 \PY{n}{view}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{:}\PY{n}{coeffs}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{[}\PY{n}{l}\PY{o}{+}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{o}{.}\PY{n}{shape}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{,}
-                      \PY{n}{coeffs}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{[}\PY{n}{l}\PY{o}{+}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{o}{.}\PY{n}{shape}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{:}\PY{n}{coeffs}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{[}\PY{n}{l}\PY{o}{+}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{o}{.}\PY{n}{shape}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{o}{*}\PY{l+m+mi}{2}\PY{p}{,}
-                      \PY{n}{i}\PY{p}{]} \PY{o}{=} \PY{n}{y}
-         
-             \PY{c+c1}{\PYZsh{} HH}
-             \PY{k}{for} \PY{n}{i}\PY{p}{,}\PY{n}{com} \PY{o+ow}{in} \PY{n+nb}{enumerate}\PY{p}{(}\PY{n}{components}\PY{p}{)}\PY{p}{:}
-                 \PY{n}{x} \PY{o}{=} \PY{n}{coeffs}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{[}\PY{n}{l}\PY{o}{+}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{p}{:}\PY{p}{]}
-                 \PY{n}{y} \PY{o}{=} \PY{p}{(}\PY{p}{(}\PY{n}{x} \PY{o}{\PYZhy{}} \PY{n}{x}\PY{o}{.}\PY{n}{min}\PY{p}{(}\PY{p}{)}\PY{p}{)} \PY{o}{/} \PY{p}{(}\PY{n}{x}\PY{o}{.}\PY{n}{max}\PY{p}{(}\PY{p}{)} \PY{o}{\PYZhy{}} \PY{n}{x}\PY{o}{.}\PY{n}{min}\PY{p}{(}\PY{p}{)}\PY{p}{)}\PY{o}{*}\PY{l+m+mi}{255}\PY{p}{)}\PY{o}{.}\PY{n}{astype}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{uint8}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-                 \PY{n}{view}\PY{p}{[}\PY{n}{coeffs}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{[}\PY{n}{l}\PY{o}{+}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{o}{.}\PY{n}{shape}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{:}\PY{n}{coeffs}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{[}\PY{n}{l}\PY{o}{+}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{o}{.}\PY{n}{shape}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{o}{*}\PY{l+m+mi}{2}\PY{p}{,}
-                      \PY{l+m+mi}{0}\PY{p}{:}\PY{n}{coeffs}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{[}\PY{n}{l}\PY{o}{+}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{o}{.}\PY{n}{shape}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{,}
-                      \PY{n}{i}\PY{p}{]} \PY{o}{=} \PY{n}{y}
-         
-             \PY{c+c1}{\PYZsh{} HH}
-             \PY{k}{for} \PY{n}{i}\PY{p}{,}\PY{n}{com} \PY{o+ow}{in} \PY{n+nb}{enumerate}\PY{p}{(}\PY{n}{components}\PY{p}{)}\PY{p}{:}
-                 \PY{n}{x} \PY{o}{=} \PY{n}{coeffs}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{[}\PY{n}{l}\PY{o}{+}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{p}{:}\PY{p}{]}
-                 \PY{n}{y} \PY{o}{=} \PY{p}{(}\PY{p}{(}\PY{n}{x} \PY{o}{\PYZhy{}} \PY{n}{x}\PY{o}{.}\PY{n}{min}\PY{p}{(}\PY{p}{)}\PY{p}{)} \PY{o}{/} \PY{p}{(}\PY{n}{x}\PY{o}{.}\PY{n}{max}\PY{p}{(}\PY{p}{)} \PY{o}{\PYZhy{}} \PY{n}{x}\PY{o}{.}\PY{n}{min}\PY{p}{(}\PY{p}{)}\PY{p}{)}\PY{o}{*}\PY{l+m+mi}{255}\PY{p}{)}\PY{o}{.}\PY{n}{astype}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{uint8}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-                 \PY{n}{view}\PY{p}{[}\PY{n}{coeffs}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{[}\PY{n}{l}\PY{o}{+}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{o}{.}\PY{n}{shape}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{:}\PY{n}{coeffs}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{[}\PY{n}{l}\PY{o}{+}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{o}{.}\PY{n}{shape}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{o}{*}\PY{l+m+mi}{2}\PY{p}{,}
-                      \PY{n}{coeffs}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{[}\PY{n}{l}\PY{o}{+}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{o}{.}\PY{n}{shape}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{:}\PY{n}{coeffs}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{[}\PY{n}{l}\PY{o}{+}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{o}{.}\PY{n}{shape}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{o}{*}\PY{l+m+mi}{2}\PY{p}{,}
-                      \PY{n}{i}\PY{p}{]} \PY{o}{=} \PY{n}{y}
-         
-         \PY{n}{plt}\PY{o}{.}\PY{n}{subplot}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{1}\PY{p}{)}
-         \PY{n}{plt}\PY{o}{.}\PY{n}{imshow}\PY{p}{(}\PY{n}{view}\PY{p}{)}
-\end{Verbatim}
-
-
-\begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}47}]:} <matplotlib.image.AxesImage at 0x7fa18419bfd0>
-\end{Verbatim}
-            
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_81_1.png}
-    \end{center}
-    { \hspace*{\fill} \\}
-    
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}48}]:} \PY{n}{recons\PYZus{}} \PY{o}{=} \PY{n}{pywt}\PY{o}{.}\PY{n}{waverec2}\PY{p}{(}\PY{n}{coeffs}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{,} \PY{n}{wavelet}\PY{o}{=}\PY{n}{wavelet\PYZus{}}\PY{p}{)}
-         \PY{n+nb}{max} \PY{o}{=} \PY{n}{recons\PYZus{}}\PY{o}{.}\PY{n}{max}\PY{p}{(}\PY{p}{)}
-         \PY{n+nb}{min} \PY{o}{=} \PY{n}{recons\PYZus{}}\PY{o}{.}\PY{n}{min}\PY{p}{(}\PY{p}{)}
-         \PY{k}{if}\PY{p}{(}\PY{n+nb}{max}\PY{o}{!=}\PY{n+nb}{min}\PY{p}{)}\PY{p}{:}
-             \PY{n}{recons} \PY{o}{=} \PY{p}{(}\PY{n}{recons\PYZus{}}\PY{o}{\PYZhy{}}\PY{n+nb}{min}\PY{p}{)}\PY{o}{/}\PY{p}{(}\PY{n+nb}{max}\PY{o}{\PYZhy{}}\PY{n+nb}{min}\PY{p}{)}\PY{o}{*}\PY{l+m+mi}{255}
-         
-         \PY{c+c1}{\PYZsh{} Visualize}
-         \PY{n}{fig} \PY{o}{=} \PY{n}{plt}\PY{o}{.}\PY{n}{figure}\PY{p}{(}\PY{n}{figsize}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{16}\PY{p}{,} \PY{l+m+mi}{16}\PY{p}{)}\PY{p}{)}
-         
-         \PY{n}{plt}\PY{o}{.}\PY{n}{imshow}\PY{p}{(}\PY{n}{recons}\PY{p}{,} \PY{n}{cmap}\PY{o}{=}\PY{n}{plt}\PY{o}{.}\PY{n}{cm}\PY{o}{.}\PY{n}{gray}\PY{p}{)}
-         \PY{n}{plt}\PY{o}{.}\PY{n}{grid}\PY{p}{(}\PY{k+kc}{False}\PY{p}{)}\PY{p}{;}
-         \PY{n}{plt}\PY{o}{.}\PY{n}{xticks}\PY{p}{(}\PY{p}{[}\PY{p}{]}\PY{p}{)}\PY{p}{;}
-         \PY{n}{plt}\PY{o}{.}\PY{n}{yticks}\PY{p}{(}\PY{p}{[}\PY{p}{]}\PY{p}{)}\PY{p}{;}
-         \PY{n}{plt}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
-\end{Verbatim}
-
-
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_82_0.png}
-    \end{center}
-    { \hspace*{\fill} \\}
-    
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}49}]:} \PY{n}{recons} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{empty}\PY{p}{(}\PY{n}{pixels}\PY{o}{.}\PY{n}{shape}\PY{p}{)}
-         
-         \PY{n}{recons}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{p}{:}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{]} \PY{o}{=} \PY{n}{pywt}\PY{o}{.}\PY{n}{waverec2}\PY{p}{(}\PY{n}{coeffs}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{,} \PY{n}{wavelet}\PY{o}{=}\PY{n}{wavelet\PYZus{}}\PY{p}{)}
-         \PY{n}{recons}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{p}{:}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{]} \PY{o}{=} \PY{n}{pywt}\PY{o}{.}\PY{n}{waverec2}\PY{p}{(}\PY{n}{coeffs}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{,} \PY{n}{wavelet}\PY{o}{=}\PY{n}{wavelet\PYZus{}}\PY{p}{)}
-         \PY{n}{recons}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{p}{:}\PY{p}{,}\PY{l+m+mi}{2}\PY{p}{]} \PY{o}{=} \PY{n}{pywt}\PY{o}{.}\PY{n}{waverec2}\PY{p}{(}\PY{n}{coeffs}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{,} \PY{n}{wavelet}\PY{o}{=}\PY{n}{wavelet\PYZus{}}\PY{p}{)}
-         \PY{n+nb}{max} \PY{o}{=} \PY{n}{recons}\PY{o}{.}\PY{n}{max}\PY{p}{(}\PY{p}{)}
-         \PY{n+nb}{min} \PY{o}{=} \PY{n}{recons}\PY{o}{.}\PY{n}{min}\PY{p}{(}\PY{p}{)}
-         \PY{k}{if}\PY{p}{(}\PY{n+nb}{max}\PY{o}{!=}\PY{n+nb}{min}\PY{p}{)}\PY{p}{:}
-             \PY{n}{recons} \PY{o}{=} \PY{p}{(}\PY{p}{(}\PY{n}{recons}\PY{o}{\PYZhy{}}\PY{n+nb}{min}\PY{p}{)}\PY{o}{/}\PY{p}{(}\PY{n+nb}{max}\PY{o}{\PYZhy{}}\PY{n+nb}{min}\PY{p}{)}\PY{o}{*}\PY{l+m+mi}{255}\PY{p}{)}\PY{o}{.}\PY{n}{astype}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{uint8}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-                               
-         \PY{c+c1}{\PYZsh{} Visualize}
-         \PY{n+nb}{print}\PY{p}{(}\PY{n}{recons}\PY{o}{.}\PY{n}{max}\PY{p}{(}\PY{p}{)}\PY{p}{,} \PY{n}{recons}\PY{o}{.}\PY{n}{min}\PY{p}{(}\PY{p}{)}\PY{p}{)}
-         \PY{n}{plt}\PY{o}{.}\PY{n}{imshow}\PY{p}{(}\PY{n}{recons}\PY{p}{)}
-         \PY{n}{plt}\PY{o}{.}\PY{n}{grid}\PY{p}{(}\PY{k+kc}{False}\PY{p}{)}\PY{p}{;}
-         \PY{n}{plt}\PY{o}{.}\PY{n}{xticks}\PY{p}{(}\PY{p}{[}\PY{p}{]}\PY{p}{)}\PY{p}{;}
-         \PY{n}{plt}\PY{o}{.}\PY{n}{yticks}\PY{p}{(}\PY{p}{[}\PY{p}{]}\PY{p}{)}\PY{p}{;}
-         \PY{n}{plt}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
-\end{Verbatim}
-
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-255 0
-
-    \end{Verbatim}
-
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_83_1.png}
-    \end{center}
-    { \hspace*{\fill} \\}
-    
-    \hypertarget{progressive-transmission}{%
-\subsubsection{Progressive
-transmission}\label{progressive-transmission}}
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}50}]:} \PY{c+c1}{\PYZsh{} Reconstruct with biggest DWT coefs}
-         \PY{n}{recons} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{empty}\PY{p}{(}\PY{n}{pixels}\PY{o}{.}\PY{n}{shape}\PY{p}{)}
-         
-         \PY{n}{N} \PY{o}{=} \PY{l+m+mi}{100} \PY{c+c1}{\PYZsh{} Step size (in coeffs) for each reconstruction}
-         \PY{k}{for} \PY{n}{k} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{10}\PY{p}{)}\PY{p}{:} \PY{c+c1}{\PYZsh{} Up to 32 reconstructions}
-         
-             \PY{n}{coeffs\PYZus{}indexes} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{empty}\PY{p}{(}\PY{p}{(}\PY{n}{pixels}\PY{o}{.}\PY{n}{shape}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]} \PY{o}{*} \PY{n}{pixels}\PY{o}{.}\PY{n}{shape}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{)}\PY{p}{,}
-                                     \PY{n}{dtype}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{float, int, int, int, int}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-                                     \PY{c+c1}{\PYZsh{} Coeff, level, subband, coor\PYZus{}x, coor\PYZus{}y}
-         
-             \PY{c+c1}{\PYZsh{} Process only the R component to find the higher coeffs}
-             
-             \PY{n}{offset} \PY{o}{=} \PY{l+m+mi}{0}
-             
-             \PY{c+c1}{\PYZsh{} LL}
-             \PY{k}{for} \PY{n}{x} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{n}{coeffs}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{o}{.}\PY{n}{shape}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{)}\PY{p}{:}
-                 \PY{k}{for} \PY{n}{y} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{n}{coeffs}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{o}{.}\PY{n}{shape}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{)}\PY{p}{:}
-                     \PY{n}{coeffs\PYZus{}indexes}\PY{p}{[}\PY{n}{offset}\PY{p}{]} \PY{o}{=} \PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{abs}\PY{p}{(}\PY{n}{coeffs}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{[}\PY{n}{x}\PY{p}{]}\PY{p}{[}\PY{n}{y}\PY{p}{]}\PY{p}{)}\PY{p}{,} \PY{l+m+mi}{0}\PY{p}{,} \PY{l+m+mi}{0}\PY{p}{,} \PY{n}{x}\PY{p}{,} \PY{n}{y}\PY{p}{)}
-                     \PY{n}{offset} \PY{o}{+}\PY{o}{=} \PY{l+m+mi}{1}
-             
-             \PY{c+c1}{\PYZsh{} Rest of subbands}
-             \PY{k}{for} \PY{n}{l} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{n}{levels\PYZus{}}\PY{p}{)}\PY{p}{:}
-                 \PY{k}{for} \PY{n}{s} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{3}\PY{p}{)}\PY{p}{:}
-                     \PY{k}{for} \PY{n}{x} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{n}{coeffs}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{[}\PY{n}{l}\PY{o}{+}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{[}\PY{n}{s}\PY{p}{]}\PY{o}{.}\PY{n}{shape}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{)}\PY{p}{:}
-                         \PY{k}{for} \PY{n}{y} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{n}{coeffs}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{[}\PY{n}{l}\PY{o}{+}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{[}\PY{n}{s}\PY{p}{]}\PY{o}{.}\PY{n}{shape}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{)}\PY{p}{:}
-                             \PY{n}{coeffs\PYZus{}indexes}\PY{p}{[}\PY{n}{offset}\PY{p}{]} \PY{o}{=} \PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{abs}\PY{p}{(}\PY{n}{coeffs}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{[}\PY{n}{l}\PY{o}{+}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{[}\PY{n}{s}\PY{p}{]}\PY{p}{[}\PY{n}{x}\PY{p}{]}\PY{p}{[}\PY{n}{y}\PY{p}{]}\PY{p}{)}\PY{p}{,} \PY{p}{(}\PY{n}{l}\PY{o}{+}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{,} \PY{n}{s}\PY{p}{,} \PY{n}{x}\PY{p}{,} \PY{n}{y}\PY{p}{)}
-                             \PY{n}{offset} \PY{o}{+}\PY{o}{=} \PY{l+m+mi}{1}
-         
-             \PY{n+nb}{sorted} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{zeros}\PY{p}{(}\PY{p}{(}\PY{n}{pixels}\PY{o}{.}\PY{n}{shape}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]} \PY{o}{*} \PY{n}{pixels}\PY{o}{.}\PY{n}{shape}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{)}\PY{p}{,} \PY{n}{dtype}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{float, int, int, int, int}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-             \PY{n+nb}{sorted} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{sort}\PY{p}{(}\PY{n}{coeffs\PYZus{}indexes}\PY{p}{)}\PY{p}{[}\PY{p}{:}\PY{p}{:}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{]}
-         
-             \PY{c+c1}{\PYZsh{} Reconstruct R}
-         
-             \PY{c+c1}{\PYZsh{} An \PYZdq{}empty\PYZdq{} transformed structure}
-         
-             \PY{n}{zeros} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{zeros}\PY{p}{(}\PY{p}{(}\PY{n}{pixels}\PY{o}{.}\PY{n}{shape}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{,} \PY{n}{pixels}\PY{o}{.}\PY{n}{shape}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{)}\PY{p}{)}
-             \PY{n}{filtered\PYZus{}coeffs} \PY{o}{=} \PY{n}{pywt}\PY{o}{.}\PY{n}{wavedec2}\PY{p}{(}\PY{n}{zeros}\PY{p}{,} \PY{n}{wavelet}\PY{o}{=}\PY{n}{wavelet\PYZus{}}\PY{p}{,} \PY{n}{level}\PY{o}{=}\PY{n}{levels\PYZus{}}\PY{p}{)}
-         
-             \PY{c+c1}{\PYZsh{} Copy some coeffs}
-             \PY{k}{for} \PY{n}{kk} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{p}{(}\PY{n}{k}\PY{o}{+}\PY{l+m+mi}{1}\PY{p}{)}\PY{o}{*}\PY{n}{N}\PY{p}{)}\PY{p}{:}
-                 \PY{k}{if} \PY{n+nb}{sorted}\PY{p}{[}\PY{n}{kk}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]} \PY{o}{==} \PY{l+m+mi}{0}\PY{p}{:}
-                     \PY{n}{filtered\PYZus{}coeffs}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{[}\PY{n+nb}{sorted}\PY{p}{[}\PY{n}{kk}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{3}\PY{p}{]}\PY{p}{,} \PY{n+nb}{sorted}\PY{p}{[}\PY{n}{kk}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{4}\PY{p}{]}\PY{p}{]} \PY{o}{=} \PYZbs{}
-                     \PY{n}{coeffs}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{[}\PY{n+nb}{sorted}\PY{p}{[}\PY{n}{kk}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{3}\PY{p}{]}\PY{p}{,} \PY{n+nb}{sorted}\PY{p}{[}\PY{n}{kk}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{4}\PY{p}{]}\PY{p}{]}
-                 \PY{k}{else}\PY{p}{:}
-                     \PY{c+c1}{\PYZsh{}print(kk, sorted[kk][1], sorted[kk][2], sorted[kk][3], sorted[kk][4])}
-                     \PY{n}{filtered\PYZus{}coeffs}\PY{p}{[}\PY{n+nb}{sorted}\PY{p}{[}\PY{n}{kk}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{]}\PY{p}{[}\PY{n+nb}{sorted}\PY{p}{[}\PY{n}{kk}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{]}\PY{p}{[}\PY{n+nb}{sorted}\PY{p}{[}\PY{n}{kk}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{3}\PY{p}{]}\PY{p}{,} \PY{n+nb}{sorted}\PY{p}{[}\PY{n}{kk}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{4}\PY{p}{]}\PY{p}{]} \PY{o}{=} \PYZbs{}
-                     \PY{n}{coeffs}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{[}\PY{n+nb}{sorted}\PY{p}{[}\PY{n}{kk}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{]}\PY{p}{[}\PY{n+nb}{sorted}\PY{p}{[}\PY{n}{kk}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{]}\PY{p}{[}\PY{n+nb}{sorted}\PY{p}{[}\PY{n}{kk}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{3}\PY{p}{]}\PY{p}{,} \PY{n+nb}{sorted}\PY{p}{[}\PY{n}{kk}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{4}\PY{p}{]}\PY{p}{]}
-                 
-             \PY{n}{recons\PYZus{}} \PY{o}{=} \PY{n}{pywt}\PY{o}{.}\PY{n}{waverec2}\PY{p}{(}\PY{n}{filtered\PYZus{}coeffs}\PY{p}{,} \PY{n}{wavelet}\PY{o}{=}\PY{n}{wavelet\PYZus{}}\PY{p}{)}
-             \PY{n}{recons}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{p}{:}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{]} \PY{o}{=} \PY{n}{recons\PYZus{}}
-         
-             \PY{c+c1}{\PYZsh{} Reconstruct G}
-         
-             \PY{c+c1}{\PYZsh{} An \PYZdq{}empty\PYZdq{} transformed structure}
-         
-             \PY{n}{zeros} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{zeros}\PY{p}{(}\PY{p}{(}\PY{n}{pixels}\PY{o}{.}\PY{n}{shape}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{,} \PY{n}{pixels}\PY{o}{.}\PY{n}{shape}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{)}\PY{p}{)}
-             \PY{n}{filtered\PYZus{}coeffs} \PY{o}{=} \PY{n}{pywt}\PY{o}{.}\PY{n}{wavedec2}\PY{p}{(}\PY{n}{zeros}\PY{p}{,} \PY{n}{wavelet}\PY{o}{=}\PY{n}{wavelet\PYZus{}}\PY{p}{,} \PY{n}{level}\PY{o}{=}\PY{n}{levels\PYZus{}}\PY{p}{)}
-         
-             \PY{c+c1}{\PYZsh{} Copy some coeffs}
-             \PY{k}{for} \PY{n}{kk} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{p}{(}\PY{n}{k}\PY{o}{+}\PY{l+m+mi}{1}\PY{p}{)}\PY{o}{*}\PY{n}{N}\PY{p}{)}\PY{p}{:}
-                 \PY{k}{if} \PY{n+nb}{sorted}\PY{p}{[}\PY{n}{kk}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]} \PY{o}{==} \PY{l+m+mi}{0}\PY{p}{:}
-                     \PY{n}{filtered\PYZus{}coeffs}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{[}\PY{n+nb}{sorted}\PY{p}{[}\PY{n}{kk}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{3}\PY{p}{]}\PY{p}{,} \PY{n+nb}{sorted}\PY{p}{[}\PY{n}{kk}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{4}\PY{p}{]}\PY{p}{]} \PY{o}{=} \PYZbs{}
-                     \PY{n}{coeffs}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{[}\PY{n+nb}{sorted}\PY{p}{[}\PY{n}{kk}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{3}\PY{p}{]}\PY{p}{,} \PY{n+nb}{sorted}\PY{p}{[}\PY{n}{kk}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{4}\PY{p}{]}\PY{p}{]}
-                 \PY{k}{else}\PY{p}{:}
-                     \PY{n}{filtered\PYZus{}coeffs}\PY{p}{[}\PY{n+nb}{sorted}\PY{p}{[}\PY{n}{kk}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{]}\PY{p}{[}\PY{n+nb}{sorted}\PY{p}{[}\PY{n}{kk}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{]}\PY{p}{[}\PY{n+nb}{sorted}\PY{p}{[}\PY{n}{kk}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{3}\PY{p}{]}\PY{p}{,} \PY{n+nb}{sorted}\PY{p}{[}\PY{n}{kk}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{4}\PY{p}{]}\PY{p}{]} \PY{o}{=} \PYZbs{}
-                     \PY{n}{coeffs}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{[}\PY{n+nb}{sorted}\PY{p}{[}\PY{n}{kk}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{]}\PY{p}{[}\PY{n+nb}{sorted}\PY{p}{[}\PY{n}{kk}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{]}\PY{p}{[}\PY{n+nb}{sorted}\PY{p}{[}\PY{n}{kk}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{3}\PY{p}{]}\PY{p}{,} \PY{n+nb}{sorted}\PY{p}{[}\PY{n}{kk}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{4}\PY{p}{]}\PY{p}{]}
-                 
-             \PY{n}{recons\PYZus{}} \PY{o}{=} \PY{n}{pywt}\PY{o}{.}\PY{n}{waverec2}\PY{p}{(}\PY{n}{filtered\PYZus{}coeffs}\PY{p}{,} \PY{n}{wavelet}\PY{o}{=}\PY{n}{wavelet\PYZus{}}\PY{p}{)}
-             \PY{n}{recons}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{p}{:}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{]} \PY{o}{=} \PY{n}{recons\PYZus{}}
-             
-             \PY{c+c1}{\PYZsh{} Reconstruct B}
-         
-             \PY{c+c1}{\PYZsh{} An \PYZdq{}empty\PYZdq{} transformed structure}
-             \PY{n}{zeros} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{zeros}\PY{p}{(}\PY{p}{(}\PY{n}{pixels}\PY{o}{.}\PY{n}{shape}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{,} \PY{n}{pixels}\PY{o}{.}\PY{n}{shape}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{)}\PY{p}{)}
-             \PY{n}{filtered\PYZus{}coeffs} \PY{o}{=} \PY{n}{pywt}\PY{o}{.}\PY{n}{wavedec2}\PY{p}{(}\PY{n}{zeros}\PY{p}{,} \PY{n}{wavelet}\PY{o}{=}\PY{n}{wavelet\PYZus{}}\PY{p}{,} \PY{n}{level}\PY{o}{=}\PY{n}{levels\PYZus{}}\PY{p}{)}
-         
-             \PY{c+c1}{\PYZsh{} Copy some coeffs}
-             \PY{k}{for} \PY{n}{kk} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{p}{(}\PY{n}{k}\PY{o}{+}\PY{l+m+mi}{1}\PY{p}{)}\PY{o}{*}\PY{n}{N}\PY{p}{)}\PY{p}{:}
-                 \PY{k}{if} \PY{n+nb}{sorted}\PY{p}{[}\PY{n}{kk}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]} \PY{o}{==} \PY{l+m+mi}{0}\PY{p}{:}
-                     \PY{n}{filtered\PYZus{}coeffs}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{[}\PY{n+nb}{sorted}\PY{p}{[}\PY{n}{kk}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{3}\PY{p}{]}\PY{p}{,} \PY{n+nb}{sorted}\PY{p}{[}\PY{n}{kk}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{4}\PY{p}{]}\PY{p}{]} \PY{o}{=} \PYZbs{}
-                     \PY{n}{coeffs}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{[}\PY{n+nb}{sorted}\PY{p}{[}\PY{n}{kk}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{3}\PY{p}{]}\PY{p}{,} \PY{n+nb}{sorted}\PY{p}{[}\PY{n}{kk}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{4}\PY{p}{]}\PY{p}{]}
-                 \PY{k}{else}\PY{p}{:}
-                     \PY{n}{filtered\PYZus{}coeffs}\PY{p}{[}\PY{n+nb}{sorted}\PY{p}{[}\PY{n}{kk}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{]}\PY{p}{[}\PY{n+nb}{sorted}\PY{p}{[}\PY{n}{kk}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{]}\PY{p}{[}\PY{n+nb}{sorted}\PY{p}{[}\PY{n}{kk}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{3}\PY{p}{]}\PY{p}{,} \PY{n+nb}{sorted}\PY{p}{[}\PY{n}{kk}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{4}\PY{p}{]}\PY{p}{]} \PY{o}{=} \PYZbs{}
-                     \PY{n}{coeffs}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{[}\PY{n+nb}{sorted}\PY{p}{[}\PY{n}{kk}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{]}\PY{p}{[}\PY{n+nb}{sorted}\PY{p}{[}\PY{n}{kk}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{]}\PY{p}{[}\PY{n+nb}{sorted}\PY{p}{[}\PY{n}{kk}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{3}\PY{p}{]}\PY{p}{,} \PY{n+nb}{sorted}\PY{p}{[}\PY{n}{kk}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{4}\PY{p}{]}\PY{p}{]}
-         
-             \PY{n}{recons\PYZus{}} \PY{o}{=} \PY{n}{pywt}\PY{o}{.}\PY{n}{waverec2}\PY{p}{(}\PY{n}{filtered\PYZus{}coeffs}\PY{p}{,} \PY{n}{wavelet}\PY{o}{=}\PY{n}{wavelet\PYZus{}}\PY{p}{)}
-             \PY{n}{recons}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{p}{:}\PY{p}{,}\PY{l+m+mi}{2}\PY{p}{]} \PY{o}{=} \PY{n}{recons\PYZus{}}
-                               
-             \PY{n+nb}{max} \PY{o}{=} \PY{n}{recons}\PY{o}{.}\PY{n}{max}\PY{p}{(}\PY{p}{)}
-             \PY{n+nb}{min} \PY{o}{=} \PY{n}{recons}\PY{o}{.}\PY{n}{min}\PY{p}{(}\PY{p}{)}
-             \PY{k}{if}\PY{p}{(}\PY{n+nb}{max}\PY{o}{!=}\PY{n+nb}{min}\PY{p}{)}\PY{p}{:}
-                 \PY{n}{recons} \PY{o}{=} \PY{p}{(}\PY{p}{(}\PY{n}{recons}\PY{o}{\PYZhy{}}\PY{n+nb}{min}\PY{p}{)}\PY{o}{/}\PY{p}{(}\PY{n+nb}{max}\PY{o}{\PYZhy{}}\PY{n+nb}{min}\PY{p}{)}\PY{o}{*}\PY{l+m+mi}{255}\PY{p}{)}\PY{o}{.}\PY{n}{astype}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{uint8}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-         
-             \PY{c+c1}{\PYZsh{} Visualize}
-             \PY{n}{plt}\PY{o}{.}\PY{n}{imshow}\PY{p}{(}\PY{n}{recons}\PY{p}{)}
-             \PY{n}{plt}\PY{o}{.}\PY{n}{grid}\PY{p}{(}\PY{k+kc}{False}\PY{p}{)}\PY{p}{;}
-             \PY{n}{plt}\PY{o}{.}\PY{n}{xticks}\PY{p}{(}\PY{p}{[}\PY{p}{]}\PY{p}{)}\PY{p}{;}
-             \PY{n}{plt}\PY{o}{.}\PY{n}{yticks}\PY{p}{(}\PY{p}{[}\PY{p}{]}\PY{p}{)}\PY{p}{;}
-             \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+s2}{ coefficients}\PY{l+s+s2}{\PYZdq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{p}{(}\PY{n}{k}\PY{o}{+}\PY{l+m+mi}{1}\PY{p}{)}\PY{o}{*}\PY{n}{N}\PY{p}{)}\PY{p}{,} \PY{n}{end}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-             \PY{n}{plt}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
-\end{Verbatim}
-
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-100 coefficients
-    \end{Verbatim}
-
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_85_1.png}
-    \end{center}
-    { \hspace*{\fill} \\}
-    
-    \begin{Verbatim}[commandchars=\\\{\}]
-200 coefficients
-    \end{Verbatim}
-
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_85_3.png}
-    \end{center}
-    { \hspace*{\fill} \\}
-    
-    \begin{Verbatim}[commandchars=\\\{\}]
-300 coefficients
-    \end{Verbatim}
-
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_85_5.png}
-    \end{center}
-    { \hspace*{\fill} \\}
-    
-    \begin{Verbatim}[commandchars=\\\{\}]
-400 coefficients
-    \end{Verbatim}
-
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_85_7.png}
-    \end{center}
-    { \hspace*{\fill} \\}
-    
-    \begin{Verbatim}[commandchars=\\\{\}]
-500 coefficients
-    \end{Verbatim}
-
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_85_9.png}
-    \end{center}
-    { \hspace*{\fill} \\}
-    
-    \begin{Verbatim}[commandchars=\\\{\}]
-600 coefficients
-    \end{Verbatim}
-
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_85_11.png}
-    \end{center}
-    { \hspace*{\fill} \\}
-    
-    \begin{Verbatim}[commandchars=\\\{\}]
-700 coefficients
-    \end{Verbatim}
-
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_85_13.png}
-    \end{center}
-    { \hspace*{\fill} \\}
-    
-    \begin{Verbatim}[commandchars=\\\{\}]
-800 coefficients
-    \end{Verbatim}
-
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_85_15.png}
-    \end{center}
-    { \hspace*{\fill} \\}
-    
-    \begin{Verbatim}[commandchars=\\\{\}]
-900 coefficients
-    \end{Verbatim}
-
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_85_17.png}
-    \end{center}
-    { \hspace*{\fill} \\}
-    
-    \begin{Verbatim}[commandchars=\\\{\}]
-1000 coefficients
-    \end{Verbatim}
-
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_85_19.png}
-    \end{center}
-    { \hspace*{\fill} \\}
-    
-    \hypertarget{linear-filters-sweldens-schruxf6der-2000}{%
-\subsubsection{\texorpdfstring{5/3 (linear) filters
-\href{https://scholar.google.es/scholar?hl=es\&as_sdt=0\%2C5\&q=building+wavelets+at+home\&btnG==}{{[}Sweldens
-\& Schröder,
-2000{]}}}{5/3 (linear) filters {[}Sweldens \& Schröder, 2000{]}}}\label{linear-filters-sweldens-schruxf6der-2000}}
-
-The \(i\)-th sample of the low-frequency subband (using a filter-bank
-implementation) is
+\section{Linear (5/3) filters~\cite{sweldens1997building}}
+The $i$-th sample of the low-frequency subband (using a filter-bank implementation) is
 
 \begin{equation}
   L_i=-\frac{1}{8}s_{2i-2}+\frac{1}{4}s_{2i-1}+\frac{3}{4}s_{2i}
@@ -1222,7 +690,7 @@ implementation) is
   \label{eq:Lineal_A-LPF}
 \end{equation}
 
-and the \(i\)-th sample of the high-frequency signal is computed by
+and the $i$-th sample of the high-frequency signal is computed by
 
 \begin{equation}
   H_i=s_{2i+1}-\frac{s_{2i}+s_{2i+2}}{2},
@@ -1230,8 +698,7 @@ and the \(i\)-th sample of the high-frequency signal is computed by
   \label{eq:Lineal_A-HPF}
 \end{equation}
 
-that, if we use Lifting, it can be also computed using less operations
-by
+that, if we use Lifting, it can be also computed using less operations by
 
 \begin{equation}
   L_i=s_{2i}+\frac{H_{i-1}+H_i}{4}.
@@ -1239,520 +706,11 @@ by
   \label{eq:Lineal_A-LPF_lifting}
 \end{equation}
 
-Notice that \(H_i=0\) if \(s_{2i+1}=(s_{2i}+s_{2i+2})/2\). Therefore,
-the 5/3 transform is suitable to encode lineally piece-wised signals.
+Notice that $H_i=0$ if $s_{2i+1}=(s_{2i}+s_{2i+2})/2$. Therefore, the 5/3 transform is suitable to encode lineally piece-wised signals.
 
-    \hypertarget{d-basis-functions}{%
-\paragraph{2D basis functions}\label{d-basis-functions}}
+\href{https://nbviewer.jupyter.org/github/vicente-gonzalez-ruiz/image_transformations_for_coding/blob/master/Haar_2d_basis.ipynb}{Linear (5/3) basis}.
 
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}1}]:} \PY{k+kn}{import} \PY{n+nn}{pywt} \PY{c+c1}{\PYZsh{} pip install pywavelets}
-        \PY{k+kn}{from} \PY{n+nn}{matplotlib} \PY{k}{import} \PY{n}{pyplot} \PY{k}{as} \PY{n}{plt}
-        \PY{o}{\PYZpc{}}\PY{k}{matplotlib} inline
-        \PY{k+kn}{import} \PY{n+nn}{numpy} \PY{k}{as} \PY{n+nn}{np}
-        
-        \PY{n}{fig} \PY{o}{=} \PY{n}{plt}\PY{o}{.}\PY{n}{figure}\PY{p}{(}\PY{n}{figsize}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{16}\PY{p}{,} \PY{l+m+mi}{16}\PY{p}{)}\PY{p}{)}
-        \PY{n}{wavelet\PYZus{}}\PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{bior2.2}\PY{l+s+s1}{\PYZsq{}}
-        
-        \PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{4}\PY{p}{)}\PY{p}{:}
-            \PY{k}{for} \PY{n}{j} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{4}\PY{p}{)}\PY{p}{:}
-        
-                \PY{n}{pixels} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{zeros}\PY{p}{(}\PY{p}{(}\PY{l+m+mi}{64}\PY{p}{,} \PY{l+m+mi}{64}\PY{p}{)}\PY{p}{)}
-                \PY{c+c1}{\PYZsh{}coeffs = pywt.wavedec2(pixels, wavelet=wavelet\PYZus{}, mode=\PYZsq{}per\PYZsq{}, level=3)}
-                \PY{n}{coeffs} \PY{o}{=} \PY{n}{pywt}\PY{o}{.}\PY{n}{wavedec2}\PY{p}{(}\PY{n}{pixels}\PY{p}{,} \PY{n}{wavelet}\PY{o}{=}\PY{n}{wavelet\PYZus{}}\PY{p}{,} \PY{n}{level}\PY{o}{=}\PY{l+m+mi}{3}\PY{p}{)}
-                \PY{c+c1}{\PYZsh{}print(coeffs[0].shape)}
-                \PY{n}{coeffs}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{[}\PY{n}{i}\PY{p}{,} \PY{n}{j}\PY{p}{]} \PY{o}{=} \PY{l+m+mf}{1.0}
-        \PY{c+c1}{\PYZsh{}for i in range(len(coeffs)\PYZhy{}1):}
-            \PY{c+c1}{\PYZsh{}print(i)}
-            \PY{c+c1}{\PYZsh{}coeffs[i+1][0][1, 1] = 1.0}
-            \PY{c+c1}{\PYZsh{}coeffs[i+1][1][1, 1] = 1.0}
-            \PY{c+c1}{\PYZsh{}coeffs[i+1][2][1, 1] = 1.0}
-                \PY{n}{recons} \PY{o}{=} \PY{n}{pywt}\PY{o}{.}\PY{n}{waverec2}\PY{p}{(}\PY{n}{coeffs}\PY{p}{,} \PY{n}{wavelet}\PY{o}{=}\PY{n}{wavelet\PYZus{}}\PY{p}{)}
-                \PY{n+nb}{max} \PY{o}{=} \PY{n}{recons}\PY{o}{.}\PY{n}{max}\PY{p}{(}\PY{p}{)}
-                \PY{n+nb}{min} \PY{o}{=} \PY{n}{recons}\PY{o}{.}\PY{n}{min}\PY{p}{(}\PY{p}{)}
-                \PY{k}{if}\PY{p}{(}\PY{n+nb}{max}\PY{o}{!=}\PY{n+nb}{min}\PY{p}{)}\PY{p}{:}
-                    \PY{n}{recons} \PY{o}{=} \PY{p}{(}\PY{n}{recons}\PY{o}{\PYZhy{}}\PY{n+nb}{min}\PY{p}{)}\PY{o}{/}\PY{p}{(}\PY{n+nb}{max}\PY{o}{\PYZhy{}}\PY{n+nb}{min}\PY{p}{)}\PY{o}{*}\PY{l+m+mi}{255}
-                    
-                \PY{n}{plt}\PY{o}{.}\PY{n}{subplot}\PY{p}{(}\PY{l+m+mi}{8}\PY{p}{,} \PY{l+m+mi}{8}\PY{p}{,} \PY{l+m+mi}{8}\PY{o}{*}\PY{n}{i}\PY{o}{+}\PY{n}{j}\PY{o}{+}\PY{l+m+mi}{1}\PY{p}{)}
-                \PY{n}{plt}\PY{o}{.}\PY{n}{imshow}\PY{p}{(}\PY{n}{recons}\PY{p}{,} \PY{n}{cmap}\PY{o}{=}\PY{n}{plt}\PY{o}{.}\PY{n}{cm}\PY{o}{.}\PY{n}{gray}\PY{p}{)}
-                \PY{n}{plt}\PY{o}{.}\PY{n}{grid}\PY{p}{(}\PY{k+kc}{False}\PY{p}{)}\PY{p}{;}
-                \PY{n}{plt}\PY{o}{.}\PY{n}{xticks}\PY{p}{(}\PY{p}{[}\PY{p}{]}\PY{p}{)}\PY{p}{;}
-                \PY{n}{plt}\PY{o}{.}\PY{n}{yticks}\PY{p}{(}\PY{p}{[}\PY{p}{]}\PY{p}{)}\PY{p}{;}
-        \PY{c+c1}{\PYZsh{}plt.subplot(1, 1, 1)}
-        \PY{c+c1}{\PYZsh{}plt.imshow(recons, cmap=\PYZsq{}gray\PYZsq{})}
-\end{Verbatim}
-
-
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_88_0.png}
-    \end{center}
-    { \hspace*{\fill} \\}
-    
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}71}]:} \PY{n}{fig} \PY{o}{=} \PY{n}{plt}\PY{o}{.}\PY{n}{figure}\PY{p}{(}\PY{n}{figsize}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{16}\PY{p}{,} \PY{l+m+mi}{16}\PY{p}{)}\PY{p}{)}
-         
-         \PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{4}\PY{p}{)}\PY{p}{:}
-             \PY{k}{for} \PY{n}{j} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{4}\PY{p}{)}\PY{p}{:}
-         
-                 \PY{n}{pixels} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{zeros}\PY{p}{(}\PY{p}{(}\PY{l+m+mi}{64}\PY{p}{,} \PY{l+m+mi}{64}\PY{p}{)}\PY{p}{)}
-                 \PY{n}{coeffs} \PY{o}{=} \PY{n}{pywt}\PY{o}{.}\PY{n}{wavedec2}\PY{p}{(}\PY{n}{pixels}\PY{p}{,} \PY{n}{wavelet}\PY{o}{=}\PY{n}{wavelet\PYZus{}}\PY{p}{,} \PY{n}{level}\PY{o}{=}\PY{l+m+mi}{3}\PY{p}{)}
-                 \PY{n}{coeffs}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{[}\PY{n}{i}\PY{p}{,} \PY{n}{j}\PY{p}{]} \PY{o}{=} \PY{l+m+mf}{1.0}
-                 \PY{n}{recons} \PY{o}{=} \PY{n}{pywt}\PY{o}{.}\PY{n}{waverec2}\PY{p}{(}\PY{n}{coeffs}\PY{p}{,} \PY{n}{wavelet}\PY{o}{=}\PY{n}{wavelet\PYZus{}}\PY{p}{)}
-                 \PY{n+nb}{max} \PY{o}{=} \PY{n}{recons}\PY{o}{.}\PY{n}{max}\PY{p}{(}\PY{p}{)}
-                 \PY{n+nb}{min} \PY{o}{=} \PY{n}{recons}\PY{o}{.}\PY{n}{min}\PY{p}{(}\PY{p}{)}
-                 \PY{k}{if}\PY{p}{(}\PY{n+nb}{max}\PY{o}{!=}\PY{n+nb}{min}\PY{p}{)}\PY{p}{:}
-                     \PY{n}{recons} \PY{o}{=} \PY{p}{(}\PY{n}{recons}\PY{o}{\PYZhy{}}\PY{n+nb}{min}\PY{p}{)}\PY{o}{/}\PY{p}{(}\PY{n+nb}{max}\PY{o}{\PYZhy{}}\PY{n+nb}{min}\PY{p}{)}\PY{o}{*}\PY{l+m+mi}{255}
-                     
-                 \PY{n}{plt}\PY{o}{.}\PY{n}{subplot}\PY{p}{(}\PY{l+m+mi}{8}\PY{p}{,} \PY{l+m+mi}{8}\PY{p}{,} \PY{l+m+mi}{8}\PY{o}{*}\PY{n}{i}\PY{o}{+}\PY{n}{j}\PY{o}{+}\PY{l+m+mi}{1}\PY{p}{)}
-                 \PY{n}{plt}\PY{o}{.}\PY{n}{imshow}\PY{p}{(}\PY{n}{recons}\PY{p}{,} \PY{n}{cmap}\PY{o}{=}\PY{n}{plt}\PY{o}{.}\PY{n}{cm}\PY{o}{.}\PY{n}{gray}\PY{p}{)}
-                 \PY{n}{plt}\PY{o}{.}\PY{n}{grid}\PY{p}{(}\PY{k+kc}{False}\PY{p}{)}\PY{p}{;}
-                 \PY{n}{plt}\PY{o}{.}\PY{n}{xticks}\PY{p}{(}\PY{p}{[}\PY{p}{]}\PY{p}{)}\PY{p}{;}
-                 \PY{n}{plt}\PY{o}{.}\PY{n}{yticks}\PY{p}{(}\PY{p}{[}\PY{p}{]}\PY{p}{)}\PY{p}{;}
-\end{Verbatim}
-
-
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_89_0.png}
-    \end{center}
-    { \hspace*{\fill} \\}
-    
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}72}]:} \PY{n}{fig} \PY{o}{=} \PY{n}{plt}\PY{o}{.}\PY{n}{figure}\PY{p}{(}\PY{n}{figsize}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{16}\PY{p}{,} \PY{l+m+mi}{16}\PY{p}{)}\PY{p}{)}
-         
-         \PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{4}\PY{p}{)}\PY{p}{:}
-             \PY{k}{for} \PY{n}{j} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{4}\PY{p}{)}\PY{p}{:}
-         
-                 \PY{n}{pixels} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{zeros}\PY{p}{(}\PY{p}{(}\PY{l+m+mi}{64}\PY{p}{,} \PY{l+m+mi}{64}\PY{p}{)}\PY{p}{)}
-                 \PY{n}{coeffs} \PY{o}{=} \PY{n}{pywt}\PY{o}{.}\PY{n}{wavedec2}\PY{p}{(}\PY{n}{pixels}\PY{p}{,} \PY{n}{wavelet}\PY{o}{=}\PY{n}{wavelet\PYZus{}}\PY{p}{,} \PY{n}{level}\PY{o}{=}\PY{l+m+mi}{3}\PY{p}{)}
-                 \PY{n}{coeffs}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{[}\PY{n}{i}\PY{p}{,} \PY{n}{j}\PY{p}{]} \PY{o}{=} \PY{l+m+mf}{1.0}
-                 \PY{n}{recons} \PY{o}{=} \PY{n}{pywt}\PY{o}{.}\PY{n}{waverec2}\PY{p}{(}\PY{n}{coeffs}\PY{p}{,} \PY{n}{wavelet}\PY{o}{=}\PY{n}{wavelet\PYZus{}}\PY{p}{)}
-                 \PY{n+nb}{max} \PY{o}{=} \PY{n}{recons}\PY{o}{.}\PY{n}{max}\PY{p}{(}\PY{p}{)}
-                 \PY{n+nb}{min} \PY{o}{=} \PY{n}{recons}\PY{o}{.}\PY{n}{min}\PY{p}{(}\PY{p}{)}
-                 \PY{k}{if}\PY{p}{(}\PY{n+nb}{max}\PY{o}{!=}\PY{n+nb}{min}\PY{p}{)}\PY{p}{:}
-                     \PY{n}{recons} \PY{o}{=} \PY{p}{(}\PY{n}{recons}\PY{o}{\PYZhy{}}\PY{n+nb}{min}\PY{p}{)}\PY{o}{/}\PY{p}{(}\PY{n+nb}{max}\PY{o}{\PYZhy{}}\PY{n+nb}{min}\PY{p}{)}\PY{o}{*}\PY{l+m+mi}{255}
-                     
-                 \PY{n}{plt}\PY{o}{.}\PY{n}{subplot}\PY{p}{(}\PY{l+m+mi}{8}\PY{p}{,} \PY{l+m+mi}{8}\PY{p}{,} \PY{l+m+mi}{8}\PY{o}{*}\PY{n}{i}\PY{o}{+}\PY{n}{j}\PY{o}{+}\PY{l+m+mi}{1}\PY{p}{)}
-                 \PY{n}{plt}\PY{o}{.}\PY{n}{imshow}\PY{p}{(}\PY{n}{recons}\PY{p}{,} \PY{n}{cmap}\PY{o}{=}\PY{n}{plt}\PY{o}{.}\PY{n}{cm}\PY{o}{.}\PY{n}{gray}\PY{p}{)}
-                 \PY{n}{plt}\PY{o}{.}\PY{n}{grid}\PY{p}{(}\PY{k+kc}{False}\PY{p}{)}\PY{p}{;}
-                 \PY{n}{plt}\PY{o}{.}\PY{n}{xticks}\PY{p}{(}\PY{p}{[}\PY{p}{]}\PY{p}{)}\PY{p}{;}
-                 \PY{n}{plt}\PY{o}{.}\PY{n}{yticks}\PY{p}{(}\PY{p}{[}\PY{p}{]}\PY{p}{)}\PY{p}{;}
-\end{Verbatim}
-
-
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_90_0.png}
-    \end{center}
-    { \hspace*{\fill} \\}
-    
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}73}]:} \PY{n}{fig} \PY{o}{=} \PY{n}{plt}\PY{o}{.}\PY{n}{figure}\PY{p}{(}\PY{n}{figsize}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{16}\PY{p}{,} \PY{l+m+mi}{16}\PY{p}{)}\PY{p}{)}
-         
-         \PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{4}\PY{p}{)}\PY{p}{:}
-             \PY{k}{for} \PY{n}{j} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{4}\PY{p}{)}\PY{p}{:}
-         
-                 \PY{n}{pixels} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{zeros}\PY{p}{(}\PY{p}{(}\PY{l+m+mi}{64}\PY{p}{,} \PY{l+m+mi}{64}\PY{p}{)}\PY{p}{)}
-                 \PY{n}{coeffs} \PY{o}{=} \PY{n}{pywt}\PY{o}{.}\PY{n}{wavedec2}\PY{p}{(}\PY{n}{pixels}\PY{p}{,} \PY{n}{wavelet}\PY{o}{=}\PY{n}{wavelet\PYZus{}}\PY{p}{,} \PY{n}{level}\PY{o}{=}\PY{l+m+mi}{3}\PY{p}{)}
-                 \PY{n}{coeffs}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{[}\PY{n}{i}\PY{p}{,} \PY{n}{j}\PY{p}{]} \PY{o}{=} \PY{l+m+mf}{1.0}
-                 \PY{n}{recons} \PY{o}{=} \PY{n}{pywt}\PY{o}{.}\PY{n}{waverec2}\PY{p}{(}\PY{n}{coeffs}\PY{p}{,} \PY{n}{wavelet}\PY{o}{=}\PY{n}{wavelet\PYZus{}}\PY{p}{)}
-                 \PY{n+nb}{max} \PY{o}{=} \PY{n}{recons}\PY{o}{.}\PY{n}{max}\PY{p}{(}\PY{p}{)}
-                 \PY{n+nb}{min} \PY{o}{=} \PY{n}{recons}\PY{o}{.}\PY{n}{min}\PY{p}{(}\PY{p}{)}
-                 \PY{k}{if}\PY{p}{(}\PY{n+nb}{max}\PY{o}{!=}\PY{n+nb}{min}\PY{p}{)}\PY{p}{:}
-                     \PY{n}{recons} \PY{o}{=} \PY{p}{(}\PY{n}{recons}\PY{o}{\PYZhy{}}\PY{n+nb}{min}\PY{p}{)}\PY{o}{/}\PY{p}{(}\PY{n+nb}{max}\PY{o}{\PYZhy{}}\PY{n+nb}{min}\PY{p}{)}\PY{o}{*}\PY{l+m+mi}{255}
-                     
-                 \PY{n}{plt}\PY{o}{.}\PY{n}{subplot}\PY{p}{(}\PY{l+m+mi}{8}\PY{p}{,} \PY{l+m+mi}{8}\PY{p}{,} \PY{l+m+mi}{8}\PY{o}{*}\PY{n}{i}\PY{o}{+}\PY{n}{j}\PY{o}{+}\PY{l+m+mi}{1}\PY{p}{)}
-                 \PY{n}{plt}\PY{o}{.}\PY{n}{imshow}\PY{p}{(}\PY{n}{recons}\PY{p}{,} \PY{n}{cmap}\PY{o}{=}\PY{n}{plt}\PY{o}{.}\PY{n}{cm}\PY{o}{.}\PY{n}{gray}\PY{p}{)}
-                 \PY{n}{plt}\PY{o}{.}\PY{n}{grid}\PY{p}{(}\PY{k+kc}{False}\PY{p}{)}\PY{p}{;}
-                 \PY{n}{plt}\PY{o}{.}\PY{n}{xticks}\PY{p}{(}\PY{p}{[}\PY{p}{]}\PY{p}{)}\PY{p}{;}
-                 \PY{n}{plt}\PY{o}{.}\PY{n}{yticks}\PY{p}{(}\PY{p}{[}\PY{p}{]}\PY{p}{)}\PY{p}{;}
-\end{Verbatim}
-
-
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_91_0.png}
-    \end{center}
-    { \hspace*{\fill} \\}
-    
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}74}]:} \PY{n}{fig} \PY{o}{=} \PY{n}{plt}\PY{o}{.}\PY{n}{figure}\PY{p}{(}\PY{n}{figsize}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{16}\PY{p}{,} \PY{l+m+mi}{16}\PY{p}{)}\PY{p}{)}
-         
-         \PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{8}\PY{p}{)}\PY{p}{:}
-             \PY{k}{for} \PY{n}{j} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{8}\PY{p}{)}\PY{p}{:}
-         
-                 \PY{n}{pixels} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{zeros}\PY{p}{(}\PY{p}{(}\PY{l+m+mi}{64}\PY{p}{,} \PY{l+m+mi}{64}\PY{p}{)}\PY{p}{)}
-                 \PY{n}{coeffs} \PY{o}{=} \PY{n}{pywt}\PY{o}{.}\PY{n}{wavedec2}\PY{p}{(}\PY{n}{pixels}\PY{p}{,} \PY{n}{wavelet}\PY{o}{=}\PY{n}{wavelet\PYZus{}}\PY{p}{,} \PY{n}{level}\PY{o}{=}\PY{l+m+mi}{3}\PY{p}{)}
-                 \PY{n}{coeffs}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{[}\PY{n}{i}\PY{p}{,} \PY{n}{j}\PY{p}{]} \PY{o}{=} \PY{l+m+mf}{1.0}
-                 \PY{n}{recons} \PY{o}{=} \PY{n}{pywt}\PY{o}{.}\PY{n}{waverec2}\PY{p}{(}\PY{n}{coeffs}\PY{p}{,} \PY{n}{wavelet}\PY{o}{=}\PY{n}{wavelet\PYZus{}}\PY{p}{)}
-                 \PY{n+nb}{max} \PY{o}{=} \PY{n}{recons}\PY{o}{.}\PY{n}{max}\PY{p}{(}\PY{p}{)}
-                 \PY{n+nb}{min} \PY{o}{=} \PY{n}{recons}\PY{o}{.}\PY{n}{min}\PY{p}{(}\PY{p}{)}
-                 \PY{k}{if}\PY{p}{(}\PY{n+nb}{max}\PY{o}{!=}\PY{n+nb}{min}\PY{p}{)}\PY{p}{:}
-                     \PY{n}{recons} \PY{o}{=} \PY{p}{(}\PY{n}{recons}\PY{o}{\PYZhy{}}\PY{n+nb}{min}\PY{p}{)}\PY{o}{/}\PY{p}{(}\PY{n+nb}{max}\PY{o}{\PYZhy{}}\PY{n+nb}{min}\PY{p}{)}\PY{o}{*}\PY{l+m+mi}{255}
-                     
-                 \PY{n}{plt}\PY{o}{.}\PY{n}{subplot}\PY{p}{(}\PY{l+m+mi}{16}\PY{p}{,} \PY{l+m+mi}{16}\PY{p}{,} \PY{l+m+mi}{16}\PY{o}{*}\PY{n}{i}\PY{o}{+}\PY{n}{j}\PY{o}{+}\PY{l+m+mi}{1}\PY{p}{)}
-                 \PY{n}{plt}\PY{o}{.}\PY{n}{imshow}\PY{p}{(}\PY{n}{recons}\PY{p}{,} \PY{n}{cmap}\PY{o}{=}\PY{n}{plt}\PY{o}{.}\PY{n}{cm}\PY{o}{.}\PY{n}{gray}\PY{p}{)}
-                 \PY{n}{plt}\PY{o}{.}\PY{n}{grid}\PY{p}{(}\PY{k+kc}{False}\PY{p}{)}\PY{p}{;}
-                 \PY{n}{plt}\PY{o}{.}\PY{n}{xticks}\PY{p}{(}\PY{p}{[}\PY{p}{]}\PY{p}{)}\PY{p}{;}
-                 \PY{n}{plt}\PY{o}{.}\PY{n}{yticks}\PY{p}{(}\PY{p}{[}\PY{p}{]}\PY{p}{)}\PY{p}{;}
-\end{Verbatim}
-
-
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_92_0.png}
-    \end{center}
-    { \hspace*{\fill} \\}
-    
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}75}]:} \PY{c+c1}{\PYZsh{} Load lena}
-         
-         \PY{k+kn}{import} \PY{n+nn}{urllib}\PY{n+nn}{.}\PY{n+nn}{request}
-         \PY{k+kn}{from} \PY{n+nn}{matplotlib} \PY{k}{import} \PY{n}{pyplot} \PY{k}{as} \PY{n}{plt}
-         \PY{k+kn}{import} \PY{n+nn}{numpy} \PY{k}{as} \PY{n+nn}{np}
-         \PY{k+kn}{import} \PY{n+nn}{cv2} \PY{c+c1}{\PYZsh{} pip install opencv\PYZhy{}python}
-         
-         \PY{o}{\PYZpc{}}\PY{k}{matplotlib} inline
-         \PY{n}{HTTP\PYZus{}response} \PY{o}{=} \PY{n}{urllib}\PY{o}{.}\PY{n}{request}\PY{o}{.}\PY{n}{urlopen}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{http://www.hpca.ual.es/\PYZti{}vruiz/images/lena.png}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-         \PY{n}{arr} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{asarray}\PY{p}{(}\PY{n+nb}{bytearray}\PY{p}{(}\PY{n}{HTTP\PYZus{}response}\PY{o}{.}\PY{n}{read}\PY{p}{(}\PY{p}{)}\PY{p}{)}\PY{p}{,} \PY{n}{dtype}\PY{o}{=}\PY{n}{np}\PY{o}{.}\PY{n}{uint8}\PY{p}{)}
-         \PY{n}{BRG} \PY{o}{=} \PY{n}{cv2}\PY{o}{.}\PY{n}{imdecode}\PY{p}{(}\PY{n}{arr}\PY{p}{,}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{)}
-         \PY{n}{pixels} \PY{o}{=} \PY{n}{cv2}\PY{o}{.}\PY{n}{cvtColor}\PY{p}{(}\PY{n}{BRG}\PY{p}{,} \PY{n}{cv2}\PY{o}{.}\PY{n}{COLOR\PYZus{}BGR2RGB}\PY{p}{)}
-         \PY{n}{plt}\PY{o}{.}\PY{n}{imshow}\PY{p}{(}\PY{n}{pixels}\PY{p}{)}
-\end{Verbatim}
-
-
-\begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}75}]:} <matplotlib.image.AxesImage at 0x7ff7d1a95518>
-\end{Verbatim}
-            
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_93_1.png}
-    \end{center}
-    { \hspace*{\fill} \\}
-    
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}76}]:} \PY{c+c1}{\PYZsh{} Color 2D\PYZhy{}DWT is the 2D\PYZhy{}DWT of each component}
-         \PY{n}{components} \PY{o}{=} \PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{r}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{g}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{b}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-         \PY{n}{coeffs} \PY{o}{=} \PY{p}{[}\PY{k+kc}{None}\PY{p}{]}\PY{o}{*}\PY{l+m+mi}{3}
-         \PY{n}{wavelet\PYZus{}}\PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{bior2.2}\PY{l+s+s1}{\PYZsq{}}
-         \PY{n}{levels\PYZus{}} \PY{o}{=} \PY{l+m+mi}{5}
-         \PY{k}{for} \PY{n}{i}\PY{p}{,}\PY{n}{com} \PY{o+ow}{in} \PY{n+nb}{enumerate}\PY{p}{(}\PY{n}{components}\PY{p}{)}\PY{p}{:}
-             \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+s2}{ }\PY{l+s+s2}{\PYZdq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{n}{i}\PY{p}{)}\PY{p}{,} \PY{n}{end}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-             \PY{n}{coeffs}\PY{p}{[}\PY{n}{i}\PY{p}{]} \PY{o}{=} \PY{n}{pywt}\PY{o}{.}\PY{n}{wavedec2}\PY{p}{(}\PY{n}{pixels}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{p}{:}\PY{p}{,}\PY{n}{i}\PY{p}{]}\PY{p}{,} \PY{n}{wavelet}\PY{o}{=}\PY{n}{wavelet\PYZus{}}\PY{p}{,} \PY{n}{level}\PY{o}{=}\PY{n}{levels\PYZus{}}\PY{p}{,} \PY{n}{mode}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{per}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-\end{Verbatim}
-
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-0 1 2 
-    \end{Verbatim}
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}77}]:} \PY{c+c1}{\PYZsh{} View DWT coefs}
-         
-         \PY{n}{fig} \PY{o}{=} \PY{n}{plt}\PY{o}{.}\PY{n}{figure}\PY{p}{(}\PY{n}{figsize}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{16}\PY{p}{,} \PY{l+m+mi}{16}\PY{p}{)}\PY{p}{)}
-         
-         \PY{n}{view} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{empty}\PY{p}{(}\PY{n}{pixels}\PY{o}{.}\PY{n}{shape}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{uint8}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-         
-         \PY{c+c1}{\PYZsh{} LL subband}
-         \PY{k}{for} \PY{n}{i}\PY{p}{,}\PY{n}{com} \PY{o+ow}{in} \PY{n+nb}{enumerate}\PY{p}{(}\PY{n}{components}\PY{p}{)}\PY{p}{:}
-             \PY{n}{x} \PY{o}{=} \PY{n}{coeffs}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{p}{:}\PY{p}{]}
-             \PY{n}{y} \PY{o}{=} \PY{p}{(}\PY{p}{(}\PY{n}{x} \PY{o}{\PYZhy{}} \PY{n}{x}\PY{o}{.}\PY{n}{min}\PY{p}{(}\PY{p}{)}\PY{p}{)} \PY{o}{/} \PY{p}{(}\PY{n}{x}\PY{o}{.}\PY{n}{max}\PY{p}{(}\PY{p}{)} \PY{o}{\PYZhy{}} \PY{n}{x}\PY{o}{.}\PY{n}{min}\PY{p}{(}\PY{p}{)}\PY{p}{)}\PY{o}{*}\PY{l+m+mi}{255}\PY{p}{)}\PY{o}{.}\PY{n}{astype}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{uint8}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-             \PY{n}{view}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{:}\PY{n}{coeffs}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{o}{.}\PY{n}{shape}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{,}
-                  \PY{l+m+mi}{0}\PY{p}{:}\PY{n}{coeffs}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{o}{.}\PY{n}{shape}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{,}
-                  \PY{n}{i}\PY{p}{]} \PY{o}{=} \PY{n}{y}
-         
-         \PY{k}{for} \PY{n}{l} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{n}{levels\PYZus{}}\PY{p}{)}\PY{p}{:}
-         
-             \PY{c+c1}{\PYZsh{} LH}
-             \PY{k}{for} \PY{n}{i}\PY{p}{,}\PY{n}{com} \PY{o+ow}{in} \PY{n+nb}{enumerate}\PY{p}{(}\PY{n}{components}\PY{p}{)}\PY{p}{:}
-                 \PY{n}{x} \PY{o}{=} \PY{n}{coeffs}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{[}\PY{n}{l}\PY{o}{+}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{p}{:}\PY{p}{]}
-                 \PY{n}{y} \PY{o}{=} \PY{p}{(}\PY{p}{(}\PY{n}{x} \PY{o}{\PYZhy{}} \PY{n}{x}\PY{o}{.}\PY{n}{min}\PY{p}{(}\PY{p}{)}\PY{p}{)} \PY{o}{/} \PY{p}{(}\PY{n}{x}\PY{o}{.}\PY{n}{max}\PY{p}{(}\PY{p}{)} \PY{o}{\PYZhy{}} \PY{n}{x}\PY{o}{.}\PY{n}{min}\PY{p}{(}\PY{p}{)}\PY{p}{)}\PY{o}{*}\PY{l+m+mi}{255}\PY{p}{)}\PY{o}{.}\PY{n}{astype}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{uint8}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-                 \PY{n}{view}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{:}\PY{n}{coeffs}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{[}\PY{n}{l}\PY{o}{+}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{o}{.}\PY{n}{shape}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{,}
-                      \PY{n}{coeffs}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{[}\PY{n}{l}\PY{o}{+}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{o}{.}\PY{n}{shape}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{:}\PY{n}{coeffs}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{[}\PY{n}{l}\PY{o}{+}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{o}{.}\PY{n}{shape}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{o}{*}\PY{l+m+mi}{2}\PY{p}{,}
-                      \PY{n}{i}\PY{p}{]} \PY{o}{=} \PY{n}{y}
-         
-             \PY{c+c1}{\PYZsh{} HH}
-             \PY{k}{for} \PY{n}{i}\PY{p}{,}\PY{n}{com} \PY{o+ow}{in} \PY{n+nb}{enumerate}\PY{p}{(}\PY{n}{components}\PY{p}{)}\PY{p}{:}
-                 \PY{n}{x} \PY{o}{=} \PY{n}{coeffs}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{[}\PY{n}{l}\PY{o}{+}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{p}{:}\PY{p}{]}
-                 \PY{n}{y} \PY{o}{=} \PY{p}{(}\PY{p}{(}\PY{n}{x} \PY{o}{\PYZhy{}} \PY{n}{x}\PY{o}{.}\PY{n}{min}\PY{p}{(}\PY{p}{)}\PY{p}{)} \PY{o}{/} \PY{p}{(}\PY{n}{x}\PY{o}{.}\PY{n}{max}\PY{p}{(}\PY{p}{)} \PY{o}{\PYZhy{}} \PY{n}{x}\PY{o}{.}\PY{n}{min}\PY{p}{(}\PY{p}{)}\PY{p}{)}\PY{o}{*}\PY{l+m+mi}{255}\PY{p}{)}\PY{o}{.}\PY{n}{astype}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{uint8}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-                 \PY{n}{view}\PY{p}{[}\PY{n}{coeffs}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{[}\PY{n}{l}\PY{o}{+}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{o}{.}\PY{n}{shape}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{:}\PY{n}{coeffs}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{[}\PY{n}{l}\PY{o}{+}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{o}{.}\PY{n}{shape}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{o}{*}\PY{l+m+mi}{2}\PY{p}{,}
-                      \PY{l+m+mi}{0}\PY{p}{:}\PY{n}{coeffs}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{[}\PY{n}{l}\PY{o}{+}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{o}{.}\PY{n}{shape}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{,}
-                      \PY{n}{i}\PY{p}{]} \PY{o}{=} \PY{n}{y}
-         
-             \PY{c+c1}{\PYZsh{} HH}
-             \PY{k}{for} \PY{n}{i}\PY{p}{,}\PY{n}{com} \PY{o+ow}{in} \PY{n+nb}{enumerate}\PY{p}{(}\PY{n}{components}\PY{p}{)}\PY{p}{:}
-                 \PY{n}{x} \PY{o}{=} \PY{n}{coeffs}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{[}\PY{n}{l}\PY{o}{+}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{p}{:}\PY{p}{]}
-                 \PY{n}{y} \PY{o}{=} \PY{p}{(}\PY{p}{(}\PY{n}{x} \PY{o}{\PYZhy{}} \PY{n}{x}\PY{o}{.}\PY{n}{min}\PY{p}{(}\PY{p}{)}\PY{p}{)} \PY{o}{/} \PY{p}{(}\PY{n}{x}\PY{o}{.}\PY{n}{max}\PY{p}{(}\PY{p}{)} \PY{o}{\PYZhy{}} \PY{n}{x}\PY{o}{.}\PY{n}{min}\PY{p}{(}\PY{p}{)}\PY{p}{)}\PY{o}{*}\PY{l+m+mi}{255}\PY{p}{)}\PY{o}{.}\PY{n}{astype}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{uint8}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-                 \PY{n}{view}\PY{p}{[}\PY{n}{coeffs}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{[}\PY{n}{l}\PY{o}{+}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{o}{.}\PY{n}{shape}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{:}\PY{n}{coeffs}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{[}\PY{n}{l}\PY{o}{+}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{o}{.}\PY{n}{shape}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{o}{*}\PY{l+m+mi}{2}\PY{p}{,}
-                      \PY{n}{coeffs}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{[}\PY{n}{l}\PY{o}{+}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{o}{.}\PY{n}{shape}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{:}\PY{n}{coeffs}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{[}\PY{n}{l}\PY{o}{+}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{o}{.}\PY{n}{shape}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{o}{*}\PY{l+m+mi}{2}\PY{p}{,}
-                      \PY{n}{i}\PY{p}{]} \PY{o}{=} \PY{n}{y}
-         
-         \PY{n}{plt}\PY{o}{.}\PY{n}{subplot}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{1}\PY{p}{)}
-         \PY{n}{plt}\PY{o}{.}\PY{n}{imshow}\PY{p}{(}\PY{n}{view}\PY{p}{)}
-\end{Verbatim}
-
-
-\begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}77}]:} <matplotlib.image.AxesImage at 0x7ff7d0793b00>
-\end{Verbatim}
-            
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_95_1.png}
-    \end{center}
-    { \hspace*{\fill} \\}
-    
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}78}]:} \PY{n}{recons\PYZus{}} \PY{o}{=} \PY{n}{pywt}\PY{o}{.}\PY{n}{waverec2}\PY{p}{(}\PY{n}{coeffs}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{,} \PY{n}{wavelet}\PY{o}{=}\PY{n}{wavelet\PYZus{}}\PY{p}{,} \PY{n}{mode}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{per}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-         \PY{n+nb}{max} \PY{o}{=} \PY{n}{recons\PYZus{}}\PY{o}{.}\PY{n}{max}\PY{p}{(}\PY{p}{)}
-         \PY{n+nb}{min} \PY{o}{=} \PY{n}{recons\PYZus{}}\PY{o}{.}\PY{n}{min}\PY{p}{(}\PY{p}{)}
-         \PY{k}{if}\PY{p}{(}\PY{n+nb}{max}\PY{o}{!=}\PY{n+nb}{min}\PY{p}{)}\PY{p}{:}
-             \PY{n}{recons} \PY{o}{=} \PY{p}{(}\PY{n}{recons\PYZus{}}\PY{o}{\PYZhy{}}\PY{n+nb}{min}\PY{p}{)}\PY{o}{/}\PY{p}{(}\PY{n+nb}{max}\PY{o}{\PYZhy{}}\PY{n+nb}{min}\PY{p}{)}\PY{o}{*}\PY{l+m+mi}{255}
-         
-         \PY{c+c1}{\PYZsh{} Visualize}
-         \PY{n}{fig} \PY{o}{=} \PY{n}{plt}\PY{o}{.}\PY{n}{figure}\PY{p}{(}\PY{n}{figsize}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{16}\PY{p}{,} \PY{l+m+mi}{16}\PY{p}{)}\PY{p}{)}
-         
-         \PY{n}{plt}\PY{o}{.}\PY{n}{imshow}\PY{p}{(}\PY{n}{recons}\PY{p}{,} \PY{n}{cmap}\PY{o}{=}\PY{n}{plt}\PY{o}{.}\PY{n}{cm}\PY{o}{.}\PY{n}{gray}\PY{p}{)}
-         \PY{n}{plt}\PY{o}{.}\PY{n}{grid}\PY{p}{(}\PY{k+kc}{False}\PY{p}{)}\PY{p}{;}
-         \PY{n}{plt}\PY{o}{.}\PY{n}{xticks}\PY{p}{(}\PY{p}{[}\PY{p}{]}\PY{p}{)}\PY{p}{;}
-         \PY{n}{plt}\PY{o}{.}\PY{n}{yticks}\PY{p}{(}\PY{p}{[}\PY{p}{]}\PY{p}{)}\PY{p}{;}
-         \PY{n}{plt}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
-\end{Verbatim}
-
-
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_96_0.png}
-    \end{center}
-    { \hspace*{\fill} \\}
-    
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}79}]:} \PY{n}{recons} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{empty}\PY{p}{(}\PY{n}{pixels}\PY{o}{.}\PY{n}{shape}\PY{p}{)}
-         
-         \PY{n}{recons}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{p}{:}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{]} \PY{o}{=} \PY{n}{pywt}\PY{o}{.}\PY{n}{waverec2}\PY{p}{(}\PY{n}{coeffs}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{,} \PY{n}{wavelet}\PY{o}{=}\PY{n}{wavelet\PYZus{}}\PY{p}{,} \PY{n}{mode}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{per}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-         \PY{n}{recons}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{p}{:}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{]} \PY{o}{=} \PY{n}{pywt}\PY{o}{.}\PY{n}{waverec2}\PY{p}{(}\PY{n}{coeffs}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{,} \PY{n}{wavelet}\PY{o}{=}\PY{n}{wavelet\PYZus{}}\PY{p}{,} \PY{n}{mode}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{per}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-         \PY{n}{recons}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{p}{:}\PY{p}{,}\PY{l+m+mi}{2}\PY{p}{]} \PY{o}{=} \PY{n}{pywt}\PY{o}{.}\PY{n}{waverec2}\PY{p}{(}\PY{n}{coeffs}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{,} \PY{n}{wavelet}\PY{o}{=}\PY{n}{wavelet\PYZus{}}\PY{p}{,} \PY{n}{mode}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{per}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-         \PY{n+nb}{max} \PY{o}{=} \PY{n}{recons}\PY{o}{.}\PY{n}{max}\PY{p}{(}\PY{p}{)}
-         \PY{n+nb}{min} \PY{o}{=} \PY{n}{recons}\PY{o}{.}\PY{n}{min}\PY{p}{(}\PY{p}{)}
-         \PY{k}{if}\PY{p}{(}\PY{n+nb}{max}\PY{o}{!=}\PY{n+nb}{min}\PY{p}{)}\PY{p}{:}
-             \PY{n}{recons} \PY{o}{=} \PY{p}{(}\PY{p}{(}\PY{n}{recons}\PY{o}{\PYZhy{}}\PY{n+nb}{min}\PY{p}{)}\PY{o}{/}\PY{p}{(}\PY{n+nb}{max}\PY{o}{\PYZhy{}}\PY{n+nb}{min}\PY{p}{)}\PY{o}{*}\PY{l+m+mi}{255}\PY{p}{)}\PY{o}{.}\PY{n}{astype}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{uint8}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-                               
-         \PY{c+c1}{\PYZsh{} Visualize}
-         \PY{n+nb}{print}\PY{p}{(}\PY{n}{recons}\PY{o}{.}\PY{n}{max}\PY{p}{(}\PY{p}{)}\PY{p}{,} \PY{n}{recons}\PY{o}{.}\PY{n}{min}\PY{p}{(}\PY{p}{)}\PY{p}{)}
-         \PY{n}{plt}\PY{o}{.}\PY{n}{imshow}\PY{p}{(}\PY{n}{recons}\PY{p}{)}
-         \PY{n}{plt}\PY{o}{.}\PY{n}{grid}\PY{p}{(}\PY{k+kc}{False}\PY{p}{)}\PY{p}{;}
-         \PY{n}{plt}\PY{o}{.}\PY{n}{xticks}\PY{p}{(}\PY{p}{[}\PY{p}{]}\PY{p}{)}\PY{p}{;}
-         \PY{n}{plt}\PY{o}{.}\PY{n}{yticks}\PY{p}{(}\PY{p}{[}\PY{p}{]}\PY{p}{)}\PY{p}{;}
-         \PY{n}{plt}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
-\end{Verbatim}
-
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-255 0
-
-    \end{Verbatim}
-
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_97_1.png}
-    \end{center}
-    { \hspace*{\fill} \\}
-    
-    \hypertarget{progressive-transmission}{%
-\subsubsection{Progressive
-transmission}\label{progressive-transmission}}
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}80}]:} \PY{c+c1}{\PYZsh{} Reconstruct with biggest DWT coefs}
-         \PY{n}{recons} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{empty}\PY{p}{(}\PY{n}{pixels}\PY{o}{.}\PY{n}{shape}\PY{p}{)}
-         
-         \PY{n}{N} \PY{o}{=} \PY{l+m+mi}{100} \PY{c+c1}{\PYZsh{} Step size (in coeffs) for each reconstruction}
-         \PY{k}{for} \PY{n}{k} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{10}\PY{p}{)}\PY{p}{:} \PY{c+c1}{\PYZsh{} Up to 32 reconstructions}
-         
-             \PY{n}{coeffs\PYZus{}indexes} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{empty}\PY{p}{(}\PY{p}{(}\PY{n}{pixels}\PY{o}{.}\PY{n}{shape}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]} \PY{o}{*} \PY{n}{pixels}\PY{o}{.}\PY{n}{shape}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{)}\PY{p}{,}
-                                     \PY{n}{dtype}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{float, int, int, int, int}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-                                     \PY{c+c1}{\PYZsh{} Coeff, level, subband, coor\PYZus{}x, coor\PYZus{}y}
-         
-             \PY{c+c1}{\PYZsh{} Process only the R component to find the higher coeffs}
-             
-             \PY{n}{offset} \PY{o}{=} \PY{l+m+mi}{0}
-             
-             \PY{c+c1}{\PYZsh{} LL}
-             \PY{k}{for} \PY{n}{x} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{n}{coeffs}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{o}{.}\PY{n}{shape}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{)}\PY{p}{:}
-                 \PY{k}{for} \PY{n}{y} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{n}{coeffs}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{o}{.}\PY{n}{shape}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{)}\PY{p}{:}
-                     \PY{n}{coeffs\PYZus{}indexes}\PY{p}{[}\PY{n}{offset}\PY{p}{]} \PY{o}{=} \PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{abs}\PY{p}{(}\PY{n}{coeffs}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{[}\PY{n}{x}\PY{p}{]}\PY{p}{[}\PY{n}{y}\PY{p}{]}\PY{p}{)}\PY{p}{,} \PY{l+m+mi}{0}\PY{p}{,} \PY{l+m+mi}{0}\PY{p}{,} \PY{n}{x}\PY{p}{,} \PY{n}{y}\PY{p}{)}
-                     \PY{n}{offset} \PY{o}{+}\PY{o}{=} \PY{l+m+mi}{1}
-             
-             \PY{c+c1}{\PYZsh{} Rest of subbands}
-             \PY{k}{for} \PY{n}{l} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{n}{levels\PYZus{}}\PY{p}{)}\PY{p}{:}
-                 \PY{k}{for} \PY{n}{s} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{3}\PY{p}{)}\PY{p}{:}
-                     \PY{k}{for} \PY{n}{x} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{n}{coeffs}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{[}\PY{n}{l}\PY{o}{+}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{[}\PY{n}{s}\PY{p}{]}\PY{o}{.}\PY{n}{shape}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{)}\PY{p}{:}
-                         \PY{k}{for} \PY{n}{y} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{n}{coeffs}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{[}\PY{n}{l}\PY{o}{+}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{[}\PY{n}{s}\PY{p}{]}\PY{o}{.}\PY{n}{shape}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{)}\PY{p}{:}
-                             \PY{n}{coeffs\PYZus{}indexes}\PY{p}{[}\PY{n}{offset}\PY{p}{]} \PY{o}{=} \PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{abs}\PY{p}{(}\PY{n}{coeffs}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{[}\PY{n}{l}\PY{o}{+}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{[}\PY{n}{s}\PY{p}{]}\PY{p}{[}\PY{n}{x}\PY{p}{]}\PY{p}{[}\PY{n}{y}\PY{p}{]}\PY{p}{)}\PY{p}{,} \PY{p}{(}\PY{n}{l}\PY{o}{+}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{,} \PY{n}{s}\PY{p}{,} \PY{n}{x}\PY{p}{,} \PY{n}{y}\PY{p}{)}
-                             \PY{n}{offset} \PY{o}{+}\PY{o}{=} \PY{l+m+mi}{1}
-         
-             \PY{n+nb}{sorted} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{zeros}\PY{p}{(}\PY{p}{(}\PY{n}{pixels}\PY{o}{.}\PY{n}{shape}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]} \PY{o}{*} \PY{n}{pixels}\PY{o}{.}\PY{n}{shape}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{)}\PY{p}{,} \PY{n}{dtype}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{float, int, int, int, int}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-             \PY{n+nb}{sorted} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{sort}\PY{p}{(}\PY{n}{coeffs\PYZus{}indexes}\PY{p}{)}\PY{p}{[}\PY{p}{:}\PY{p}{:}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{]}
-         
-             \PY{c+c1}{\PYZsh{} Reconstruct R}
-         
-             \PY{c+c1}{\PYZsh{} An \PYZdq{}empty\PYZdq{} transformed structure}
-         
-             \PY{n}{zeros} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{zeros}\PY{p}{(}\PY{p}{(}\PY{n}{pixels}\PY{o}{.}\PY{n}{shape}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{,} \PY{n}{pixels}\PY{o}{.}\PY{n}{shape}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{)}\PY{p}{)}
-             \PY{n}{filtered\PYZus{}coeffs} \PY{o}{=} \PY{n}{pywt}\PY{o}{.}\PY{n}{wavedec2}\PY{p}{(}\PY{n}{zeros}\PY{p}{,} \PY{n}{wavelet}\PY{o}{=}\PY{n}{wavelet\PYZus{}}\PY{p}{,} \PY{n}{level}\PY{o}{=}\PY{n}{levels\PYZus{}}\PY{p}{,} \PY{n}{mode}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{per}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-         
-             \PY{c+c1}{\PYZsh{} Copy some coeffs}
-             \PY{k}{for} \PY{n}{kk} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{p}{(}\PY{n}{k}\PY{o}{+}\PY{l+m+mi}{1}\PY{p}{)}\PY{o}{*}\PY{n}{N}\PY{p}{)}\PY{p}{:}
-                 \PY{k}{if} \PY{n+nb}{sorted}\PY{p}{[}\PY{n}{kk}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]} \PY{o}{==} \PY{l+m+mi}{0}\PY{p}{:}
-                     \PY{n}{filtered\PYZus{}coeffs}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{[}\PY{n+nb}{sorted}\PY{p}{[}\PY{n}{kk}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{3}\PY{p}{]}\PY{p}{,} \PY{n+nb}{sorted}\PY{p}{[}\PY{n}{kk}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{4}\PY{p}{]}\PY{p}{]} \PY{o}{=} \PYZbs{}
-                     \PY{n}{coeffs}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{[}\PY{n+nb}{sorted}\PY{p}{[}\PY{n}{kk}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{3}\PY{p}{]}\PY{p}{,} \PY{n+nb}{sorted}\PY{p}{[}\PY{n}{kk}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{4}\PY{p}{]}\PY{p}{]}
-                 \PY{k}{else}\PY{p}{:}
-                     \PY{c+c1}{\PYZsh{}print(kk, sorted[kk][1], sorted[kk][2], sorted[kk][3], sorted[kk][4])}
-                     \PY{n}{filtered\PYZus{}coeffs}\PY{p}{[}\PY{n+nb}{sorted}\PY{p}{[}\PY{n}{kk}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{]}\PY{p}{[}\PY{n+nb}{sorted}\PY{p}{[}\PY{n}{kk}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{]}\PY{p}{[}\PY{n+nb}{sorted}\PY{p}{[}\PY{n}{kk}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{3}\PY{p}{]}\PY{p}{,} \PY{n+nb}{sorted}\PY{p}{[}\PY{n}{kk}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{4}\PY{p}{]}\PY{p}{]} \PY{o}{=} \PYZbs{}
-                     \PY{n}{coeffs}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{[}\PY{n+nb}{sorted}\PY{p}{[}\PY{n}{kk}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{]}\PY{p}{[}\PY{n+nb}{sorted}\PY{p}{[}\PY{n}{kk}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{]}\PY{p}{[}\PY{n+nb}{sorted}\PY{p}{[}\PY{n}{kk}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{3}\PY{p}{]}\PY{p}{,} \PY{n+nb}{sorted}\PY{p}{[}\PY{n}{kk}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{4}\PY{p}{]}\PY{p}{]}
-                 
-             \PY{n}{recons\PYZus{}} \PY{o}{=} \PY{n}{pywt}\PY{o}{.}\PY{n}{waverec2}\PY{p}{(}\PY{n}{filtered\PYZus{}coeffs}\PY{p}{,} \PY{n}{wavelet}\PY{o}{=}\PY{n}{wavelet\PYZus{}}\PY{p}{,} \PY{n}{mode}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{per}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-             \PY{n}{recons}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{p}{:}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{]} \PY{o}{=} \PY{n}{recons\PYZus{}}
-         
-             \PY{c+c1}{\PYZsh{} Reconstruct G}
-         
-             \PY{c+c1}{\PYZsh{} An \PYZdq{}empty\PYZdq{} transformed structure}
-         
-             \PY{n}{zeros} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{zeros}\PY{p}{(}\PY{p}{(}\PY{n}{pixels}\PY{o}{.}\PY{n}{shape}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{,} \PY{n}{pixels}\PY{o}{.}\PY{n}{shape}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{)}\PY{p}{)}
-             \PY{n}{filtered\PYZus{}coeffs} \PY{o}{=} \PY{n}{pywt}\PY{o}{.}\PY{n}{wavedec2}\PY{p}{(}\PY{n}{zeros}\PY{p}{,} \PY{n}{wavelet}\PY{o}{=}\PY{n}{wavelet\PYZus{}}\PY{p}{,} \PY{n}{level}\PY{o}{=}\PY{n}{levels\PYZus{}}\PY{p}{,} \PY{n}{mode}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{per}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-         
-             \PY{c+c1}{\PYZsh{} Copy some coeffs}
-             \PY{k}{for} \PY{n}{kk} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{p}{(}\PY{n}{k}\PY{o}{+}\PY{l+m+mi}{1}\PY{p}{)}\PY{o}{*}\PY{n}{N}\PY{p}{)}\PY{p}{:}
-                 \PY{k}{if} \PY{n+nb}{sorted}\PY{p}{[}\PY{n}{kk}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]} \PY{o}{==} \PY{l+m+mi}{0}\PY{p}{:}
-                     \PY{n}{filtered\PYZus{}coeffs}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{[}\PY{n+nb}{sorted}\PY{p}{[}\PY{n}{kk}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{3}\PY{p}{]}\PY{p}{,} \PY{n+nb}{sorted}\PY{p}{[}\PY{n}{kk}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{4}\PY{p}{]}\PY{p}{]} \PY{o}{=} \PYZbs{}
-                     \PY{n}{coeffs}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{[}\PY{n+nb}{sorted}\PY{p}{[}\PY{n}{kk}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{3}\PY{p}{]}\PY{p}{,} \PY{n+nb}{sorted}\PY{p}{[}\PY{n}{kk}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{4}\PY{p}{]}\PY{p}{]}
-                 \PY{k}{else}\PY{p}{:}
-                     \PY{n}{filtered\PYZus{}coeffs}\PY{p}{[}\PY{n+nb}{sorted}\PY{p}{[}\PY{n}{kk}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{]}\PY{p}{[}\PY{n+nb}{sorted}\PY{p}{[}\PY{n}{kk}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{]}\PY{p}{[}\PY{n+nb}{sorted}\PY{p}{[}\PY{n}{kk}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{3}\PY{p}{]}\PY{p}{,} \PY{n+nb}{sorted}\PY{p}{[}\PY{n}{kk}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{4}\PY{p}{]}\PY{p}{]} \PY{o}{=} \PYZbs{}
-                     \PY{n}{coeffs}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{[}\PY{n+nb}{sorted}\PY{p}{[}\PY{n}{kk}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{]}\PY{p}{[}\PY{n+nb}{sorted}\PY{p}{[}\PY{n}{kk}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{]}\PY{p}{[}\PY{n+nb}{sorted}\PY{p}{[}\PY{n}{kk}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{3}\PY{p}{]}\PY{p}{,} \PY{n+nb}{sorted}\PY{p}{[}\PY{n}{kk}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{4}\PY{p}{]}\PY{p}{]}
-                 
-             \PY{n}{recons\PYZus{}} \PY{o}{=} \PY{n}{pywt}\PY{o}{.}\PY{n}{waverec2}\PY{p}{(}\PY{n}{filtered\PYZus{}coeffs}\PY{p}{,} \PY{n}{wavelet}\PY{o}{=}\PY{n}{wavelet\PYZus{}}\PY{p}{,} \PY{n}{mode}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{per}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-             \PY{n}{recons}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{p}{:}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{]} \PY{o}{=} \PY{n}{recons\PYZus{}}
-             
-             \PY{c+c1}{\PYZsh{} Reconstruct B}
-         
-             \PY{c+c1}{\PYZsh{} An \PYZdq{}empty\PYZdq{} transformed structure}
-             \PY{n}{zeros} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{zeros}\PY{p}{(}\PY{p}{(}\PY{n}{pixels}\PY{o}{.}\PY{n}{shape}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{,} \PY{n}{pixels}\PY{o}{.}\PY{n}{shape}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{)}\PY{p}{)}
-             \PY{n}{filtered\PYZus{}coeffs} \PY{o}{=} \PY{n}{pywt}\PY{o}{.}\PY{n}{wavedec2}\PY{p}{(}\PY{n}{zeros}\PY{p}{,} \PY{n}{wavelet}\PY{o}{=}\PY{n}{wavelet\PYZus{}}\PY{p}{,} \PY{n}{level}\PY{o}{=}\PY{n}{levels\PYZus{}}\PY{p}{,} \PY{n}{mode}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{per}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-         
-             \PY{c+c1}{\PYZsh{} Copy some coeffs}
-             \PY{k}{for} \PY{n}{kk} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{p}{(}\PY{n}{k}\PY{o}{+}\PY{l+m+mi}{1}\PY{p}{)}\PY{o}{*}\PY{n}{N}\PY{p}{)}\PY{p}{:}
-                 \PY{k}{if} \PY{n+nb}{sorted}\PY{p}{[}\PY{n}{kk}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]} \PY{o}{==} \PY{l+m+mi}{0}\PY{p}{:}
-                     \PY{n}{filtered\PYZus{}coeffs}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{[}\PY{n+nb}{sorted}\PY{p}{[}\PY{n}{kk}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{3}\PY{p}{]}\PY{p}{,} \PY{n+nb}{sorted}\PY{p}{[}\PY{n}{kk}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{4}\PY{p}{]}\PY{p}{]} \PY{o}{=} \PYZbs{}
-                     \PY{n}{coeffs}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{[}\PY{n+nb}{sorted}\PY{p}{[}\PY{n}{kk}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{3}\PY{p}{]}\PY{p}{,} \PY{n+nb}{sorted}\PY{p}{[}\PY{n}{kk}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{4}\PY{p}{]}\PY{p}{]}
-                 \PY{k}{else}\PY{p}{:}
-                     \PY{n}{filtered\PYZus{}coeffs}\PY{p}{[}\PY{n+nb}{sorted}\PY{p}{[}\PY{n}{kk}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{]}\PY{p}{[}\PY{n+nb}{sorted}\PY{p}{[}\PY{n}{kk}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{]}\PY{p}{[}\PY{n+nb}{sorted}\PY{p}{[}\PY{n}{kk}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{3}\PY{p}{]}\PY{p}{,} \PY{n+nb}{sorted}\PY{p}{[}\PY{n}{kk}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{4}\PY{p}{]}\PY{p}{]} \PY{o}{=} \PYZbs{}
-                     \PY{n}{coeffs}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{[}\PY{n+nb}{sorted}\PY{p}{[}\PY{n}{kk}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{]}\PY{p}{[}\PY{n+nb}{sorted}\PY{p}{[}\PY{n}{kk}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{]}\PY{p}{[}\PY{n+nb}{sorted}\PY{p}{[}\PY{n}{kk}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{3}\PY{p}{]}\PY{p}{,} \PY{n+nb}{sorted}\PY{p}{[}\PY{n}{kk}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{4}\PY{p}{]}\PY{p}{]}
-         
-             \PY{n}{recons\PYZus{}} \PY{o}{=} \PY{n}{pywt}\PY{o}{.}\PY{n}{waverec2}\PY{p}{(}\PY{n}{filtered\PYZus{}coeffs}\PY{p}{,} \PY{n}{wavelet}\PY{o}{=}\PY{n}{wavelet\PYZus{}}\PY{p}{,} \PY{n}{mode}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{per}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-             \PY{n}{recons}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{p}{:}\PY{p}{,}\PY{l+m+mi}{2}\PY{p}{]} \PY{o}{=} \PY{n}{recons\PYZus{}}
-                               
-             \PY{n+nb}{max} \PY{o}{=} \PY{n}{recons}\PY{o}{.}\PY{n}{max}\PY{p}{(}\PY{p}{)}
-             \PY{n+nb}{min} \PY{o}{=} \PY{n}{recons}\PY{o}{.}\PY{n}{min}\PY{p}{(}\PY{p}{)}
-             \PY{k}{if}\PY{p}{(}\PY{n+nb}{max}\PY{o}{!=}\PY{n+nb}{min}\PY{p}{)}\PY{p}{:}
-                 \PY{n}{recons} \PY{o}{=} \PY{p}{(}\PY{p}{(}\PY{n}{recons}\PY{o}{\PYZhy{}}\PY{n+nb}{min}\PY{p}{)}\PY{o}{/}\PY{p}{(}\PY{n+nb}{max}\PY{o}{\PYZhy{}}\PY{n+nb}{min}\PY{p}{)}\PY{o}{*}\PY{l+m+mi}{255}\PY{p}{)}\PY{o}{.}\PY{n}{astype}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{uint8}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-         
-             \PY{c+c1}{\PYZsh{} Visualize}
-             \PY{n}{plt}\PY{o}{.}\PY{n}{imshow}\PY{p}{(}\PY{n}{recons}\PY{p}{)}
-             \PY{n}{plt}\PY{o}{.}\PY{n}{grid}\PY{p}{(}\PY{k+kc}{False}\PY{p}{)}\PY{p}{;}
-             \PY{n}{plt}\PY{o}{.}\PY{n}{xticks}\PY{p}{(}\PY{p}{[}\PY{p}{]}\PY{p}{)}\PY{p}{;}
-             \PY{n}{plt}\PY{o}{.}\PY{n}{yticks}\PY{p}{(}\PY{p}{[}\PY{p}{]}\PY{p}{)}\PY{p}{;}
-             \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+s2}{ coefficients}\PY{l+s+s2}{\PYZdq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{p}{(}\PY{n}{k}\PY{o}{+}\PY{l+m+mi}{1}\PY{p}{)}\PY{o}{*}\PY{n}{N}\PY{p}{)}\PY{p}{,} \PY{n}{end}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-             \PY{n}{plt}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
-\end{Verbatim}
-
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-100 coefficients
-    \end{Verbatim}
-
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_99_1.png}
-    \end{center}
-    { \hspace*{\fill} \\}
-    
-    \begin{Verbatim}[commandchars=\\\{\}]
-200 coefficients
-    \end{Verbatim}
-
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_99_3.png}
-    \end{center}
-    { \hspace*{\fill} \\}
-    
-    \begin{Verbatim}[commandchars=\\\{\}]
-300 coefficients
-    \end{Verbatim}
-
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_99_5.png}
-    \end{center}
-    { \hspace*{\fill} \\}
-    
-    \begin{Verbatim}[commandchars=\\\{\}]
-400 coefficients
-    \end{Verbatim}
-
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_99_7.png}
-    \end{center}
-    { \hspace*{\fill} \\}
-    
-    \begin{Verbatim}[commandchars=\\\{\}]
-500 coefficients
-    \end{Verbatim}
-
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_99_9.png}
-    \end{center}
-    { \hspace*{\fill} \\}
-    
-    \begin{Verbatim}[commandchars=\\\{\}]
-600 coefficients
-    \end{Verbatim}
-
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_99_11.png}
-    \end{center}
-    { \hspace*{\fill} \\}
-    
-    \begin{Verbatim}[commandchars=\\\{\}]
-700 coefficients
-    \end{Verbatim}
-
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_99_13.png}
-    \end{center}
-    { \hspace*{\fill} \\}
-    
-    \begin{Verbatim}[commandchars=\\\{\}]
-800 coefficients
-    \end{Verbatim}
-
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_99_15.png}
-    \end{center}
-    { \hspace*{\fill} \\}
-    
-    \begin{Verbatim}[commandchars=\\\{\}]
-900 coefficients
-    \end{Verbatim}
-
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_99_17.png}
-    \end{center}
-    { \hspace*{\fill} \\}
-    
-    \begin{Verbatim}[commandchars=\\\{\}]
-1000 coefficients
-    \end{Verbatim}
-
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_99_19.png}
-    \end{center}
-    { \hspace*{\fill} \\}
-    
-    \hypertarget{quantization-in-the-transform-domain}{%
-\subsection{Quantization in the transform
-domain}\label{quantization-in-the-transform-domain}}
-
+\section{Quantization in the transform domain}
 \begin{itemize}
 \tightlist
 \item
@@ -1761,20 +719,10 @@ domain}\label{quantization-in-the-transform-domain}}
   quantization.
 \end{itemize}
 
-    \hypertarget{bit-planes-progression}{%
-\subsection{Bit-planes progression}\label{bit-planes-progression}}
+\section{Bit-planes progression}
+\img{800}{graphics/bit-plane-trans.svg}
 
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor} }]:} \PY{o}{!}make bit\PYZhy{}plane\PYZhy{}trans.svg
-\end{Verbatim}
-
-
-    
-
-    \hypertarget{bit-allocation-bit-rate-control}{%
-\subsection{Bit allocation (bit-rate
-control)}\label{bit-allocation-bit-rate-control}}
-
+\subsection{Bit allocation (bit-rate control)}
 \begin{itemize}
 \item
   In lossless coding, coeffs \(S_u\) are directly encoded using some
@@ -1787,10 +735,7 @@ control)}\label{bit-allocation-bit-rate-control}}
   each coeff \(S_k\).
 \end{itemize}
 
-    \hypertarget{bit-allocation-based-on-minimizing-the-quantization-error}{%
-\subsection{Bit allocation based on minimizing the quantization
-error}\label{bit-allocation-based-on-minimizing-the-quantization-error}}
-
+\section{Bit allocation based on minimizing the quantization error}
 \begin{itemize}
 \tightlist
 \item
@@ -1801,11 +746,7 @@ error}\label{bit-allocation-based-on-minimizing-the-quantization-error}}
   distortion) in the recostructed signal \(s\).
 \end{itemize}
 
-    \hypertarget{bit-allocation-based-on-minimizing-the-variance-of-the-quantization-error}{%
-\subsection{Bit allocation based on minimizing the variance of the
-quantization
-error}\label{bit-allocation-based-on-minimizing-the-variance-of-the-quantization-error}}
-
+\section{Bit allocation based on minimizing the variance of the quantization error}
 \begin{itemize}
 \item
   Lets assume that the variance of the coeffs, defined as
@@ -1846,32 +787,9 @@ error}\label{bit-allocation-based-on-minimizing-the-variance-of-the-quantization
   where \(\alpha_{u}\) depends on the frequency \(u\) and the quantizer.
 \end{itemize}
 
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}1}]:} \PY{o}{\PYZpc{}}\PY{k}{matplotlib} inline
-        
-        \PY{k+kn}{import} \PY{n+nn}{matplotlib}
-        \PY{k+kn}{import} \PY{n+nn}{numpy} \PY{k}{as} \PY{n+nn}{np}
-        \PY{k+kn}{import} \PY{n+nn}{matplotlib}\PY{n+nn}{.}\PY{n+nn}{pyplot} \PY{k}{as} \PY{n+nn}{plt}
-        
-        \PY{n}{x} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{linspace}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,} \PY{l+m+mi}{5}\PY{p}{,} \PY{l+m+mi}{500}\PY{p}{)}
-        \PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{x}\PY{p}{,} \PY{l+m+mi}{2}\PY{o}{*}\PY{o}{*}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{l+m+mi}{2}\PY{o}{*}\PY{n}{x}\PY{p}{)}\PY{p}{,} \PY{n}{label}\PY{o}{=}\PY{l+s+sa}{r}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZdl{}2\PYZca{}}\PY{l+s+s1}{\PYZob{}}\PY{l+s+s1}{\PYZhy{}2R\PYZus{}k\PYZcb{}\PYZdl{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-        \PY{n}{plt}\PY{o}{.}\PY{n}{title}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{R\PYZhy{}D curve model}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-        \PY{n}{plt}\PY{o}{.}\PY{n}{xlabel}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Rate (R)}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-        \PY{n}{plt}\PY{o}{.}\PY{n}{ylabel}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Distortion (D)}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-        \PY{n}{plt}\PY{o}{.}\PY{n}{legend}\PY{p}{(}\PY{p}{)}
-\end{Verbatim}
-
-
-\begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}1}]:} <matplotlib.legend.Legend at 0x7f6e55d1a860>
-\end{Verbatim}
-            
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_107_1.png}
-    \end{center}
-    { \hspace*{\fill} \\}
+\href{https://nbviewer.jupyter.org/github/vicente-gonzalez-ruiz/image_transformations_for_coding/blob/master/DR_model.ipynb}{DR_model}.
     
-    \begin{itemize}
+\begin{itemize}
 \item
   Assuming an additive distorion metric, the total distortion variance
   for \(R_k\) bits/coeff is given by
@@ -1947,9 +865,7 @@ produces that
   variances of all coeffs.
 \end{itemize}
 
-    \hypertarget{encoding}{%
-\subsection{Encoding}\label{encoding}}
-
+\section{Encoding}
 \begin{itemize}
 \tightlist
 \item
@@ -1958,10 +874,7 @@ produces that
   For DWT, tree coding or block-based coding.
 \end{itemize}
 
-    \hypertarget{code-stream-orderings-and-scalabilities}{%
-\subsection{Code-stream orderings and
-scalabilities}\label{code-stream-orderings-and-scalabilities}}
-
+\section{Code-stream orderings and scalabilities}
 \begin{itemize}
 \tightlist
 \item
@@ -1969,24 +882,6 @@ scalabilities}\label{code-stream-orderings-and-scalabilities}}
   scalability (example with 2 qualities and 3 resolutions):
 \end{itemize}
 
-    
+\href{800}{graphics/orderers-and-scalabilities.svg}
 
-    \hypertarget{interesting-links}{%
-\subsection{Interesting links}\label{interesting-links}}
-
-\begin{itemize}
-\tightlist
-\item
-  http://www.degeneratestate.org/posts/2016/Oct/23/image-processing-with-numpy/
-\item
-  http://www.scipy-lectures.org/packages/scikit-image/
-\item
-  https://www.safaribooksonline.com/library/view/programming-computer-vision/9781449341916/ch01.html
-\end{itemize}
-
-
-    % Add a bibliography block to the postdoc
-    
-    
-    
-    \end{document}
+\bibliography{DWT,Python}
