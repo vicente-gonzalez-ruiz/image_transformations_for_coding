@@ -533,7 +533,7 @@ Comments:
 
 \begin{equation}
     (\downarrow^2(s))_i = s_{2i}
-  \end{equation}
+\end{equation}
 
 and
 
@@ -609,7 +609,7 @@ where \(Z^{-1}\) represents the one sample delay function.
   been low-pass filtered before subsampling it).
 \end{enumerate}
 
-\section{\(T\)-levels 1D-DWT}
+\section{$T$-levels 1D-DWT}
 \img{1000}{graphics/n_levels_dwt1d.svg}
 
 \section{2D-DWT}    
@@ -643,7 +643,7 @@ where \(Z^{-1}\) represents the one sample delay function.
 \end{equation}
 
 In the case of the 5/3-DWT, the L\(_2\)-norms of the DWT subbands are:
-\img{800}{graphics/2D-DWT.svg}
+\img{400}{graphics/factores_5_3_L2_norm.svg}
 
 \section{Haar filters~\cite{haar1910theorie}}
 The \(i\)-th sample of the low-frequency subband is computed (using a
@@ -787,7 +787,7 @@ Notice that $H_i=0$ if $s_{2i+1}=(s_{2i}+s_{2i+2})/2$. Therefore, the 5/3 transf
   where \(\alpha_{u}\) depends on the frequency \(u\) and the quantizer.
 \end{itemize}
 
-\href{https://nbviewer.jupyter.org/github/vicente-gonzalez-ruiz/image_transformations_for_coding/blob/master/DR_model.ipynb}{DR_model}.
+\href{https://nbviewer.jupyter.org/github/vicente-gonzalez-ruiz/image_transformations_for_coding/blob/master/DR_model.ipynb}{DR\_model notebook}.
     
 \begin{itemize}
 \item
@@ -878,10 +878,10 @@ produces that
 \begin{itemize}
 \tightlist
 \item
-  The order in which the DWT coeﬃents are decoded determines the type of
+  The order in which the DWT coefficients are decoded determines the type of
   scalability (example with 2 qualities and 3 resolutions):
 \end{itemize}
 
-\href{800}{graphics/orderers-and-scalabilities.svg}
+\img{800}{graphics/orderers-and-scalabilities.svg}
 
 \bibliography{DWT,Python}
