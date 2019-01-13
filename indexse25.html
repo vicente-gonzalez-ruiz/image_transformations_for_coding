@@ -1,0 +1,181 @@
+<!DOCTYPE html> 
+<html> 
+<head><title>Haar ﬁlters [3]</title> 
+<meta charset="UTF-8" /> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
+<link rel="stylesheet" type="text/css" href="index.css" /> 
+<script type="text/javascript" 
+src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" 
+></script> 
+<style type="text/css"> 
+.MathJax_MathML {text-indent: 0;} 
+</style> 
+</head><body 
+>
+   <!--l. 648--><div class="crosslinks"><p class="noindent">[<a 
+href="indexse26.html" >next</a>] [<a 
+href="indexse24.html" >prev</a>] [<a 
+href="indexse24.html#tailindexse24.html" >prev-tail</a>] [<a 
+href="#tailindexse25.html">tail</a>] [<a 
+href="index.html#indexse25.html" >up</a>] </p></div>
+   <h3 class="sectionHead"><span class="titlemark">25   </span> <a 
+ id="x35-3500025"></a>Haar ﬁlters <span class="cite">[<a 
+href="indexli1.html#Xhaar1910theorie">3</a>]</span></h3>
+<!--l. 649--><p class="noindent" >The <!--l. 649--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mrow 
+><mi 
+>i</mi></mrow></math>-th
+sample of the low-frequency subband is computed (using a ﬁlter plus subsampling)
+as
+</p>
+   <table class="equation"><tr><td> <a 
+ id="x35-35001r32"></a>
+<!--l. 652--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="block" class="equation">
+                          <msub><mrow 
+><mi 
+>L</mi></mrow><mrow 
+><mi 
+>i</mi></mrow></msub 
+> <mo 
+class="MathClass-rel">=</mo> <mfrac><mrow 
+><msub><mrow 
+><mi 
+>s</mi></mrow><mrow 
+><mn>2</mn><mi 
+>i</mi></mrow></msub 
+> <mo 
+class="MathClass-bin">+</mo> <msub><mrow 
+><mi 
+>s</mi></mrow><mrow 
+><mn>2</mn><mi 
+>i</mi><mo 
+class="MathClass-bin">+</mo><mn>1</mn></mrow></msub 
+></mrow> 
+        <mrow 
+><mn>2</mn></mrow></mfrac>       <mo 
+class="MathClass-punc">,</mo>
+                                                                  <mstyle 
+   id="x35-35002r31"  class="label" ></mstyle><!--endlabel-->
+</math></td><td class="eq-no">(HaarL)<a 
+ id="x35-35003r31"></a></td></tr></table>
+<!--l. 658--><p class="indent" >   and the <!--l. 658--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mrow 
+><mi 
+>i</mi></mrow></math>-th
+sample of the high-frequency subband as
+</p>
+   <table class="equation"><tr><td> <a 
+ id="x35-35004r32"></a>
+<!--l. 660--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="block" class="equation">
+                          <msub><mrow 
+><mi 
+>H</mi></mrow><mrow 
+><mi 
+>i</mi></mrow></msub 
+> <mo 
+class="MathClass-rel">=</mo> <msub><mrow 
+><mi 
+>s</mi></mrow><mrow 
+><mn>2</mn><mi 
+>i</mi><mo 
+class="MathClass-bin">+</mo><mn>1</mn></mrow></msub 
+> <mo 
+class="MathClass-bin">−</mo> <msub><mrow 
+><mi 
+>s</mi></mrow><mrow 
+><mn>2</mn><mi 
+>i</mi></mrow></msub 
+><mo 
+class="MathClass-punc">.</mo>
+                                                                  <mstyle 
+   id="x35-35005r31"  class="label" ></mstyle><!--endlabel-->
+</math></td><td class="eq-no">(HaarH)<a 
+ id="x35-35006r31"></a></td></tr></table>
+<!--l. 666--><p class="indent" >   If Lifting is used,
+</p>
+   <table class="equation"><tr><td> <a 
+ id="x35-35007r32"></a>
+                                                                  
+
+                                                                  
+<!--l. 668--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="block" class="equation">
+                           <msub><mrow 
+><mi 
+>L</mi></mrow><mrow 
+><mi 
+>i</mi></mrow></msub 
+> <mo 
+class="MathClass-rel">=</mo> <msub><mrow 
+><mi 
+>s</mi></mrow><mrow 
+><mn>2</mn><mi 
+>i</mi></mrow></msub 
+> <mo 
+class="MathClass-bin">+</mo> <mfrac><mrow 
+><msub><mrow 
+><mi 
+>H</mi></mrow><mrow 
+><mi 
+>i</mi></mrow></msub 
+></mrow> 
+ <mrow 
+><mn>2</mn></mrow></mfrac> <mo 
+class="MathClass-punc">.</mo>
+                                                                  <mstyle 
+   id="x35-35008r31"  class="label" ></mstyle><!--endlabel-->
+</math></td><td class="eq-no">(HaarLLifted)<a 
+ id="x35-35009r31"></a></td></tr></table>
+<!--l. 674--><p class="indent" >   Notice that <!--l. 674--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mrow 
+><msub><mrow 
+><mi 
+>H</mi></mrow><mrow 
+><mi 
+>i</mi></mrow></msub 
+> <mo 
+class="MathClass-rel">=</mo> <mn>0</mn></mrow></math>
+if <!--l. 674--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mrow 
+><msub><mrow 
+><mi 
+>s</mi></mrow><mrow 
+><mn>2</mn><mi 
+>i</mi><mo 
+class="MathClass-bin">+</mo><mn>1</mn></mrow></msub 
+> <mo 
+class="MathClass-rel">=</mo> <msub><mrow 
+><mi 
+>s</mi></mrow><mrow 
+><mn>2</mn><mi 
+>i</mi></mrow></msub 
+></mrow></math>,
+therefore, the Haar transform is good to encode constant signals. The notation X/Y
+indicates the length (taps or number of coeﬃcients) of the low-pass and the
+high-pass (convolution) ﬁlters of the ﬁlter bank implementation (not Lifting),
+respectively.
+</p><!--l. 681--><p class="indent" >   <a 
+href="https://nbviewer.jupyter.org/github/vicente-gonzalez-ruiz/image_transformations_for_coding/blob/master/Haar_2d_basis.ipynb" >Haar basis</a>.
+                                                                  
+
+                                                                  
+</p>
+   <!--l. 683--><div class="crosslinks"><p class="noindent">[<a 
+href="indexse26.html" >next</a>] [<a 
+href="indexse24.html" >prev</a>] [<a 
+href="indexse24.html#tailindexse24.html" >prev-tail</a>] [<a 
+href="indexse25.html" >front</a>] [<a 
+href="index.html#indexse25.html" >up</a>] </p></div>
+<!--l. 683--><p class="indent" >   <a 
+ id="tailindexse25.html"></a> </p> 
+</body> 
+</html>
