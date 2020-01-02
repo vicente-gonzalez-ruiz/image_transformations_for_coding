@@ -1,7 +1,8 @@
-include $(HOME)/Makefile_templates/tex2pdf_rule/Makefile
-include $(HOME)/Makefile_templates/fig2pdf/Makefile
-include $(HOME)/Makefile_templates/pdf2svg/Makefile
-include $(HOME)/Makefile_templates/pdf2png_rule/Makefile
+include $(HOME)/Makefile_templates/Makefile
+#include $(HOME)/Makefile_templates/tex2pdf_rule/Makefile
+#include $(HOME)/Makefile_templates/fig2pdf/Makefile
+#include $(HOME)/Makefile_templates/pdf2svg/Makefile
+#include $(HOME)/Makefile_templates/pdf2png_rule/Makefile
 
 lena.png:
 	wget http://www.hpca.ual.es/~vruiz/images/lena.png
@@ -31,8 +32,8 @@ TMPs += orderers-and-scalabilities.svg
 
 bit-plane-trans.pdf:	lena_plano* lena_rec* bit-plane-trans.tex
 
-bit-plane-trans.png:	bit-plane-trans.pdf
-TMPs += bit-plane-trans.png
+#bit-plane-trans.png:	bit-plane-trans.pdf
+#TMPs += bit-plane-trans.png
 
 default: all
 

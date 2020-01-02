@@ -1,14 +1,8 @@
-%%% Local Variables:
-%%% mode: latex
-%%% TeX-master: "<none>"
-%%% End:
-
 \title{Image transformations for compression}
 
 \author{Vicente González Ruiz}
 
 \maketitle
-
 \tableofcontents
 
 \section{Insights}\begin{itemize}
@@ -201,7 +195,7 @@ system is more sensitive to the luma (Y) than to the chroma (UV)}. This
 means than the chroma can be subsampled without a significant loss of
 quality in the images.
 
-\imgw{600}{graphics/color_subsampling.svg}
+\svg{color_subsampling}{600}
 
 %\iframe{1200}{1200}{https://nbviewer.jupyter.org/github/vicente-gonzalez-ruiz/image_transformations_for_coding/blob/master/chroma_subsampling.ipynb}
 \href{https://nbviewer.jupyter.org/github/vicente-gonzalez-ruiz/image_transformations_for_coding/blob/master/chroma_subsampling.ipynb}{Chroma subsampling}.
@@ -561,7 +555,7 @@ where \(s_i\) if the \(i\)-th sample of \(s\).
 \end{enumerate}
 
 \section{Lifting implementation~\cite{sweldens1997building}}
-\imgw{1000}{graphics/lifting.svg}
+\svg{lifting}{1000}
 
 Comments:
 
@@ -613,7 +607,7 @@ where \(Z^{-1}\) represents the one sample delay function.
 \end{enumerate}
 
 \section{$T$-levels 1D-DWT}
-\imgw{1000}{graphics/n_levels_dwt1d.svg}
+\svg{n_levels_dwt1d}{1000}
 
 \section{2D-DWT}    
 \begin{itemize}
@@ -624,7 +618,7 @@ where \(Z^{-1}\) represents the one sample delay function.
   and next, to all the columns, or viceversa.
 \end{itemize}
 
-\imgw{800}{graphics/2D-DWT.svg}
+\svg{2D-DWT}{800}
 
 \begin{itemize}
 \tightlist
@@ -646,7 +640,7 @@ where \(Z^{-1}\) represents the one sample delay function.
 \end{equation}
 
 In the case of the 5/3-DWT, the L\(_2\)-norms of the DWT subbands are:
-\imgw{400}{graphics/factores_5_3_L2_norm.svg}
+\svg{factores_5_3_L2_norm}{400}
 
 \section{Haar filters~\cite{haar1910theorie}}
 The \(i\)-th sample of the low-frequency subband is computed (using a
@@ -723,7 +717,7 @@ Notice that $H_i=0$ if $s_{2i+1}=(s_{2i}+s_{2i+2})/2$. Therefore, the 5/3 transf
 \end{itemize}
 
 \section{Bit-planes progression}
-\imgw{800}{graphics/bit-plane-trans.svg}
+\svg{bit-plane-trans}{800}
 
 \subsection{Bit allocation (bit-rate control)}
 \begin{itemize}
@@ -885,6 +879,6 @@ produces that
   scalability (example with 2 qualities and 3 resolutions):
 \end{itemize}
 
-\imgw{800}{graphics/orderers-and-scalabilities.svg}
+\svg{orderers-and-scalabilities}{800}
 
 \bibliography{DWT,Python}
