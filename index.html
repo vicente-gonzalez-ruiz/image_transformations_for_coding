@@ -26,7 +26,7 @@ class="ecrm-1200">Vicente Gonz</span><span
 class="ecrm-1200">á</span><span 
 class="ecrm-1200">lez Ruiz</span></div><br />
 <div class="date" ><span 
-class="ecrm-1200">January 2, 2020</span></div>
+class="ecrm-1200">January 11, 2020</span></div>
    </div>
    <h3 class="likesectionHead"><a 
  id="x1-1000"></a>Contents</h3>
@@ -111,21 +111,23 @@ href="#x1-3600025" id="QQ2-1-36">Haar ﬁlters [3]</a></span>
 <br />   <span class="sectionToc" >26 <a 
 href="#x1-3700026" id="QQ2-1-37">Linear (5/3) ﬁlters [6]</a></span>
 <br />   <span class="sectionToc" >27 <a 
-href="#x1-3800027" id="QQ2-1-38">Quantization in the transform domain</a></span>
+href="#x1-3800027" id="QQ2-1-38">Orthogonal, orthonormal, and biorthogonal transforms</a></span>
 <br />   <span class="sectionToc" >28 <a 
-href="#x1-3900028" id="QQ2-1-39">Bit-planes progression</a></span>
-<br />    <span class="subsectionToc" >28.1 <a 
-href="#x1-4000028.1" id="QQ2-1-40">Bit allocation (bit-rate control)</a></span>
+href="#x1-3900028" id="QQ2-1-39">Quantization in the transform domain</a></span>
 <br />   <span class="sectionToc" >29 <a 
-href="#x1-4100029" id="QQ2-1-41">Bit allocation based on minimizing the quantization error</a></span>
+href="#x1-4000029" id="QQ2-1-40">Bit-planes progression</a></span>
+<br />    <span class="subsectionToc" >29.1 <a 
+href="#x1-4100029.1" id="QQ2-1-41">Bit allocation (bit-rate control)</a></span>
 <br />   <span class="sectionToc" >30 <a 
-href="#x1-4200030" id="QQ2-1-42">Bit allocation based on minimizing the variance of the quantization error</a></span>
+href="#x1-4200030" id="QQ2-1-42">Bit allocation based on minimizing the quantization error</a></span>
 <br />   <span class="sectionToc" >31 <a 
-href="#x1-4300031" id="QQ2-1-43">Encoding</a></span>
+href="#x1-4300031" id="QQ2-1-43">Bit allocation based on minimizing the variance of the quantization error</a></span>
 <br />   <span class="sectionToc" >32 <a 
-href="#x1-4400032" id="QQ2-1-44">Code-stream orderings and scalabilities</a></span>
+href="#x1-4400032" id="QQ2-1-44">Encoding</a></span>
+<br />   <span class="sectionToc" >33 <a 
+href="#x1-4500033" id="QQ2-1-45">Code-stream orderings and scalabilities</a></span>
 <br />   <span class="sectionToc" ><a 
-href="#Q1-1-46">References</a></span>
+href="#Q1-1-47">References</a></span>
    </div>
 <!--l. 8--><p class="noindent" >
 </p>
@@ -141,13 +143,13 @@ href="#Q1-1-46">References</a></span>
      (transform) coeﬃcients.
      </li>
      <li class="itemize">This property can be interesting for increasing the coding eﬃciency.</li></ul>
+                                                                  
+
+                                                                  
 <!--l. 23--><p class="noindent" >
 </p>
    <h3 class="sectionHead"><span class="titlemark">2   </span> <a 
  id="x1-30002"></a>Basic coding steps</h3>
-                                                                  
-
-                                                                  
 <!--l. 24--><p class="noindent" >
 </p>
    <h4 class="subsectionHead"><span class="titlemark">2.1   </span> <a 
@@ -198,6 +200,9 @@ display="inline" ><mrow
    <h3 class="sectionHead"><span class="titlemark">3   </span> <a 
  id="x1-60003"></a>Splitting</h3>
 <!--l. 52--><p class="noindent" >
+                                                                  
+
+                                                                  
      </p><ol  class="enumerate1" >
      <li 
   class="enumerate" id="x1-6002x1">Divide <!--l. 55--><math 
@@ -258,9 +263,6 @@ display="inline" ><mrow
 ><mi 
 >B</mi></mrow></math>
      samples.</li></ol>
-                                                                  
-
-                                                                  
 <!--l. 59--><p class="noindent" >
 </p>
    <h3 class="sectionHead"><span class="titlemark">4   </span> <a 
@@ -370,13 +372,13 @@ class="MathClass-punc">.</mo>
    id="x1-7005r0"  class="label" ></mstyle><!--endlabel-->
 </math></td><td class="eq-no">(inverse_transform)<a 
  id="x1-7006r0"></a></td></tr></table>
+                                                                  
+
+                                                                  
      </li>
      <li class="itemize">These equations can be written in matrix form as
      <table class="equation"><tr><td> <a 
  id="x1-7007r1"></a>
-                                                                  
-
-                                                                  
      <!--l. 79--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="block" class="equation">
@@ -460,6 +462,9 @@ class="MathClass-punc">,</mo><mi
 ><mo 
 class="MathClass-punc">.</mo> </mtd></mtr><!--l--></mtable>
 </math></td><td class="eq-no">(1)</td></tr></table>
+                                                                  
+
+                                                                  
      </li>
      <li class="itemize">In transform coding, <!--l. 98--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
@@ -485,9 +490,6 @@ class="MathClass-bin">−</mo><mn>1</mn></mrow></msup
      i.e.
      <table class="equation"><tr><td> <a 
  id="x1-7014r2"></a>
-                                                                  
-
-                                                                  
      <!--l. 101--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="block" class="equation">
@@ -526,6 +528,9 @@ href="https://en.wikipedia.org/wiki/Chrominance" >Chrominance</a> (or chroma) is
 href="https://en.wikipedia.org/wiki/YUV" >YUV</a>).</li></ul>
    <table class="equation"><tr><td> <a 
  id="x1-9001r3"></a>
+                                                                  
+
+                                                                  
 <!--l. 123--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="block" class="equation">
@@ -578,9 +583,6 @@ class="text"><mtext  >B</mtext></mstyle>  </mtd></mtr> <!--c--></mtable>        
 </math></td><td class="eq-no">(3)</td></tr></table>
    <table class="equation"><tr><td> <a 
  id="x1-9002r4"></a>
-                                                                  
-
-                                                                  
 <!--l. 147--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="block" class="equation">
@@ -653,6 +655,9 @@ href="https://nbviewer.jupyter.org/github/vicente-gonzalez-ruiz/image_transforma
 href="#Xbarr__image">1</a>, <a 
 href="#Xgouillart__scikit">2</a>, <a 
 href="#Xsolem__programming">4</a>]</span></a>.
+                                                                  
+
+                                                                  
 </p><!--l. 192--><p class="noindent" >
 </p>
    <h3 class="sectionHead"><span class="titlemark">6   </span> <a 
@@ -664,9 +669,6 @@ in the images.
 </p><!--l. 198--><p class="indent" >   <div style="text-align:center;"> <img width=600 src="graphics/color_subsampling.svg" /> </div> 
 </p><!--l. 201--><p class="indent" >   <a 
 href="https://nbviewer.jupyter.org/github/vicente-gonzalez-ruiz/image_transformations_for_coding/blob/master/chroma_subsampling.ipynb" >Chroma subsampling</a>.
-                                                                  
-
-                                                                  
 </p><!--l. 203--><p class="noindent" >
 </p>
    <h3 class="sectionHead"><span class="titlemark">7   </span> <a 
@@ -730,6 +732,9 @@ display="inline" ><mrow
      <li class="itemize">For orthonormal transforms, it holds that
      <table class="equation"><tr><td> <a 
  id="x1-13001r5"></a>
+                                                                  
+
+                                                                  
      <!--l. 227--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="block" class="equation">
@@ -747,9 +752,6 @@ class="MathClass-rel">=</mo> <msup><mrow
 ><mo 
 class="MathClass-punc">.</mo>
 </math></td><td class="eq-no">(5)</td></tr></table>
-                                                                  
-
-                                                                  
      <!--l. 231--><p class="noindent" >Therefore, the pair of transforms refered by Eqs. (forward_transform_matrix_form)
      and (inverse_transform_matrix_form) can be written as
 </p>
@@ -816,13 +818,13 @@ class="MathClass-bin">−</mo><mn>1</mn></mrow></munderover
 ><mo 
 class="MathClass-punc">.</mo>
 </math></td><td class="eq-no">(7)</td></tr></table>
+                                                                  
+
+                                                                  
 <!--l. 248--><p class="noindent" >
 </p>
    <h4 class="subsectionHead"><span class="titlemark">8.1   </span> <a 
  id="x1-150008.1"></a>Energy conservation</h4>
-                                                                  
-
-                                                                  
      <ul class="itemize1">
      <li class="itemize">if <!--l. 251--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
@@ -933,14 +935,14 @@ class="MathClass-rel">|</mo></mrow><mrow
 ><mo 
 class="MathClass-punc">.</mo>
 </math></td><td class="eq-no">(9)</td></tr></table>
+                                                                  
+
+                                                                  
 <!--l. 264--><p class="noindent" >
 </p>
    <h3 class="sectionHead"><span class="titlemark">9   </span> <a 
  id="x1-170009"></a><a 
 href="https://en.wikipedia.org/wiki/Expected_value" >Expected value</a></h3>
-                                                                  
-
-                                                                  
 <!--l. 265--><p class="noindent" >The expected value <!--l. 265--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mrow 
@@ -1244,12 +1246,12 @@ display="inline" ><mrow
 ><mi 
 >i</mi></mrow></msub 
 ></mrow></math>):
-</p>
-   <table class="equation"><tr><td> <a 
- id="x1-20001r13"></a>
                                                                   
 
                                                                   
+</p>
+   <table class="equation"><tr><td> <a 
+ id="x1-20001r13"></a>
 <!--l. 300--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="block" class="equation"><msub><mrow 
@@ -1577,6 +1579,9 @@ display="inline" ><mrow
  id="x1-2100012"></a>Covariance matrix of a block-based transform</h3>
    <table class="equation"><tr><td> <a 
  id="x1-21001r15"></a>
+                                                                  
+
+                                                                  
 <!--l. 319--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="block" class="equation"><msub><mrow 
@@ -1673,9 +1678,6 @@ class="MathClass-rel">=</mo> <mi
 ><mo 
 class="MathClass-punc">.</mo>
 </math></td><td class="eq-no">(15)</td></tr></table>
-                                                                  
-
-                                                                  
 <!--l. 334--><p class="noindent" >
 </p>
    <h3 class="sectionHead"><span class="titlemark">13   </span> <a 
@@ -1973,6 +1975,9 @@ is a non-zero vector that changes by only a scalar factor
 display="inline" ><mrow 
 ><mi 
 >λ</mi></mrow></math>
+                                                                  
+
+                                                                  
 (known as the eigenvalue, characteristic value, or characteristic root of
 <!--l. 370--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
@@ -1983,9 +1988,6 @@ display="inline" ><mrow
 class="MathClass-op">⃗</mo></mover></mrow></math>)
 when that linear transformation is applied to it:
 </p>
-                                                                  
-
-                                                                  
    <table class="equation"><tr><td> <a 
  id="x1-25001r19"></a>
 <!--l. 373--><math 
@@ -2479,7 +2481,8 @@ href="https://nbviewer.jupyter.org/github/vicente-gonzalez-ruiz/image_transforma
 </p>
    <h3 class="sectionHead"><span class="titlemark">20   </span> <a 
  id="x1-3100020"></a>Dyadic discrete wavelet transform (DWT)</h3>
-<!--l. 485--><p class="noindent" >Key features:
+<!--l. 485--><p class="noindent" >Key <a 
+href="https://en.wikipedia.org/wiki/Discrete_wavelet_transform" >features</a>:
 </p><!--l. 487--><p class="indent" >
      </p><ol  class="enumerate1" >
      <li 
@@ -3492,12 +3495,147 @@ class="MathClass-bin">∕</mo><mn>2</mn></math>.
 Therefore, the 5/3 transform is suitable to encode lineally piece-wised signals.
 </p><!--l. 708--><p class="indent" >   <a 
 href="https://nbviewer.jupyter.org/github/vicente-gonzalez-ruiz/image_transformations_for_coding/blob/master/linear_2d_basis.ipynb" >Linear (5/3) basis</a>.
-</p><!--l. 710--><p class="noindent" >
+</p><!--l. 711--><p class="noindent" >
 </p>
    <h3 class="sectionHead"><span class="titlemark">27   </span> <a 
- id="x1-3800027"></a>Quantization in the transform domain</h3>
+ id="x1-3800027"></a>Orthogonal, orthonormal, and biorthogonal transforms</h3>
+<!--l. 714--><p class="noindent" >In signal processing<span class="footnote-mark"><a 
+href="index2.html#fn1x0"><sup class="textsuperscript">1</sup></a></span><a 
+ id="x1-38001f1"></a> ,
+a transform (such as the <a 
+href="https://en.wikipedia.org/wiki/Discrete_cosine_transform" >Discrete Cosine Transform</a>, the <a 
+href="https://en.wikipedia.org/wiki/Hadamard_transform" >Walsh-Hadamard Transform</a>
+or the <a 
+href="https://en.wikipedia.org/wiki/Karhunen%E2%80%93Lo%C3%A8ve_theorem" >Karhunen-Loève Transform</a>) is orthogonal when the coeﬃcients generated by
+the transform are uncorrelated (there is no way to infer one coeﬃcient from
+another).
+</p><!--l. 729--><p class="indent" >   If the <a 
+href="https://en.wikipedia.org/wiki/Norm_(mathematics)" >norm</a> of all the basis of an orthogonal transform is one, then the
+transform is said <a 
+href="https://en.wikipedia.org/wiki/Orthonormal_basis" >orthonormal</a>. Orthonormal transforms are interesting because of
+their:
+                                                                  
+
+                                                                  
+     </p><ol  class="enumerate1" >
+     <li 
+  class="enumerate" id="x1-38003x1"><a 
+href="https://en.wikipedia.org/wiki/Energy_(signal_processing)" ><span 
+class="ecbx-1000">Energy</span></a>  <span 
+class="ecbx-1000">preservation</span>:  The  energy  of  the  output  is  the  same  than
+     the energy of the input. This means that, for example, a quantization
+     error produced in a coeﬃcient of the transform will generate the same
+     quantization  error  at  the  output  (the  complete  signal)  of  the  inverse
+     transform. The same holds by the forward transform.
+     </li>
+     <li 
+  class="enumerate" id="x1-38005x2"><span 
+class="ecbx-1000">Implementation</span>:  The  transform  matrix  of  the  inverse  transform  is
+     the transpose of the forward transform. In orthogonal transforms, the
+     transform matrix of the inverse transform is the inverse of the transform
+     matrix of the forward transform.</li></ol>
+<!--l. 748--><p class="indent" >   Biorthogonal transforms (and in particular, <a 
+href="https://en.wikipedia.org/wiki/Biorthogonal_wavelet" >biorthogonal wavelets</a>) do
+no satisfy any of these features: they are not energy preserving (this can
+be also observed because the frequency-domain responses of the analysis
+and synthesis ﬁlters are not symmetric), and there is not an algebraic way
+(matrix transposition/inversion) to compute the backward transform from the
+forward one, and viceversa. This, that can be considered as a drawback, gives
+an extra degree of freedom to design the analysis and the synthesis ﬁlters
+(whose only requirement is that transform pair to be reversible), providing in
+general the possibility of using more soﬁsticated ﬁlters such as those based
+on non-linear ﬁltering, as for example, those that use motion estimation
+algorithms.
+</p><!--l. 762--><p class="indent" >   In general, each subband <!--l. 762--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>b</mi></math>
+of a decomposition generated by a biorthogonal 2D-DWT transform have a diﬀerent subband
+gain <!--l. 764--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><msub><mrow 
+><mi 
+>α</mi></mrow><mrow 
+><mi 
+>b</mi></mrow></msub 
+></math>.
+Usually, the lower the frequency of the subband, the higher the gain. Notice also,
+that these gains also are diﬀerent for each transform.
+</p><!--l. 768--><p class="indent" >   Subband gains are important in lossy signal compression because they quantify
+the relative importance of the wavelet coeﬃcients of the diﬀerent subbands when we
+introduce distortion in the wavelet domain. Thus, for example, if we decide to
+quantize a wavelet coeﬃcient, the amount of distortion that we are generating in the
+signal domain will depend on the subband where that coeﬃcient is localized. In
+general, low-frequency coeﬃcients are more “important” that high-frequency
+ones.
+</p><!--l. 777--><p class="indent" >   To compute the subband gains we have two options:
+     </p><ol  class="enumerate1" >
+     <li 
+  class="enumerate" id="x1-38007x1">The algebraic way. We will need the expressions of the four ﬁlters (two
+     anaylsis ﬁlters and two synthesis ﬁlters) and deduce the gains.
+     </li>
+     <li 
+  class="enumerate" id="x1-38009x2">The algorithmic way. We will need to compute the energy of the impulse response
+     of the inverse transform, when we apply such impulse to each one of the
+     subbands of the decomposition. Supposing that, after appliying the DWT to an
+     image, the coeﬃcients of the subband HH are the least energetic with an energy
+                                                                  
+
+                                                                  
+     <!--l. 786--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>x</mi></math>, the subband
+     gain for subband <!--l. 787--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>b</mi></math>
+     is computed as <table class="equation"><tr><td> <a 
+ id="x1-38010r32"></a>
+     <!--l. 788--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="block" class="equation">
+                                            <msub><mrow 
+><mi 
+>α</mi></mrow><mrow 
+><mi 
+>b</mi></mrow></msub 
+> <mo 
+class="MathClass-rel">=</mo> <msub><mrow 
+><mi 
+>E</mi></mrow><mrow 
+><mi 
+>b</mi></mrow></msub 
+><mo 
+class="MathClass-bin">∕</mo><mi 
+>x</mi><mo 
+class="MathClass-punc">,</mo>
+</math></td><td class="eq-no">(32)</td></tr></table>
+     <!--l. 791--><p class="noindent" >where <!--l. 791--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><msub><mrow 
+><mi 
+>E</mi></mrow><mrow 
+><mi 
+>b</mi></mrow></msub 
+></math>
+     is the energy of the reconstruction when the impulse signal is localized at
+     <!--l. 792--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>b</mi></math>.
+     Notice that all the gains should be larger than one.</p></li></ol>
+<!--l. 796--><p class="indent" >   This computation can be also applied to MCDWT, by computing the subband gains as a function
+of the number <!--l. 797--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>T</mi></math>
+of temporal decompositions.
+</p>
+   <h3 class="sectionHead"><span class="titlemark">28   </span> <a 
+ id="x1-3900028"></a>Quantization in the transform domain</h3>
      <ul class="itemize1">
-     <li class="itemize">If the transform is orthogonal, by deﬁnition coeﬀs <!--l. 714--><math 
+     <li class="itemize">If the transform is orthogonal, by deﬁnition coeﬀs <!--l. 805--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mrow 
 ><mi 
@@ -3507,20 +3645,20 @@ class="MathClass-open">[</mo><mrow><mi
 class="MathClass-close">]</mo></mrow></mrow></math>
      are uncorrelated. Therefore, a scalar quantizer can performs an optimal
      quantization.</li></ul>
-<!--l. 719--><p class="noindent" >
+<!--l. 810--><p class="noindent" >
 </p>
-   <h3 class="sectionHead"><span class="titlemark">28   </span> <a 
- id="x1-3900028"></a>Bit-planes progression</h3>
-<!--l. 720--><p class="noindent" ><div style="text-align:center;"> <img width=800 src="graphics/bit-plane-trans.svg" /> </div> 
+   <h3 class="sectionHead"><span class="titlemark">29   </span> <a 
+ id="x1-4000029"></a>Bit-planes progression</h3>
+<!--l. 811--><p class="noindent" ><div style="text-align:center;"> <img width=800 src="graphics/bit-plane-trans.svg" /> </div> 
                                                                   
 
                                                                   
-</p><!--l. 722--><p class="noindent" >
+</p><!--l. 813--><p class="noindent" >
 </p>
-   <h4 class="subsectionHead"><span class="titlemark">28.1   </span> <a 
- id="x1-4000028.1"></a>Bit allocation (bit-rate control)</h4>
+   <h4 class="subsectionHead"><span class="titlemark">29.1   </span> <a 
+ id="x1-4100029.1"></a>Bit allocation (bit-rate control)</h4>
      <ul class="itemize1">
-     <li class="itemize">In lossless coding, coeﬀs <!--l. 725--><math 
+     <li class="itemize">In lossless coding, coeﬀs <!--l. 816--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mrow 
 ><msub><mrow 
@@ -3534,7 +3672,7 @@ display="inline" ><mrow
      </li>
      <li class="itemize">However, in most situations, a lossy compression is needed and in this
      case, a transform coder must determine, given a maximum number of bits
-     <!--l. 730--><math 
+     <!--l. 821--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mrow 
 ><mover accent="false" 
@@ -3542,7 +3680,7 @@ class="mml-overline"><mrow><mi
 >R</mi></mrow><mo 
 accent="true">¯</mo></mover></mrow></math>
      (which  is  deﬁned  by  the  compression  ratio  selected  by  the  user),  the
-     number of bits <!--l. 731--><math 
+     number of bits <!--l. 822--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mrow 
 ><mi 
@@ -3550,7 +3688,7 @@ display="inline" ><mrow
 class="MathClass-open">(</mo><mrow><mi 
 >u</mi></mrow><mo 
 class="MathClass-close">)</mo></mrow></mrow></math>
-     used by the quantizer for each coeﬀ <!--l. 732--><math 
+     used by the quantizer for each coeﬀ <!--l. 823--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mrow 
 ><msub><mrow 
@@ -3559,13 +3697,13 @@ display="inline" ><mrow
 ><mi 
 >k</mi></mrow></msub 
 ></mrow></math>.</li></ul>
-<!--l. 735--><p class="noindent" >
+<!--l. 826--><p class="noindent" >
 </p>
-   <h3 class="sectionHead"><span class="titlemark">29   </span> <a 
- id="x1-4100029"></a>Bit allocation based on minimizing the quantization error</h3>
+   <h3 class="sectionHead"><span class="titlemark">30   </span> <a 
+ id="x1-4200030"></a>Bit allocation based on minimizing the quantization error</h3>
      <ul class="itemize1">
      <li class="itemize">In unitary transforms, as a consequence of the energy preserving property,
-     an uniform quantization (i.e. the dividing each coeﬀ <!--l. 741--><math 
+     an uniform quantization (i.e. the dividing each coeﬀ <!--l. 832--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mrow 
 ><msub><mrow 
@@ -3576,24 +3714,24 @@ display="inline" ><mrow
 ></mrow></math>
      by the same quantization step) should provide optimal bit allocation if we
      want to minimize the quantization error (the distortion) in the recostructed
-     signal <!--l. 743--><math 
+     signal <!--l. 834--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mrow 
 ><mi 
 >s</mi></mrow></math>.</li></ul>
-<!--l. 746--><p class="noindent" >
+<!--l. 837--><p class="noindent" >
 </p>
-   <h3 class="sectionHead"><span class="titlemark">30   </span> <a 
- id="x1-4200030"></a>Bit allocation based on minimizing the variance of the quantization
+   <h3 class="sectionHead"><span class="titlemark">31   </span> <a 
+ id="x1-4300031"></a>Bit allocation based on minimizing the variance of the quantization
 error</h3>
      <ul class="itemize1">
      <li class="itemize">Lets assume that the variance of the coeﬀs, deﬁned as
      <table class="equation"><tr><td> <a 
- id="x1-42001r32"></a>
+ id="x1-43001r33"></a>
                                                                   
 
                                                                   
-     <!--l. 751--><math 
+     <!--l. 842--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="block" class="equation">
                                        <msubsup><mrow 
@@ -3626,12 +3764,12 @@ class="MathClass-close">)</mo></mrow></mrow><mrow
 ><mn>2</mn></mrow></msup 
 ><mstyle mathsize="1.19em"><mfenced separators="" 
 open=")"  close="" ><mrow></mrow></mfenced></mstyle>
-</math></td><td class="eq-no">(32)</td></tr></table>
-     <!--l. 755--><p class="noindent" >(where
+</math></td><td class="eq-no">(33)</td></tr></table>
+     <!--l. 846--><p class="noindent" >(where
 </p>
      <table class="equation"><tr><td> <a 
- id="x1-42002r33"></a>
-     <!--l. 757--><math 
+ id="x1-43002r34"></a>
+     <!--l. 848--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="block" class="equation">
                                  <mover accent="false" 
@@ -3664,14 +3802,14 @@ class="MathClass-bin">−</mo><mn>1</mn></mrow></munderover
 <mi 
 >u</mi></mrow></msub 
 >
-</math></td><td class="eq-no">(33)</td></tr></table>
-     <!--l. 761--><p class="noindent" >corresponds to the amount of information provided by each coeﬀ. Therefore,
+</math></td><td class="eq-no">(34)</td></tr></table>
+     <!--l. 852--><p class="noindent" >corresponds to the amount of information provided by each coeﬀ. Therefore,
      coeﬀs with high variance should be assigned more bits and viceversa.
      </p></li>
      <li class="itemize">Lets deﬁne
      <table class="equation"><tr><td> <a 
- id="x1-42003r34"></a>
-     <!--l. 767--><math 
+ id="x1-43003r35"></a>
+     <!--l. 858--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="block" class="equation">
                                     <mover accent="false" 
@@ -3698,16 +3836,16 @@ class="MathClass-open">(</mo><mrow><mi
 >u</mi></mrow><mo 
 class="MathClass-close">)</mo></mrow>
                                                                                                        <mstyle 
-   id="x1-42004r33"  class="label" ></mstyle><!--endlabel-->
-</math></td><td class="eq-no">(<!--l. 770--><math 
+   id="x1-43004r34"  class="label" ></mstyle><!--endlabel-->
+</math></td><td class="eq-no">(<!--l. 861--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mover accent="false" 
 class="mml-overline"><mrow><mi 
 >R</mi></mrow><mo 
 accent="true">¯</mo></mover></math>)<a 
- id="x1-42005r33"></a></td></tr></table>
-     <!--l. 772--><p class="noindent" >as the (target) average number of bits/coeﬀ, where
-     <!--l. 772--><math 
+ id="x1-43005r34"></a></td></tr></table>
+     <!--l. 863--><p class="noindent" >as the (target) average number of bits/coeﬀ, where
+     <!--l. 863--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mrow 
 ><mi 
@@ -3715,7 +3853,7 @@ display="inline" ><mrow
 class="MathClass-open">(</mo><mrow><mi 
 >u</mi></mrow><mo 
 class="MathClass-close">)</mo></mrow></mrow></math> is the number of bits
-     assigned to coeﬀ <!--l. 773--><math 
+     assigned to coeﬀ <!--l. 864--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mrow 
 ><msub><mrow 
@@ -3730,7 +3868,7 @@ display="inline" ><mrow
      </p></li>
      <li class="itemize">If the mean square error is as a measure of distortion, the
      variance of the distortion generated by the quantization of a coeﬀ
-     <!--l. 776--><math 
+     <!--l. 867--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mrow 
 ><msub><mrow 
@@ -3742,8 +3880,8 @@ display="inline" ><mrow
      <a 
 href="http://cdn.intechopen.com/pdfs/16267/InTech-Rate_control_in_video_coding.pdf" >can be modeled</a> by
      <table class="equation"><tr><td> <a 
- id="x1-42006r34"></a>
-     <!--l. 780--><math 
+ id="x1-43006r35"></a>
+     <!--l. 871--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="block" class="equation">
                                  <msubsup><mrow 
@@ -3793,8 +3931,8 @@ class="MathClass-close">)</mo></mrow></mrow></msup
 ><mn>2</mn></mrow></msubsup 
 ><mo 
 class="MathClass-punc">,</mo>
-</math></td><td class="eq-no">(34)</td></tr></table>
-     <!--l. 784--><p class="noindent" >where <!--l. 784--><math 
+</math></td><td class="eq-no">(35)</td></tr></table>
+     <!--l. 875--><p class="noindent" >where <!--l. 875--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mrow 
 ><msub><mrow 
@@ -3803,18 +3941,18 @@ display="inline" ><mrow
 ><mi 
 >u</mi></mrow></msub 
 ></mrow></math> depends
-     on the frequency <!--l. 784--><math 
+     on the frequency <!--l. 875--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mrow 
 ><mi 
 >u</mi></mrow></math>
      and the quantizer.</p></li></ul>
-<!--l. 787--><p class="noindent" ><a 
+<!--l. 878--><p class="noindent" ><a 
 href="https://nbviewer.jupyter.org/github/vicente-gonzalez-ruiz/image_transformations_for_coding/blob/master/DR_model.ipynb" >DR_model notebook</a>.
 </p>
      <ul class="itemize1">
      <li class="itemize">Assuming an additive distorion metric, the total distortion variance for
-     <!--l. 792--><math 
+     <!--l. 883--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mrow 
 ><msub><mrow 
@@ -3825,8 +3963,8 @@ display="inline" ><mrow
 ></mrow></math>
      bits/coeﬀ is given by
      <table class="equation"><tr><td> <a 
- id="x1-42007r35"></a>
-     <!--l. 794--><math 
+ id="x1-43007r36"></a>
+     <!--l. 885--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="block" class="equation">
 <mi 
@@ -3941,17 +4079,17 @@ class="MathClass-close">)</mo></mrow></mrow></msup
 ><mn>2</mn></mrow></msubsup 
 >
                                                                                                                                 <mstyle 
-   id="x1-42008r34"  class="label" ></mstyle><!--endlabel-->
-</math></td><td class="eq-no">(<!--l. 797--><math 
+   id="x1-43008r35"  class="label" ></mstyle><!--endlabel-->
+</math></td><td class="eq-no">(<!--l. 888--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mi 
 >D</mi></math>)<a 
- id="x1-42009r34"></a></td></tr></table>
-     <!--l. 797--><p class="noindent" >,
+ id="x1-43009r35"></a></td></tr></table>
+     <!--l. 888--><p class="noindent" >,
                                                                   
 
                                                                   
-     </p><!--l. 799--><p class="noindent" >supposing that <!--l. 799--><math 
+     </p><!--l. 890--><p class="noindent" >supposing that <!--l. 890--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mrow 
 ><msub><mrow 
@@ -3967,7 +4105,7 @@ class="MathClass-rel">=</mo> <mi
      quantizer is used).
      </p></li>
      <li class="itemize">The objective of the bit-allocation process is to ﬁnd the
-     <!--l. 805--><math 
+     <!--l. 896--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mrow 
 ><msubsup><mrow 
@@ -3985,12 +4123,12 @@ class="MathClass-rel">=</mo><mn>0</mn></mrow><mrow
 >B</mi><mo 
 class="MathClass-bin">−</mo><mn>1</mn></mrow></msubsup 
 ></mrow></math> so that minimize
-     <!--l. 805--><math 
+     <!--l. 896--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mrow 
 ><mi 
 >D</mi></mrow></math> subject to
-     constraint <!--l. 806--><math 
+     constraint <!--l. 897--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mrow 
 ><mover accent="false" 
@@ -3998,8 +4136,8 @@ class="mml-overline"><mrow><mi
 >R</mi></mrow><mo 
 accent="true">¯</mo></mover></mrow></math>:
      <table class="equation"><tr><td> <a 
- id="x1-42010r35"></a>
-     <!--l. 808--><math 
+ id="x1-43010r36"></a>
+     <!--l. 899--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="block" class="equation">
                                 <munder><mrow 
@@ -4026,7 +4164,7 @@ class="mml-overline"><mrow><mi
 >R</mi></mrow><mo 
 accent="true">¯</mo></mover><mo 
 class="MathClass-punc">.</mo>
-</math></td><td class="eq-no">(35)</td></tr></table>
+</math></td><td class="eq-no">(36)</td></tr></table>
      </li>
      <li class="itemize">This is an optimization problem that can be solved using <a 
 href="https://en.wikipedia.org/wiki/Lagrange_multiplier" >Lagrange multipliers</a>
@@ -4035,8 +4173,8 @@ href="https://en.wikipedia.org/wiki/Lagrange_multiplier" >Lagrange multipliers</
      </li>
      <li class="itemize">Lets deﬁne the Lagrangian functional
      <table class="equation"><tr><td> <a 
- id="x1-42011r36"></a>
-     <!--l. 819--><math 
+ id="x1-43011r37"></a>
+     <!--l. 910--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="block" class="equation">
 <mi 
@@ -4127,16 +4265,16 @@ class="MathClass-open">(</mo><mrow><mi
 class="MathClass-close">)</mo></mrow><mstyle mathsize="1.61em"><mfenced separators="" 
 open=")"  close="" ><mrow></mrow></mfenced></mstyle><mo 
 class="MathClass-punc">,</mo>
-</math></td><td class="eq-no">(36)</td></tr></table>
+</math></td><td class="eq-no">(37)</td></tr></table>
      </li></ul>
                                                                   
 
                                                                   
-<!--l. 824--><p class="indent" >   which taking
+<!--l. 915--><p class="indent" >   which taking
 </p>
    <table class="equation"><tr><td> <a 
- id="x1-42012r37"></a>
-<!--l. 826--><math 
+ id="x1-43012r38"></a>
+<!--l. 917--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="block" class="equation">
                               <mfrac><mrow 
@@ -4151,12 +4289,12 @@ class="MathClass-open">(</mo><mrow><mi
 >u</mi></mrow><mo 
 class="MathClass-close">)</mo></mrow></mrow></mfrac> <mo 
 class="MathClass-rel">=</mo> <mn>0</mn>
-</math></td><td class="eq-no">(37)</td></tr></table>
-<!--l. 830--><p class="indent" >   produces that
+</math></td><td class="eq-no">(38)</td></tr></table>
+<!--l. 921--><p class="indent" >   produces that
 </p>
    <table class="equation"><tr><td> <a 
- id="x1-42013r38"></a>
-<!--l. 832--><math 
+ id="x1-43013r39"></a>
+<!--l. 923--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="block" class="equation">
                   <mi 
@@ -4194,17 +4332,17 @@ class="MathClass-bin">−</mo><mfrac><mrow
 >λ</mi><mo 
 class="MathClass-punc">.</mo>
                                                                   <mstyle 
-   id="x1-42014r37"  class="label" ></mstyle><!--endlabel-->
-</math></td><td class="eq-no">(<!--l. 835--><math 
+   id="x1-43014r38"  class="label" ></mstyle><!--endlabel-->
+</math></td><td class="eq-no">(<!--l. 926--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mi 
 >R</mi><mrow ><mo 
 class="MathClass-open">(</mo><mrow><mi 
 >u</mi></mrow><mo 
 class="MathClass-close">)</mo></mrow></math>)<a 
- id="x1-42015r37"></a></td></tr></table>
+ id="x1-43015r38"></a></td></tr></table>
      <ul class="itemize1">
-     <li class="itemize">Substituting <!--l. 839--><math 
+     <li class="itemize">Substituting <!--l. 930--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mrow 
 ><mi 
@@ -4212,7 +4350,7 @@ display="inline" ><mrow
 class="MathClass-open">(</mo><mrow><mi 
 >u</mi></mrow><mo 
 class="MathClass-close">)</mo></mrow></mrow></math>
-     in Eq. (<!--l. 839--><math 
+     in Eq. (<!--l. 930--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mrow 
 ><mover accent="false" 
@@ -4221,11 +4359,11 @@ class="mml-overline"><mrow><mi
 accent="true">¯</mo></mover></mrow></math>),
      we get that
      <table class="equation"><tr><td> <a 
- id="x1-42016r38"></a>
+ id="x1-43016r39"></a>
                                                                   
 
                                                                   
-     <!--l. 841--><math 
+     <!--l. 932--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="block" class="equation">
                      <mover accent="false" 
@@ -4275,12 +4413,12 @@ class="MathClass-bin">−</mo><mfrac><mrow
 ><mi 
 >λ</mi><mo 
 class="MathClass-punc">.</mo>
-</math></td><td class="eq-no">(38)</td></tr></table>
+</math></td><td class="eq-no">(39)</td></tr></table>
      </li>
      <li class="itemize">Operating
      <table class="equation"><tr><td> <a 
- id="x1-42017r39"></a>
-     <!--l. 847--><math 
+ id="x1-43017r40"></a>
+     <!--l. 938--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="block" class="equation">
                            <mi 
@@ -4320,14 +4458,14 @@ class="mml-overline"><mrow><mi
 accent="true">¯</mo></mover></mrow></msup 
 ><mo 
 class="MathClass-punc">.</mo>
-</math></td><td class="eq-no">(39)</td></tr></table>
+</math></td><td class="eq-no">(40)</td></tr></table>
      </li>
-     <li class="itemize">Substituting <!--l. 851--><math 
+     <li class="itemize">Substituting <!--l. 942--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mrow 
 ><mi 
 >λ</mi></mrow></math>
-     in Eq. (<!--l. 851--><math 
+     in Eq. (<!--l. 942--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mrow 
 ><mi 
@@ -4337,8 +4475,8 @@ class="MathClass-open">(</mo><mrow><mi
 class="MathClass-close">)</mo></mrow></mrow></math>),
      we obtain the optimal number of bits for each coeﬀ
      <table class="equation"><tr><td> <a 
- id="x1-42018r40"></a>
-     <!--l. 854--><math 
+ id="x1-43018r41"></a>
+     <!--l. 945--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="block" class="equation">
                            <mi 
@@ -4395,10 +4533,10 @@ class="MathClass-bin">−</mo><mn>1</mn></mrow></munderover
 ><mi 
 >B</mi></mrow></mroot></mrow></mfrac><mo 
 class="MathClass-punc">.</mo>
-</math></td><td class="eq-no">(40)</td></tr></table>
-     <!--l. 858--><p class="noindent" >which minimizes the variance of the quantization
+</math></td><td class="eq-no">(41)</td></tr></table>
+     <!--l. 949--><p class="noindent" >which minimizes the variance of the quantization
      error. Notice that this value depends proportionally on
-     <!--l. 859--><math 
+     <!--l. 950--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mrow 
 ><mover accent="false" 
@@ -4406,7 +4544,7 @@ class="mml-overline"><mrow><mi
 >R</mi></mrow><mo 
 accent="true">¯</mo></mover></mrow></math>
      (the target average bits/coeﬀ), logaritmically on
-     <!--l. 860--><math 
+     <!--l. 951--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mrow 
 ><msub><mrow 
@@ -4425,26 +4563,26 @@ display="inline" ><mrow
 
                                                                   
      variances of all coeﬀs.</p></li></ul>
-<!--l. 865--><p class="noindent" >
+<!--l. 956--><p class="noindent" >
 </p>
-   <h3 class="sectionHead"><span class="titlemark">31   </span> <a 
- id="x1-4300031"></a>Encoding</h3>
+   <h3 class="sectionHead"><span class="titlemark">32   </span> <a 
+ id="x1-4400032"></a>Encoding</h3>
      <ul class="itemize1">
      <li class="itemize">For DCT, usually ZigZag-RLE followed by 0-order entropy coding.
      </li>
      <li class="itemize">For DWT, tree coding or block-based coding.</li></ul>
-<!--l. 874--><p class="noindent" >
+<!--l. 965--><p class="noindent" >
 </p>
-   <h3 class="sectionHead"><span class="titlemark">32   </span> <a 
- id="x1-4400032"></a>Code-stream orderings and scalabilities</h3>
+   <h3 class="sectionHead"><span class="titlemark">33   </span> <a 
+ id="x1-4500033"></a>Code-stream orderings and scalabilities</h3>
      <ul class="itemize1">
      <li class="itemize">The order in which the DWT coeﬃcients are decoded determines the type
      of scalability (example with 2 qualities and 3 resolutions):</li></ul>
-<!--l. 882--><p class="noindent" ><div style="text-align:center;"> <img width=800 src="graphics/orderers-and-scalabilities.svg" /> </div> 
+<!--l. 973--><p class="noindent" ><div style="text-align:center;"> <img width=800 src="graphics/orderers-and-scalabilities.svg" /> </div> 
 </p><!--l. 1--><p class="noindent" >
 </p>
    <h3 class="likesectionHead"><a 
- id="x1-4500032"></a>References</h3>
+ id="x1-4600033"></a>References</h3>
 <!--l. 1--><p class="noindent" >
    </p><div class="thebibliography">
    <p class="bibitem" ><span class="biblabel">
@@ -4488,7 +4626,7 @@ class="ecti-1000">Wavelets in Computer Graphics</span>, 1997.
 </p>
    </div>
 <a 
- id="Q1-1-46"></a>
+ id="Q1-1-47"></a>
     
 </body> 
 </html>
