@@ -26,7 +26,7 @@ class="ecrm-1200">Vicente Gonz</span><span
 class="ecrm-1200">á</span><span 
 class="ecrm-1200">lez Ruiz</span></div><br />
 <div class="date" ><span 
-class="ecrm-1200">January 11, 2020</span></div>
+class="ecrm-1200">February 1, 2020</span></div>
    </div>
    <h3 class="likesectionHead"><a 
  id="x1-1000"></a>Contents</h3>
@@ -105,29 +105,35 @@ display="inline" ><mi
 >T</mi></math>-levels
 1D-DWT</a></span>
 <br />   <span class="sectionToc" >24 <a 
-href="#x1-3500024" id="QQ2-1-35">2D-DWT</a></span>
+href="#x1-3500024" id="QQ2-1-35">Subband indepency [7]</a></span>
 <br />   <span class="sectionToc" >25 <a 
-href="#x1-3600025" id="QQ2-1-36">Haar ﬁlters [3]</a></span>
+href="#x1-3600025" id="QQ2-1-36">Statistics of the subbands [7]</a></span>
 <br />   <span class="sectionToc" >26 <a 
-href="#x1-3700026" id="QQ2-1-37">Linear (5/3) ﬁlters [6]</a></span>
+href="#x1-3700026" id="QQ2-1-37">Subband quantization [7]</a></span>
 <br />   <span class="sectionToc" >27 <a 
-href="#x1-3800027" id="QQ2-1-38">Orthogonal, orthonormal, and biorthogonal transforms</a></span>
+href="#x1-3800027" id="QQ2-1-38">2D-DWT</a></span>
 <br />   <span class="sectionToc" >28 <a 
-href="#x1-3900028" id="QQ2-1-39">Quantization in the transform domain</a></span>
+href="#x1-3900028" id="QQ2-1-39">Haar ﬁlters [3]</a></span>
 <br />   <span class="sectionToc" >29 <a 
-href="#x1-4000029" id="QQ2-1-40">Bit-planes progression</a></span>
-<br />    <span class="subsectionToc" >29.1 <a 
-href="#x1-4100029.1" id="QQ2-1-41">Bit allocation (bit-rate control)</a></span>
+href="#x1-4000029" id="QQ2-1-40">Linear (5/3) ﬁlters [6]</a></span>
 <br />   <span class="sectionToc" >30 <a 
-href="#x1-4200030" id="QQ2-1-42">Bit allocation based on minimizing the quantization error</a></span>
+href="#x1-4100030" id="QQ2-1-41">Orthogonal, orthonormal, and biorthogonal transforms</a></span>
 <br />   <span class="sectionToc" >31 <a 
-href="#x1-4300031" id="QQ2-1-43">Bit allocation based on minimizing the variance of the quantization error</a></span>
+href="#x1-4200031" id="QQ2-1-42">Quantization in the transform domain</a></span>
 <br />   <span class="sectionToc" >32 <a 
-href="#x1-4400032" id="QQ2-1-44">Encoding</a></span>
+href="#x1-4300032" id="QQ2-1-43">Bit-planes progression</a></span>
+<br />    <span class="subsectionToc" >32.1 <a 
+href="#x1-4400032.1" id="QQ2-1-44">Bit allocation (bit-rate control)</a></span>
 <br />   <span class="sectionToc" >33 <a 
-href="#x1-4500033" id="QQ2-1-45">Code-stream orderings and scalabilities</a></span>
+href="#x1-4500033" id="QQ2-1-45">Bit allocation based on minimizing the quantization error</a></span>
+<br />   <span class="sectionToc" >34 <a 
+href="#x1-4600034" id="QQ2-1-46">Bit allocation based on minimizing the variance of the quantization error</a></span>
+<br />   <span class="sectionToc" >35 <a 
+href="#x1-4700035" id="QQ2-1-47">Encoding</a></span>
+<br />   <span class="sectionToc" >36 <a 
+href="#x1-4800036" id="QQ2-1-48">Code-stream orderings and scalabilities</a></span>
 <br />   <span class="sectionToc" ><a 
-href="#Q1-1-47">References</a></span>
+href="#Q1-1-50">References</a></span>
    </div>
 <!--l. 8--><p class="noindent" >
 </p>
@@ -422,7 +428,7 @@ display="inline" ><mrow
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="block" class="equation">
  <mtable  align="axis" style=""  
-equalrows="false" equalcolumns="false" class="array"> <mtr><mtd 
+equalrows="false" columnlines="" equalcolumns="false" class="array"><mtr><mtd 
 class="array"  columnalign="left">  <msub><mrow 
 ><mrow ><mo 
 class="MathClass-open">[</mo><mrow><mi 
@@ -441,7 +447,7 @@ class="MathClass-rel">=</mo> <msub><mrow
 class="MathClass-punc">,</mo><mi 
 >n</mi></mrow></msub 
 >  </mtd>
-</mtr>  <mtr><mtd 
+</mtr><mtr><mtd 
 class="array"  columnalign="left">  <msub><mrow 
 ><mrow ><mo 
 class="MathClass-open">[</mo><mrow><mi 
@@ -460,7 +466,7 @@ class="MathClass-rel">=</mo> <msub><mrow
 class="MathClass-punc">,</mo><mi 
 >u</mi></mrow></msub 
 ><mo 
-class="MathClass-punc">.</mo> </mtd></mtr><!--l--></mtable>
+class="MathClass-punc">.</mo>  </mtd></mtr><!--l--></mtable>
 </math></td><td class="eq-no">(1)</td></tr></table>
                                                                   
 
@@ -536,24 +542,24 @@ href="https://en.wikipedia.org/wiki/YUV" >YUV</a>).</li></ul>
 display="block" class="equation">
 <mfenced separators="" 
 open="("  close=")" ><mrow> <mtable  align="axis" style=""  
-equalrows="false" equalcolumns="false" class="array"> <mtr><mtd 
+equalrows="false" columnlines="" equalcolumns="false" class="array"><mtr><mtd 
 class="array"  columnalign="center">  <mstyle 
 class="text"><mtext  >Y</mtext></mstyle>  </mtd></mtr><mtr><mtd 
 class="array"  columnalign="center"><mstyle 
 class="text"><mtext  >U</mtext></mstyle></mtd>
-</mtr>  <mtr><mtd 
-class="array"  columnalign="center">  <mstyle 
-class="text"><mtext  >V</mtext></mstyle>  </mtd></mtr><!--c--></mtable>                                                             </mrow></mfenced> <mo 
+</mtr><mtr><mtd 
+class="array"  columnalign="center"> <mstyle 
+class="text"><mtext  >V</mtext></mstyle> </mtd></mtr><!--c--></mtable>                                                              </mrow></mfenced> <mo 
 class="MathClass-rel">=</mo> <mfenced separators="" 
 open="("  close=")" ><mrow> <mtable  align="axis" style=""  
-equalrows="false" columnlines="none none" equalcolumns="false" class="array"> <mtr><mtd 
-class="array"  columnalign="right">        <mn>0</mn><mo 
+equalrows="false" columnlines="none none" equalcolumns="false" class="array"><mtr><mtd 
+class="array"  columnalign="right">       <mn>0</mn><mo 
 class="MathClass-punc">,</mo><mn>2</mn><mn>9</mn><mn>9</mn> </mtd><mtd 
 class="array"  columnalign="right">        <mn>0</mn><mo 
 class="MathClass-punc">,</mo><mn>5</mn><mn>8</mn><mn>7</mn> </mtd><mtd 
 class="array"  columnalign="right">        <mn>0</mn><mo 
 class="MathClass-punc">,</mo><mn>1</mn><mn>4</mn><mn>4</mn> </mtd>
-</mtr>  <mtr><mtd 
+</mtr><mtr><mtd 
 class="array"  columnalign="right">   <mo 
 class="MathClass-bin">−</mo> <mn>0</mn><mo 
 class="MathClass-punc">.</mo><mn>1</mn><mn>4</mn><mn>7</mn><mn>1</mn><mn>3</mn> </mtd><mtd 
@@ -561,7 +567,7 @@ class="array"  columnalign="right">   <mo
 class="MathClass-bin">−</mo> <mn>0</mn><mo 
 class="MathClass-punc">.</mo><mn>2</mn><mn>8</mn><mn>8</mn><mn>8</mn><mn>6</mn> </mtd><mtd 
 class="array"  columnalign="right">        <mn>0</mn><mo 
-class="MathClass-punc">.</mo><mn>4</mn><mn>3</mn><mn>6</mn> </mtd></mtr>  <mtr><mtd 
+class="MathClass-punc">.</mo><mn>4</mn><mn>3</mn><mn>6</mn> </mtd></mtr><mtr><mtd 
 class="array"  columnalign="right">  <mn>0</mn><mo 
 class="MathClass-punc">.</mo><mn>6</mn><mn>1</mn><mn>5</mn> </mtd> <mtd 
 class="array"  columnalign="right">  <mo 
@@ -572,14 +578,14 @@ class="MathClass-bin">−</mo> <mn>0</mn><mo
 class="MathClass-punc">.</mo><mn>1</mn><mn>0</mn><mn>0</mn><mn>0</mn><mn>1</mn></mtd>
 </mtr>    <!--rrr--></mtable>                                                                                                   </mrow></mfenced> <mfenced separators="" 
 open="("  close=")" ><mrow> <mtable  align="axis" style=""  
-equalrows="false" equalcolumns="false" class="array"> <mtr><mtd 
-class="array"  columnalign="center">  <mstyle 
-class="text"><mtext  >R</mtext></mstyle>  </mtd></mtr>  <mtr><mtd 
+equalrows="false" columnlines="" equalcolumns="false" class="array"><mtr><mtd 
+class="array"  columnalign="center"> <mstyle 
+class="text"><mtext  >R</mtext></mstyle>  </mtd></mtr><mtr><mtd 
 class="array"  columnalign="center">  <mstyle 
 class="text"><mtext  >G</mtext></mstyle></mtd>
-</mtr>  <mtr><mtd 
+</mtr><mtr><mtd 
 class="array"  columnalign="center">  <mstyle 
-class="text"><mtext  >B</mtext></mstyle>  </mtd></mtr> <!--c--></mtable>                                                                                                </mrow></mfenced>
+class="text"><mtext  >B</mtext></mstyle>  </mtd></mtr> <!--c--></mtable>                                                                                                 </mrow></mfenced>
 </math></td><td class="eq-no">(3)</td></tr></table>
    <table class="equation"><tr><td> <a 
  id="x1-9002r4"></a>
@@ -588,21 +594,21 @@ class="text"><mtext  >B</mtext></mstyle>  </mtd></mtr> <!--c--></mtable>        
 display="block" class="equation">
 <mfenced separators="" 
 open="("  close=")" ><mrow> <mtable  align="axis" style=""  
-equalrows="false" equalcolumns="false" class="array"> <mtr><mtd 
+equalrows="false" columnlines="" equalcolumns="false" class="array"><mtr><mtd 
 class="array"  columnalign="center">  <mstyle 
 class="text"><mtext  >R</mtext></mstyle>  </mtd></mtr><mtr><mtd 
 class="array"  columnalign="center"><mstyle 
 class="text"><mtext  >G</mtext></mstyle></mtd>
-</mtr>  <mtr><mtd 
-class="array"  columnalign="center">  <mstyle 
-class="text"><mtext  >B</mtext></mstyle>  </mtd></mtr><!--c--></mtable>                                                             </mrow></mfenced> <mo 
+</mtr><mtr><mtd 
+class="array"  columnalign="center"> <mstyle 
+class="text"><mtext  >B</mtext></mstyle> </mtd></mtr><!--c--></mtable>                                                              </mrow></mfenced> <mo 
 class="MathClass-rel">=</mo> <mfenced separators="" 
 open="("  close=")" ><mrow> <mtable  align="axis" style=""  
-equalrows="false" columnlines="none none" equalcolumns="false" class="array"> <mtr><mtd 
+equalrows="false" columnlines="none none" equalcolumns="false" class="array"><mtr><mtd 
 class="array"  columnalign="right">  <mn>1</mn> </mtd><mtd 
 class="array"  columnalign="right">             <mn>0</mn> </mtd><mtd 
 class="array"  columnalign="right">     <mn>1</mn><mo 
-class="MathClass-punc">.</mo><mn>1</mn><mn>3</mn><mn>9</mn><mn>8</mn><mn>3</mn> </mtd></mtr>  <mtr><mtd 
+class="MathClass-punc">.</mo><mn>1</mn><mn>3</mn><mn>9</mn><mn>8</mn><mn>3</mn> </mtd></mtr><mtr><mtd 
 class="array"  columnalign="right">  <mn>1</mn> </mtd> <mtd 
 class="array"  columnalign="right">  <mo 
 class="MathClass-bin">−</mo> <mn>0</mn><mo 
@@ -610,20 +616,20 @@ class="MathClass-punc">.</mo><mn>3</mn><mn>9</mn><mn>4</mn><mn>6</mn><mn>5</mn> 
 class="array"  columnalign="right">  <mo 
 class="MathClass-bin">−</mo> <mn>0</mn><mo 
 class="MathClass-punc">.</mo><mn>5</mn><mn>8</mn><mn>0</mn><mn>6</mn><mn>0</mn></mtd>
-</mtr>  <mtr><mtd 
+</mtr><mtr><mtd 
 class="array"  columnalign="right">  <mn>1</mn> </mtd><mtd 
 class="array"  columnalign="right">     <mn>2</mn><mo 
 class="MathClass-punc">.</mo><mn>0</mn><mn>3</mn><mn>2</mn><mn>1</mn><mn>1</mn> </mtd><mtd 
-class="array"  columnalign="right">             <mn>0</mn> </mtd></mtr> <!--rrr--></mtable>                                                                </mrow></mfenced> <mfenced separators="" 
+class="array"  columnalign="right">             <mn>0</mn> </mtd></mtr> <!--rrr--></mtable>                                                                 </mrow></mfenced> <mfenced separators="" 
 open="("  close=")" ><mrow> <mtable  align="axis" style=""  
-equalrows="false" equalcolumns="false" class="array"> <mtr><mtd 
+equalrows="false" columnlines="" equalcolumns="false" class="array"><mtr><mtd 
 class="array"  columnalign="center"> <mstyle 
-class="text"><mtext  >Y</mtext></mstyle>  </mtd></mtr>  <mtr><mtd 
+class="text"><mtext  >Y</mtext></mstyle>  </mtd></mtr><mtr><mtd 
 class="array"  columnalign="center">  <mstyle 
 class="text"><mtext  >U</mtext></mstyle></mtd>
-</mtr>  <mtr><mtd 
+</mtr><mtr><mtd 
 class="array"  columnalign="center">  <mstyle 
-class="text"><mtext  >V</mtext></mstyle>  </mtd></mtr> <!--c--></mtable>                                                                                                </mrow></mfenced>
+class="text"><mtext  >V</mtext></mstyle>  </mtd></mtr> <!--c--></mtable>                                                                                                 </mrow></mfenced>
 </math></td><td class="eq-no">(4)</td></tr></table>
      <ul class="itemize1">
      <li class="itemize">Later, in digital video, the YUV color domain was called the <a 
@@ -761,13 +767,13 @@ class="MathClass-punc">.</mo>
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="block" class="equation">
  <mtable  align="axis" style=""  
-equalrows="false" equalcolumns="false" class="array"> <mtr><mtd 
+equalrows="false" columnlines="" equalcolumns="false" class="array"><mtr><mtd 
 class="array"  columnalign="left">  <mi 
 >C</mi> <mo 
 class="MathClass-rel">=</mo> <mi 
 >A</mi><mi 
 >c</mi>   </mtd>
-</mtr>  <mtr><mtd 
+</mtr><mtr><mtd 
 class="array"  columnalign="left"> <mi 
 >c</mi> <mo 
 class="MathClass-rel">=</mo> <msup><mrow 
@@ -1264,190 +1270,17 @@ display="block" class="equation"><msub><mrow
 class="MathClass-rel">=</mo>  <mfenced separators="" 
 open="["  close="]" ><mrow><mtable  align="axis" style=""  
 equalrows="false" columnlines="none none none none none none none none none" equalcolumns="false" class="array"><mtr><mtd 
-class="array"  columnalign="center">  <mo class="qopname">E</mo><!--nolimits--><mrow ><mo 
-class="MathClass-open">[</mo><mrow><mrow ><mo 
-class="MathClass-open">(</mo><mrow><msub><mrow 
-><mi 
->Z</mi></mrow><mrow 
-><mn>1</mn></mrow></msub 
-> <mo 
-class="MathClass-bin">−</mo> <msub><mrow 
-><mi 
->μ</mi></mrow><mrow 
-><mn>1</mn></mrow></msub 
-></mrow><mo 
-class="MathClass-close">)</mo></mrow><mrow ><mo 
-class="MathClass-open">(</mo><mrow><msub><mrow 
-><mi 
->Z</mi></mrow><mrow 
-><mn>1</mn></mrow></msub 
-> <mo 
-class="MathClass-bin">−</mo> <msub><mrow 
-><mi 
->μ</mi></mrow><mrow 
-><mn>1</mn></mrow></msub 
-></mrow><mo 
-class="MathClass-close">)</mo></mrow></mrow><mo 
-class="MathClass-close">]</mo></mrow>  </mtd><mtd 
-class="array"  columnalign="center">  <mo class="qopname">E</mo><!--nolimits--><mrow ><mo 
-class="MathClass-open">[</mo><mrow><mrow ><mo 
-class="MathClass-open">(</mo><mrow><msub><mrow 
-><mi 
->Z</mi></mrow><mrow 
-><mn>1</mn></mrow></msub 
-> <mo 
-class="MathClass-bin">−</mo> <msub><mrow 
-><mi 
->μ</mi></mrow><mrow 
-><mn>1</mn></mrow></msub 
-></mrow><mo 
-class="MathClass-close">)</mo></mrow><mrow ><mo 
-class="MathClass-open">(</mo><mrow><msub><mrow 
-><mi 
->Z</mi></mrow><mrow 
-><mn>2</mn></mrow></msub 
-> <mo 
-class="MathClass-bin">−</mo> <msub><mrow 
-><mi 
->μ</mi></mrow><mrow 
-><mn>2</mn></mrow></msub 
-></mrow><mo 
-class="MathClass-close">)</mo></mrow></mrow><mo 
-class="MathClass-close">]</mo></mrow>  </mtd><mtd 
-class="array"  columnalign="center"> <mo 
-class="MathClass-rel">⋯</mo> </mtd><mtd 
-class="array"  columnalign="center">  <mo class="qopname">E</mo><!--nolimits--><mrow ><mo 
-class="MathClass-open">[</mo><mrow><mrow ><mo 
-class="MathClass-open">(</mo><mrow><msub><mrow 
-><mi 
->Z</mi></mrow><mrow 
-><mn>1</mn></mrow></msub 
-> <mo 
-class="MathClass-bin">−</mo> <msub><mrow 
-><mi 
->μ</mi></mrow><mrow 
-><mn>1</mn></mrow></msub 
-></mrow><mo 
-class="MathClass-close">)</mo></mrow><mrow ><mo 
-class="MathClass-open">(</mo><mrow><msub><mrow 
-><mi 
->Z</mi></mrow><mrow 
-><mi 
->n</mi></mrow></msub 
-> <mo 
-class="MathClass-bin">−</mo> <msub><mrow 
-><mi 
->μ</mi></mrow><mrow 
-><mi 
->n</mi></mrow></msub 
-></mrow><mo 
-class="MathClass-close">)</mo></mrow></mrow><mo 
-class="MathClass-close">]</mo></mrow>  </mtd></mtr> <mtr><mtd 
-class="array"  columnalign="center"> </mtd>
-</mtr><mtr><mtd 
-class="array"  columnalign="center">  <mo class="qopname">E</mo><!--nolimits--><mrow ><mo 
-class="MathClass-open">[</mo><mrow><mrow ><mo 
-class="MathClass-open">(</mo><mrow><msub><mrow 
-><mi 
->Z</mi></mrow><mrow 
-><mn>2</mn></mrow></msub 
-> <mo 
-class="MathClass-bin">−</mo> <msub><mrow 
-><mi 
->μ</mi></mrow><mrow 
-><mn>2</mn></mrow></msub 
-></mrow><mo 
-class="MathClass-close">)</mo></mrow><mrow ><mo 
-class="MathClass-open">(</mo><mrow><msub><mrow 
-><mi 
->Z</mi></mrow><mrow 
-><mn>1</mn></mrow></msub 
-> <mo 
-class="MathClass-bin">−</mo> <msub><mrow 
-><mi 
->μ</mi></mrow><mrow 
-><mn>1</mn></mrow></msub 
-></mrow><mo 
-class="MathClass-close">)</mo></mrow></mrow><mo 
-class="MathClass-close">]</mo></mrow>  </mtd><mtd 
-class="array"  columnalign="center">  <mo class="qopname">E</mo><!--nolimits--><mrow ><mo 
-class="MathClass-open">[</mo><mrow><mrow ><mo 
-class="MathClass-open">(</mo><mrow><msub><mrow 
-><mi 
->Z</mi></mrow><mrow 
-><mn>2</mn></mrow></msub 
-> <mo 
-class="MathClass-bin">−</mo> <msub><mrow 
-><mi 
->μ</mi></mrow><mrow 
-><mn>2</mn></mrow></msub 
-></mrow><mo 
-class="MathClass-close">)</mo></mrow><mrow ><mo 
-class="MathClass-open">(</mo><mrow><msub><mrow 
-><mi 
->Z</mi></mrow><mrow 
-><mn>2</mn></mrow></msub 
-> <mo 
-class="MathClass-bin">−</mo> <msub><mrow 
-><mi 
->μ</mi></mrow><mrow 
-><mn>2</mn></mrow></msub 
-></mrow><mo 
-class="MathClass-close">)</mo></mrow></mrow><mo 
-class="MathClass-close">]</mo></mrow>  </mtd><mtd 
-class="array"  columnalign="center"> <mo 
-class="MathClass-rel">⋯</mo> </mtd><mtd 
-class="array"  columnalign="center">  <mo class="qopname">E</mo><!--nolimits--><mrow ><mo 
-class="MathClass-open">[</mo><mrow><mrow ><mo 
-class="MathClass-open">(</mo><mrow><msub><mrow 
-><mi 
->Z</mi></mrow><mrow 
-><mn>2</mn></mrow></msub 
-> <mo 
-class="MathClass-bin">−</mo> <msub><mrow 
-><mi 
->μ</mi></mrow><mrow 
-><mn>2</mn></mrow></msub 
-></mrow><mo 
-class="MathClass-close">)</mo></mrow><mrow ><mo 
-class="MathClass-open">(</mo><mrow><msub><mrow 
-><mi 
->Z</mi></mrow><mrow 
-><mi 
->n</mi></mrow></msub 
-> <mo 
-class="MathClass-bin">−</mo> <msub><mrow 
-><mi 
->μ</mi></mrow><mrow 
-><mi 
->n</mi></mrow></msub 
-></mrow><mo 
-class="MathClass-close">)</mo></mrow></mrow><mo 
-class="MathClass-close">]</mo></mrow>  </mtd></mtr> <mtr><mtd 
-class="array"  columnalign="center"> </mtd></mtr> <mtr><mtd 
-class="array"  columnalign="center"> <mo 
-class="MathClass-op">⋮</mo> </mtd> <mtd 
-class="array"  columnalign="center"> <mo 
-class="MathClass-op">⋮</mo> </mtd> <mtd 
-class="array"  columnalign="center"> <mo 
-class="MathClass-rel">⋱</mo> </mtd> <mtd 
-class="array"  columnalign="center"> <mo 
-class="MathClass-op">⋮</mo></mtd></mtr> <mtr><mtd 
-class="array"  columnalign="center"> </mtd>
-</mtr><mtr><mtd 
 class="array"  columnalign="center"> <mo class="qopname">E</mo><!--nolimits--><mrow ><mo 
 class="MathClass-open">[</mo><mrow><mrow ><mo 
 class="MathClass-open">(</mo><mrow><msub><mrow 
 ><mi 
 >Z</mi></mrow><mrow 
-><mi 
->n</mi></mrow></msub 
+><mn>1</mn></mrow></msub 
 > <mo 
 class="MathClass-bin">−</mo> <msub><mrow 
 ><mi 
 >μ</mi></mrow><mrow 
-><mi 
->n</mi></mrow></msub 
+><mn>1</mn></mrow></msub 
 ></mrow><mo 
 class="MathClass-close">)</mo></mrow><mrow ><mo 
 class="MathClass-open">(</mo><mrow><msub><mrow 
@@ -1462,6 +1295,179 @@ class="MathClass-bin">−</mo> <msub><mrow
 ></mrow><mo 
 class="MathClass-close">)</mo></mrow></mrow><mo 
 class="MathClass-close">]</mo></mrow> </mtd><mtd 
+class="array"  columnalign="center">  <mo class="qopname">E</mo><!--nolimits--><mrow ><mo 
+class="MathClass-open">[</mo><mrow><mrow ><mo 
+class="MathClass-open">(</mo><mrow><msub><mrow 
+><mi 
+>Z</mi></mrow><mrow 
+><mn>1</mn></mrow></msub 
+> <mo 
+class="MathClass-bin">−</mo> <msub><mrow 
+><mi 
+>μ</mi></mrow><mrow 
+><mn>1</mn></mrow></msub 
+></mrow><mo 
+class="MathClass-close">)</mo></mrow><mrow ><mo 
+class="MathClass-open">(</mo><mrow><msub><mrow 
+><mi 
+>Z</mi></mrow><mrow 
+><mn>2</mn></mrow></msub 
+> <mo 
+class="MathClass-bin">−</mo> <msub><mrow 
+><mi 
+>μ</mi></mrow><mrow 
+><mn>2</mn></mrow></msub 
+></mrow><mo 
+class="MathClass-close">)</mo></mrow></mrow><mo 
+class="MathClass-close">]</mo></mrow>  </mtd><mtd 
+class="array"  columnalign="center"> <mo 
+class="MathClass-rel">⋯</mo> </mtd><mtd 
+class="array"  columnalign="center">  <mo class="qopname">E</mo><!--nolimits--><mrow ><mo 
+class="MathClass-open">[</mo><mrow><mrow ><mo 
+class="MathClass-open">(</mo><mrow><msub><mrow 
+><mi 
+>Z</mi></mrow><mrow 
+><mn>1</mn></mrow></msub 
+> <mo 
+class="MathClass-bin">−</mo> <msub><mrow 
+><mi 
+>μ</mi></mrow><mrow 
+><mn>1</mn></mrow></msub 
+></mrow><mo 
+class="MathClass-close">)</mo></mrow><mrow ><mo 
+class="MathClass-open">(</mo><mrow><msub><mrow 
+><mi 
+>Z</mi></mrow><mrow 
+><mi 
+>n</mi></mrow></msub 
+> <mo 
+class="MathClass-bin">−</mo> <msub><mrow 
+><mi 
+>μ</mi></mrow><mrow 
+><mi 
+>n</mi></mrow></msub 
+></mrow><mo 
+class="MathClass-close">)</mo></mrow></mrow><mo 
+class="MathClass-close">]</mo></mrow>  </mtd></mtr><mtr><mtd 
+class="array"  columnalign="center"> </mtd>
+</mtr><mtr><mtd 
+class="array"  columnalign="center"><mo class="qopname">E</mo><!--nolimits--><mrow ><mo 
+class="MathClass-open">[</mo><mrow><mrow ><mo 
+class="MathClass-open">(</mo><mrow><msub><mrow 
+><mi 
+>Z</mi></mrow><mrow 
+><mn>2</mn></mrow></msub 
+> <mo 
+class="MathClass-bin">−</mo> <msub><mrow 
+><mi 
+>μ</mi></mrow><mrow 
+><mn>2</mn></mrow></msub 
+></mrow><mo 
+class="MathClass-close">)</mo></mrow><mrow ><mo 
+class="MathClass-open">(</mo><mrow><msub><mrow 
+><mi 
+>Z</mi></mrow><mrow 
+><mn>1</mn></mrow></msub 
+> <mo 
+class="MathClass-bin">−</mo> <msub><mrow 
+><mi 
+>μ</mi></mrow><mrow 
+><mn>1</mn></mrow></msub 
+></mrow><mo 
+class="MathClass-close">)</mo></mrow></mrow><mo 
+class="MathClass-close">]</mo></mrow>  </mtd><mtd 
+class="array"  columnalign="center">  <mo class="qopname">E</mo><!--nolimits--><mrow ><mo 
+class="MathClass-open">[</mo><mrow><mrow ><mo 
+class="MathClass-open">(</mo><mrow><msub><mrow 
+><mi 
+>Z</mi></mrow><mrow 
+><mn>2</mn></mrow></msub 
+> <mo 
+class="MathClass-bin">−</mo> <msub><mrow 
+><mi 
+>μ</mi></mrow><mrow 
+><mn>2</mn></mrow></msub 
+></mrow><mo 
+class="MathClass-close">)</mo></mrow><mrow ><mo 
+class="MathClass-open">(</mo><mrow><msub><mrow 
+><mi 
+>Z</mi></mrow><mrow 
+><mn>2</mn></mrow></msub 
+> <mo 
+class="MathClass-bin">−</mo> <msub><mrow 
+><mi 
+>μ</mi></mrow><mrow 
+><mn>2</mn></mrow></msub 
+></mrow><mo 
+class="MathClass-close">)</mo></mrow></mrow><mo 
+class="MathClass-close">]</mo></mrow>  </mtd><mtd 
+class="array"  columnalign="center"> <mo 
+class="MathClass-rel">⋯</mo> </mtd><mtd 
+class="array"  columnalign="center">  <mo class="qopname">E</mo><!--nolimits--><mrow ><mo 
+class="MathClass-open">[</mo><mrow><mrow ><mo 
+class="MathClass-open">(</mo><mrow><msub><mrow 
+><mi 
+>Z</mi></mrow><mrow 
+><mn>2</mn></mrow></msub 
+> <mo 
+class="MathClass-bin">−</mo> <msub><mrow 
+><mi 
+>μ</mi></mrow><mrow 
+><mn>2</mn></mrow></msub 
+></mrow><mo 
+class="MathClass-close">)</mo></mrow><mrow ><mo 
+class="MathClass-open">(</mo><mrow><msub><mrow 
+><mi 
+>Z</mi></mrow><mrow 
+><mi 
+>n</mi></mrow></msub 
+> <mo 
+class="MathClass-bin">−</mo> <msub><mrow 
+><mi 
+>μ</mi></mrow><mrow 
+><mi 
+>n</mi></mrow></msub 
+></mrow><mo 
+class="MathClass-close">)</mo></mrow></mrow><mo 
+class="MathClass-close">]</mo></mrow>  </mtd></mtr><mtr><mtd 
+class="array"  columnalign="center"> </mtd></mtr><mtr><mtd 
+class="array"  columnalign="center"> <mo 
+class="MathClass-op">⋮</mo> </mtd> <mtd 
+class="array"  columnalign="center"> <mo 
+class="MathClass-op">⋮</mo> </mtd> <mtd 
+class="array"  columnalign="center"> <mo 
+class="MathClass-rel">⋱</mo> </mtd> <mtd 
+class="array"  columnalign="center"> <mo 
+class="MathClass-op">⋮</mo></mtd></mtr><mtr><mtd 
+class="array"  columnalign="center"> </mtd>
+</mtr><mtr><mtd 
+class="array"  columnalign="center"><mo class="qopname">E</mo><!--nolimits--><mrow ><mo 
+class="MathClass-open">[</mo><mrow><mrow ><mo 
+class="MathClass-open">(</mo><mrow><msub><mrow 
+><mi 
+>Z</mi></mrow><mrow 
+><mi 
+>n</mi></mrow></msub 
+> <mo 
+class="MathClass-bin">−</mo> <msub><mrow 
+><mi 
+>μ</mi></mrow><mrow 
+><mi 
+>n</mi></mrow></msub 
+></mrow><mo 
+class="MathClass-close">)</mo></mrow><mrow ><mo 
+class="MathClass-open">(</mo><mrow><msub><mrow 
+><mi 
+>Z</mi></mrow><mrow 
+><mn>1</mn></mrow></msub 
+> <mo 
+class="MathClass-bin">−</mo> <msub><mrow 
+><mi 
+>μ</mi></mrow><mrow 
+><mn>1</mn></mrow></msub 
+></mrow><mo 
+class="MathClass-close">)</mo></mrow></mrow><mo 
+class="MathClass-close">]</mo></mrow>  </mtd><mtd 
 class="array"  columnalign="center"> <mo class="qopname">E</mo><!--nolimits--><mrow ><mo 
 class="MathClass-open">[</mo><mrow><mrow ><mo 
 class="MathClass-open">(</mo><mrow><msub><mrow 
@@ -1694,7 +1700,7 @@ display="inline" ><mrow
 display="inline" ><mrow 
 ><mi 
 >Y</mi> </mrow></math> is the
-Pearson product-moment correlation coeﬃcient, or “Pearson’s correlation
+Pearson product-moment correlation coeﬃcient, or “Pearson&#x2019;s correlation
 coeﬃcient”, commonly called simply “the correlation coeﬃcient”. It is obtained by
 dividing the covariance of the two variables by the product of their standard
 deviations.
@@ -2263,12 +2269,12 @@ class="MathClass-rel">=</mo>  <mfrac><mrow
 <mrow 
 ><msqrt><mrow><mn>2</mn></mrow></msqrt></mrow></mfrac> <mfenced separators="" 
 open="["  close="]" ><mrow> <mtable  align="axis" style=""  
-equalrows="false" columnlines="none" equalcolumns="false" class="array"> <mtr><mtd 
+equalrows="false" columnlines="none" equalcolumns="false" class="array"><mtr><mtd 
 class="array"  columnalign="center"> <mn>1</mn> </mtd><mtd 
-class="array"  columnalign="center">   <mn>1</mn>   </mtd></mtr>  <mtr><mtd 
+class="array"  columnalign="center">   <mn>1</mn>   </mtd></mtr><mtr><mtd 
 class="array"  columnalign="center">  <mn>1</mn> </mtd> <mtd 
 class="array"  columnalign="center">  <mo 
-class="MathClass-bin">−</mo> <mn>1</mn></mtd></mtr><!--cc--></mtable>                                                                                         </mrow></mfenced>
+class="MathClass-bin">−</mo> <mn>1</mn></mtd></mtr><!--cc--></mtable>                                                                                          </mrow></mfenced>
 </math></td><td class="eq-no">(23)</td></tr></table>
      <!--l. 426--><p class="noindent" >for all signals.</p></li></ul>
 <!--l. 429--><p class="noindent" >
@@ -2276,10 +2282,12 @@ class="MathClass-bin">−</mo> <mn>1</mn></mtd></mtr><!--cc--></mtable>         
    <h3 class="sectionHead"><span class="titlemark">19   </span> <a 
  id="x1-2800019"></a>Discrete cosine transform (DCT))</h3>
 <!--l. 431--><p class="noindent" ><a 
- id="definition"></a>
+ id="definition">
 </p>
    <h5 class="subsubsectionHead"><span class="titlemark">19.0.1   </span> <a 
  id="x1-2900019.0.1"></a>Deﬁnition</h5>
+<!--l. 431--><p class="noindent" ></a>
+</p>
      <ul class="itemize1">
      <li class="itemize">The forward (direct) transform is
      <table class="equation"><tr><td> <a 
@@ -2421,22 +2429,22 @@ class="MathClass-open">(</mo><mrow><mi
 class="MathClass-close">)</mo></mrow> <mo 
 class="MathClass-rel">=</mo> <mfenced separators="" 
 open="{"  close="" ><mrow> <mtable  align="axis" style=""  
-equalrows="false" columnlines="none" equalcolumns="false" class="array"> <mtr><mtd 
+equalrows="false" columnlines="none" equalcolumns="false" class="array"><mtr><mtd 
 class="array"  columnalign="left">   <mfrac><mrow 
 ><mn>1</mn></mrow> 
 <mrow 
 ><msqrt><mrow><mn>2</mn></mrow></msqrt></mrow></mfrac>  </mtd><mtd 
 class="array"  columnalign="left">  <mstyle 
-class="text"><mtext  >si</mtext></mstyle><mspace width="0.33em" class="nbsp" /><mi 
+class="text"><mtext  >si</mtext></mstyle><mspace width="1em" class="nbsp" /><mi 
 >u</mi> <mo 
 class="MathClass-rel">=</mo> <mn>0</mn>  </mtd>
-</mtr>  <mtr><mtd 
-class="array"  columnalign="left">  <mn>1</mn>    </mtd><mtd 
+</mtr><mtr><mtd 
+class="array"  columnalign="left">  <mn>1</mn>     </mtd><mtd 
 class="array"  columnalign="left">  <mstyle 
-class="text"><mtext  >if</mtext></mstyle><mspace width="0.33em" class="nbsp" /><mi 
+class="text"><mtext  >if</mtext></mstyle><mspace width="1em" class="nbsp" /><mi 
 >u</mi> <mo 
 class="MathClass-rel">&#x003E;</mo> <mn>0</mn><mo 
-class="MathClass-punc">.</mo> </mtd></mtr><!--ll--></mtable>                                                                     </mrow></mfenced>
+class="MathClass-punc">.</mo> </mtd></mtr><!--ll--></mtable>                                                                      </mrow></mfenced>
 </math></td><td class="eq-no">(26)</td></tr></table>
      </li></ul>
                                                                   
@@ -2548,7 +2556,7 @@ class="MathClass-close">)</mo></mrow>
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="block" class="equation">
  <mtable  align="axis" style=""  
-equalrows="false" columnlines="none none" equalcolumns="false" class="array"> <mtr><mtd 
+equalrows="false" columnlines="none none" equalcolumns="false" class="array"><mtr><mtd 
 class="array"  columnalign="right">  <mi 
 >L</mi> </mtd><mtd 
 class="array"  columnalign="center">  <mo 
@@ -2567,8 +2575,8 @@ class="text"><mtext  >a</mtext></mstyle></mrow><mrow
 >L</mi></mrow></msub 
 ></mrow><mo 
 class="MathClass-close">)</mo></mrow>   </mtd>
-</mtr>  <mtr><mtd 
-class="array"  columnalign="right">  <mi 
+</mtr><mtr><mtd 
+class="array"  columnalign="right"> <mi 
 >H</mi> </mtd><mtd 
 class="array"  columnalign="center">  <mo 
 class="MathClass-rel">=</mo> </mtd><mtd 
@@ -2611,7 +2619,7 @@ class="text"><mtext  >a</mtext></mstyle></mrow><mrow
 >H</mi></mrow></msub 
 ></mrow></math>
      are the transfer function (the transfer function of a ﬁlter is the response
-     of that ﬁlter to the unitary impulse function (Dirac’s delta)) of a low-pass
+     of that ﬁlter to the unitary impulse function (Dirac&#x2019;s delta)) of a low-pass
      ﬁlter  and  high-pass  ﬁlter,  respectively,  that  have  been  designed  to  be
      complementary (ideally, in <!--l. 516--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
@@ -2692,12 +2700,12 @@ display="inline" ><mrow
 class="MathClass-open">(</mo><mrow><mo 
 class="MathClass-bin">⋅</mo></mrow><mo 
 class="MathClass-close">)</mo></mrow></mrow></math>
-     donote the subsampling and oversampling operations:</li></ol>
-   <table class="equation"><tr><td> <a 
- id="x1-32009r29"></a>
                                                                   
 
                                                                   
+     donote the subsampling and oversampling operations:</li></ol>
+   <table class="equation"><tr><td> <a 
+ id="x1-32009r29"></a>
 <!--l. 531--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="block" class="equation">
@@ -2747,7 +2755,7 @@ class="MathClass-close">)</mo></mrow></mrow><mrow
 > <mo 
 class="MathClass-rel">=</mo> <mfenced separators="" 
 open="{"  close="" ><mrow> <mtable  align="axis" style=""  
-equalrows="false" columnlines="none" equalcolumns="false" class="array"> <mtr><mtd 
+equalrows="false" columnlines="none" equalcolumns="false" class="array"><mtr><mtd 
 class="array"  columnalign="left">  <msub><mrow 
 ><mi 
 >s</mi></mrow><mrow 
@@ -2759,8 +2767,8 @@ class="array"  columnalign="left">  <mstyle
 class="text"><mtext  >if </mtext><mstyle 
 class="math"><mi 
 >i</mi></mstyle><mtext  > if even</mtext></mstyle>  </mtd>
-</mtr>  <mtr><mtd 
-class="array"  columnalign="left">  <mn>0</mn>     </mtd><mtd 
+</mtr><mtr><mtd 
+class="array"  columnalign="left">  <mn>0</mn>      </mtd><mtd 
 class="array"  columnalign="left">  <mstyle 
 class="text"><mtext  >otherwise</mtext></mstyle><mo 
 class="MathClass-punc">.</mo> </mtd></mtr> <!--ll--></mtable>                                                                  </mrow></mfenced>
@@ -2796,6 +2804,9 @@ class="MathClass-bin">∗</mo></mrow></math>
      </li>
      <li 
   class="enumerate" id="x1-32014x5">Notice that half of the ﬁltered samples are wasted.</li></ol>
+                                                                  
+
+                                                                  
 <!--l. 557--><p class="noindent" >
 </p>
    <h3 class="sectionHead"><span class="titlemark">22   </span> <a 
@@ -2804,9 +2815,6 @@ href="#Xsweldens1997building">6</a>]</span></h3>
 <!--l. 558--><p class="noindent" ><div style="text-align:center;"> <img width=1000 src="graphics/lifting.svg" /> </div> 
 </p><!--l. 560--><p class="indent" >   Comments:
 </p><!--l. 562--><p class="indent" >
-                                                                  
-
-                                                                  
      </p><ol  class="enumerate1" >
      <li 
   class="enumerate" id="x1-33002x1"><table class="equation"><tr><td> <a 
@@ -3024,27 +3032,67 @@ display="inline" ><mrow
 display="inline" ><mi 
 >T</mi></math>-levels
 1D-DWT</h3>
-<!--l. 610--><p class="noindent" ><div style="text-align:center;"> <img width=1000 src="graphics/n_levels_dwt1d.svg" /> </div> 
                                                                   
 
                                                                   
+<!--l. 610--><p class="noindent" ><div style="text-align:center;"> <img width=1000 src="graphics/n_levels_dwt1d.svg" /> </div> 
 </p><!--l. 612--><p class="noindent" >
 </p>
    <h3 class="sectionHead"><span class="titlemark">24   </span> <a 
- id="x1-3500024"></a>2D-DWT</h3>
+ id="x1-3500024"></a>Subband indepency <span class="cite">[<a 
+href="#Xvetterli1995wavelets">7</a>]</span></h3>
+<!--l. 613--><p class="noindent" >While the subbands are only independent if the input is a Gaussian random variable
+and the ﬁlters decorrelate the subbands (the ﬁlters are ideal), the independence
+assumption is ofte made because it makes he system simpler.
+</p><!--l. 618--><p class="noindent" >
+</p>
+   <h3 class="sectionHead"><span class="titlemark">25   </span> <a 
+ id="x1-3600025"></a>Statistics of the subbands <span class="cite">[<a 
+href="#Xvetterli1995wavelets">7</a>]</span></h3>
+<!--l. 619--><p class="noindent" >The PDF of the coeﬃcients of the high-frequency subbands peaks in zero and falls oﬀ
+very rapidly. While is it often modeled as a Laplacian distribution, it is actually
+falling oﬀ faster. It is more adequately ﬁtted with a generalized Gaussian PDF with
+faster decay than the Laplacian PDF.
+</p><!--l. 625--><p class="noindent" >
+</p>
+   <h3 class="sectionHead"><span class="titlemark">26   </span> <a 
+ id="x1-3700026"></a>Subband quantization <span class="cite">[<a 
+href="#Xvetterli1995wavelets">7</a>]</span></h3>
+<!--l. 626--><p class="noindent" >Besides the low band compression, which uses known image coding methods, the bulk
+of the compression is obtained by appropiate quantization of the high bands. The
+following <a 
+href="https://vicente-gonzalez-ruiz.github.io/quantization/" >quantizers</a> are typically used:
+     </p><ol  class="enumerate1" >
+     <li 
+  class="enumerate" id="x1-37002x1">Lloyd quantizers ﬁtted to the PDF of the particular subband.
+     </li>
+     <li 
+  class="enumerate" id="x1-37004x2">Deadzone  uniform  quantizers,  since  they  tend  to  eliminate  what  is
+     essentially noise.</li></ol>
+<!--l. 635--><p class="noindent" >Because entropy coding is used after quantization, uniform quantizers are nearly
+optimal. Note that VQ could be used in the subbands, but its complexity is
+usually not worthwhile since there is little dependence between coeﬃcients
+anyway.
+</p><!--l. 640--><p class="noindent" >
+</p>
+   <h3 class="sectionHead"><span class="titlemark">27   </span> <a 
+ id="x1-3800027"></a>2D-DWT</h3>
+                                                                  
+
+                                                                  
      <ul class="itemize1">
      <li class="itemize">The one-dimensional (1D) DWT is a separable transform. Therefore, the
      2D DWT can be computed applying the DWT to all the rows of an image
      and next, to all the columns, or viceversa.</li></ul>
-<!--l. 621--><p class="noindent" ><div style="text-align:center;"> <img width=800 src="graphics/2D-DWT.svg" /> </div> 
+<!--l. 649--><p class="noindent" ><div style="text-align:center;"> <img width=800 src="graphics/2D-DWT.svg" /> </div> 
 </p>
      <ul class="itemize1">
-     <li class="itemize">The contribution of a coeﬃcient of a subband <!--l. 626--><math 
+     <li class="itemize">The contribution of a coeﬃcient of a subband <!--l. 654--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mrow 
 ><mi 
 >b</mi></mrow></math>
-     is determined by the DWT basis fuction <!--l. 627--><math 
+     is determined by the DWT basis fuction <!--l. 655--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mrow 
 ><msup><mrow 
@@ -3059,7 +3107,7 @@ display="inline" ><mrow
 ></mrow></math>
      asociated  to  that  coeﬃcient,  which  can  be  empirically  determined  by
      applying the inverse DWT to the Dirac Impulse function localized in that
-     coeﬃcient (notice that <!--l. 630--><math 
+     coeﬃcient (notice that <!--l. 658--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mrow 
 ><msup><mrow 
@@ -3075,22 +3123,22 @@ display="inline" ><mrow
      does  not  depend  on  the  coeﬃcient  because  we  are  supposing  that  all
      the coeﬃcients of a subband have the same contribution, the same basis
      fuction) <span class="cite">[<span 
-class="ecbx-1000">?</span>]</span>. Therefore, the L<!--l. 633--><math 
+class="ecbx-1000">?</span>]</span>. Therefore, the L<!--l. 661--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><msub><mrow 
 ><mrow 
 ></mrow><mrow 
 ><mn>2</mn></mrow></msub 
 ></mrow></math>-norm
-     for the subband <!--l. 634--><math 
+     for the subband <!--l. 662--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mrow 
 ><mi 
 >b</mi></mrow></math>
      is computed as the energy of a basis function of that subband as</li></ul>
    <table class="equation"><tr><td> <a 
- id="x1-35001r31"></a>
-<!--l. 638--><math 
+ id="x1-38001r31"></a>
+<!--l. 666--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="block" class="equation">
                         <mi 
@@ -3131,8 +3179,8 @@ class="MathClass-rel">|</mo></mrow><mrow
 ><mo 
 class="MathClass-punc">.</mo>
 </math></td><td class="eq-no">(31)</td></tr></table>
-<!--l. 642--><p class="indent" >   In  the  case  of  the  5/3-DWT,  the
-L<!--l. 642--><math 
+<!--l. 670--><p class="indent" >   In  the  case  of  the  5/3-DWT,  the
+L<!--l. 670--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><msub><mrow 
 ><mrow 
@@ -3140,15 +3188,12 @@ display="inline" ><msub><mrow
 ><mn>2</mn></mrow></msub 
 ></mrow></math>-norms
 of the DWT subbands are: <div style="text-align:center;"> <img width=400 src="graphics/factores_5_3_L2_norm.svg" /> </div> 
-</p><!--l. 645--><p class="noindent" >
+</p><!--l. 673--><p class="noindent" >
 </p>
-   <h3 class="sectionHead"><span class="titlemark">25   </span> <a 
- id="x1-3600025"></a>Haar ﬁlters <span class="cite">[<a 
+   <h3 class="sectionHead"><span class="titlemark">28   </span> <a 
+ id="x1-3900028"></a>Haar ﬁlters <span class="cite">[<a 
 href="#Xhaar1910theorie">3</a>]</span></h3>
-                                                                  
-
-                                                                  
-<!--l. 646--><p class="noindent" >The <!--l. 646--><math 
+<!--l. 674--><p class="noindent" >The <!--l. 674--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mrow 
 ><mi 
@@ -3157,8 +3202,11 @@ sample of the low-frequency subband is computed (using a ﬁlter plus subsamplin
 as
 </p>
    <table class="equation"><tr><td> <a 
- id="x1-36001r32"></a>
-<!--l. 649--><math 
+ id="x1-39001r32"></a>
+                                                                  
+
+                                                                  
+<!--l. 677--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="block" class="equation">
                           <msub><mrow 
@@ -3185,10 +3233,10 @@ class="MathClass-bin">+</mo><mn>1</mn></mrow></msub
 ><mn>2</mn></mrow></mfrac>       <mo 
 class="MathClass-punc">,</mo>
                                                                   <mstyle 
-   id="x1-36002r31"  class="label" ></mstyle><!--endlabel-->
+   id="x1-39002r31"  class="label" ></mstyle><!--endlabel-->
 </math></td><td class="eq-no">(HaarL)<a 
- id="x1-36003r31"></a></td></tr></table>
-<!--l. 655--><p class="indent" >   and the <!--l. 655--><math 
+ id="x1-39003r31"></a></td></tr></table>
+<!--l. 683--><p class="indent" >   and the <!--l. 683--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mrow 
 ><mi 
@@ -3196,8 +3244,8 @@ display="inline" ><mrow
 sample of the high-frequency subband as
 </p>
    <table class="equation"><tr><td> <a 
- id="x1-36004r32"></a>
-<!--l. 657--><math 
+ id="x1-39004r32"></a>
+<!--l. 685--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="block" class="equation">
                           <msub><mrow 
@@ -3221,17 +3269,14 @@ class="MathClass-bin">−</mo> <msub><mrow
 ><mo 
 class="MathClass-punc">.</mo>
                                                                   <mstyle 
-   id="x1-36005r31"  class="label" ></mstyle><!--endlabel-->
+   id="x1-39005r31"  class="label" ></mstyle><!--endlabel-->
 </math></td><td class="eq-no">(HaarH)<a 
- id="x1-36006r31"></a></td></tr></table>
-<!--l. 663--><p class="indent" >   If Lifting is used,
+ id="x1-39006r31"></a></td></tr></table>
+<!--l. 691--><p class="indent" >   If Lifting is used,
 </p>
    <table class="equation"><tr><td> <a 
- id="x1-36007r32"></a>
-                                                                  
-
-                                                                  
-<!--l. 665--><math 
+ id="x1-39007r32"></a>
+<!--l. 693--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="block" class="equation">
                            <msub><mrow 
@@ -3257,10 +3302,10 @@ class="MathClass-bin">+</mo> <mfrac><mrow
 ><mn>2</mn></mrow></mfrac> <mo 
 class="MathClass-punc">.</mo>
                                                                   <mstyle 
-   id="x1-36008r31"  class="label" ></mstyle><!--endlabel-->
+   id="x1-39008r31"  class="label" ></mstyle><!--endlabel-->
 </math></td><td class="eq-no">(HaarLLifted)<a 
- id="x1-36009r31"></a></td></tr></table>
-<!--l. 671--><p class="indent" >   Notice that <!--l. 671--><math 
+ id="x1-39009r31"></a></td></tr></table>
+<!--l. 699--><p class="indent" >   Notice that <!--l. 699--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mrow 
 ><msub><mrow 
@@ -3270,7 +3315,7 @@ display="inline" ><mrow
 >i</mi></mrow></msub 
 > <mo 
 class="MathClass-rel">=</mo> <mn>0</mn></mrow></math>
-if <!--l. 671--><math 
+if <!--l. 699--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mrow 
 ><msub><mrow 
@@ -3290,14 +3335,17 @@ therefore, the Haar transform is good to encode constant signals. The notation X
 indicates the length (taps or number of coeﬃcients) of the low-pass and the
 high-pass (convolution) ﬁlters of the ﬁlter bank implementation (not Lifting),
 respectively.
-</p><!--l. 678--><p class="indent" >   <a 
+                                                                  
+
+                                                                  
+</p><!--l. 706--><p class="indent" >   <a 
 href="https://nbviewer.jupyter.org/github/vicente-gonzalez-ruiz/image_transformations_for_coding/blob/master/Haar_2d_basis.ipynb" >Haar basis</a>.
-</p><!--l. 680--><p class="noindent" >
+</p><!--l. 708--><p class="noindent" >
 </p>
-   <h3 class="sectionHead"><span class="titlemark">26   </span> <a 
- id="x1-3700026"></a>Linear (5/3) ﬁlters <span class="cite">[<a 
+   <h3 class="sectionHead"><span class="titlemark">29   </span> <a 
+ id="x1-4000029"></a>Linear (5/3) ﬁlters <span class="cite">[<a 
 href="#Xsweldens1997building">6</a>]</span></h3>
-<!--l. 681--><p class="noindent" >The <!--l. 681--><math 
+<!--l. 709--><p class="noindent" >The <!--l. 709--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mi 
 >i</mi></math>-th
@@ -3305,8 +3353,8 @@ sample of the low-frequency subband (using a ﬁlter-bank implementation)
 is
 </p>
    <table class="equation"><tr><td> <a 
- id="x1-37001r32"></a>
-<!--l. 683--><math 
+ id="x1-40001r32"></a>
+<!--l. 711--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="block" class="equation">
             <msub><mrow 
@@ -3366,21 +3414,18 @@ class="MathClass-bin">−</mo><mfrac><mrow
 class="MathClass-bin">+</mo><mn>2</mn></mrow></msub 
 >
                                                                   <mstyle 
-   id="x1-37002r31"  class="label" ></mstyle><!--endlabel-->
+   id="x1-40002r31"  class="label" ></mstyle><!--endlabel-->
 </math></td><td class="eq-no">(5/3L)<a 
- id="x1-37003r31"></a></td></tr></table>
-<!--l. 690--><p class="indent" >   and the <!--l. 690--><math 
+ id="x1-40003r31"></a></td></tr></table>
+<!--l. 718--><p class="indent" >   and the <!--l. 718--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mi 
 >i</mi></math>-th
 sample of the high-frequency signal is computed by
 </p>
    <table class="equation"><tr><td> <a 
- id="x1-37004r32"></a>
-                                                                  
-
-                                                                  
-<!--l. 692--><math 
+ id="x1-40004r32"></a>
+<!--l. 720--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="block" class="equation">
                       <msub><mrow 
@@ -3414,15 +3459,18 @@ class="MathClass-bin">+</mo><mn>2</mn></mrow></msub
 ><mn>2</mn></mrow></mfrac>       <mo 
 class="MathClass-punc">,</mo>
                                                                   <mstyle 
-   id="x1-37005r31"  class="label" ></mstyle><!--endlabel-->
+   id="x1-40005r31"  class="label" ></mstyle><!--endlabel-->
 </math></td><td class="eq-no">(5/3H)<a 
- id="x1-37006r31"></a></td></tr></table>
-<!--l. 698--><p class="indent" >   that, if we use Lifting, it can be also computed using less operations
+ id="x1-40006r31"></a></td></tr></table>
+<!--l. 726--><p class="indent" >   that, if we use Lifting, it can be also computed using less operations
 by
 </p>
    <table class="equation"><tr><td> <a 
- id="x1-37007r32"></a>
-<!--l. 700--><math 
+ id="x1-40007r32"></a>
+                                                                  
+
+                                                                  
+<!--l. 728--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="block" class="equation">
                        <msub><mrow 
@@ -3455,10 +3503,10 @@ class="MathClass-bin">+</mo> <msub><mrow
 ><mn>4</mn></mrow></mfrac>       <mo 
 class="MathClass-punc">.</mo>
                                                                   <mstyle 
-   id="x1-37008r31"  class="label" ></mstyle><!--endlabel-->
+   id="x1-40008r31"  class="label" ></mstyle><!--endlabel-->
 </math></td><td class="eq-no">(5/3LLifted)<a 
- id="x1-37009r31"></a></td></tr></table>
-<!--l. 706--><p class="indent" >   Notice that <!--l. 706--><math 
+ id="x1-40009r31"></a></td></tr></table>
+<!--l. 734--><p class="indent" >   Notice that <!--l. 734--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><msub><mrow 
 ><mi 
@@ -3467,7 +3515,7 @@ display="inline" ><msub><mrow
 >i</mi></mrow></msub 
 > <mo 
 class="MathClass-rel">=</mo> <mn>0</mn></math>
-if <!--l. 706--><math 
+if <!--l. 734--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><msub><mrow 
 ><mi 
@@ -3493,15 +3541,15 @@ class="MathClass-bin">+</mo><mn>2</mn></mrow></msub
 class="MathClass-close">)</mo></mrow><mo 
 class="MathClass-bin">∕</mo><mn>2</mn></math>.
 Therefore, the 5/3 transform is suitable to encode lineally piece-wised signals.
-</p><!--l. 708--><p class="indent" >   <a 
+</p><!--l. 736--><p class="indent" >   <a 
 href="https://nbviewer.jupyter.org/github/vicente-gonzalez-ruiz/image_transformations_for_coding/blob/master/linear_2d_basis.ipynb" >Linear (5/3) basis</a>.
-</p><!--l. 711--><p class="noindent" >
+</p><!--l. 739--><p class="noindent" >
 </p>
-   <h3 class="sectionHead"><span class="titlemark">27   </span> <a 
- id="x1-3800027"></a>Orthogonal, orthonormal, and biorthogonal transforms</h3>
-<!--l. 714--><p class="noindent" >In signal processing<span class="footnote-mark"><a 
+   <h3 class="sectionHead"><span class="titlemark">30   </span> <a 
+ id="x1-4100030"></a>Orthogonal, orthonormal, and biorthogonal transforms</h3>
+<!--l. 742--><p class="noindent" >In signal processing<span class="footnote-mark"><a 
 href="index2.html#fn1x0"><sup class="textsuperscript">1</sup></a></span><a 
- id="x1-38001f1"></a> ,
+ id="x1-41001f1"></a> ,
 a transform (such as the <a 
 href="https://en.wikipedia.org/wiki/Discrete_cosine_transform" >Discrete Cosine Transform</a>, the <a 
 href="https://en.wikipedia.org/wiki/Hadamard_transform" >Walsh-Hadamard Transform</a>
@@ -3509,17 +3557,14 @@ or the <a
 href="https://en.wikipedia.org/wiki/Karhunen%E2%80%93Lo%C3%A8ve_theorem" >Karhunen-Loève Transform</a>) is orthogonal when the coeﬃcients generated by
 the transform are uncorrelated (there is no way to infer one coeﬃcient from
 another).
-</p><!--l. 729--><p class="indent" >   If the <a 
+</p><!--l. 757--><p class="indent" >   If the <a 
 href="https://en.wikipedia.org/wiki/Norm_(mathematics)" >norm</a> of all the basis of an orthogonal transform is one, then the
 transform is said <a 
 href="https://en.wikipedia.org/wiki/Orthonormal_basis" >orthonormal</a>. Orthonormal transforms are interesting because of
 their:
-                                                                  
-
-                                                                  
      </p><ol  class="enumerate1" >
      <li 
-  class="enumerate" id="x1-38003x1"><a 
+  class="enumerate" id="x1-41003x1"><a 
 href="https://en.wikipedia.org/wiki/Energy_(signal_processing)" ><span 
 class="ecbx-1000">Energy</span></a>  <span 
 class="ecbx-1000">preservation</span>:  The  energy  of  the  output  is  the  same  than
@@ -3529,12 +3574,15 @@ class="ecbx-1000">preservation</span>:  The  energy  of  the  output  is  the  s
      transform. The same holds by the forward transform.
      </li>
      <li 
-  class="enumerate" id="x1-38005x2"><span 
+  class="enumerate" id="x1-41005x2"><span 
 class="ecbx-1000">Implementation</span>:  The  transform  matrix  of  the  inverse  transform  is
      the transpose of the forward transform. In orthogonal transforms, the
      transform matrix of the inverse transform is the inverse of the transform
      matrix of the forward transform.</li></ol>
-<!--l. 748--><p class="indent" >   Biorthogonal transforms (and in particular, <a 
+                                                                  
+
+                                                                  
+<!--l. 776--><p class="indent" >   Biorthogonal transforms (and in particular, <a 
 href="https://en.wikipedia.org/wiki/Biorthogonal_wavelet" >biorthogonal wavelets</a>) do
 no satisfy any of these features: they are not energy preserving (this can
 be also observed because the frequency-domain responses of the analysis
@@ -3546,12 +3594,12 @@ an extra degree of freedom to design the analysis and the synthesis ﬁlters
 general the possibility of using more soﬁsticated ﬁlters such as those based
 on non-linear ﬁltering, as for example, those that use motion estimation
 algorithms.
-</p><!--l. 762--><p class="indent" >   In general, each subband <!--l. 762--><math 
+</p><!--l. 790--><p class="indent" >   In general, each subband <!--l. 790--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mi 
 >b</mi></math>
 of a decomposition generated by a biorthogonal 2D-DWT transform have a diﬀerent subband
-gain <!--l. 764--><math 
+gain <!--l. 792--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><msub><mrow 
 ><mi 
@@ -3561,38 +3609,38 @@ display="inline" ><msub><mrow
 ></math>.
 Usually, the lower the frequency of the subband, the higher the gain. Notice also,
 that these gains also are diﬀerent for each transform.
-</p><!--l. 768--><p class="indent" >   Subband gains are important in lossy signal compression because they quantify
+</p><!--l. 796--><p class="indent" >   Subband gains are important in lossy signal compression because they quantify
 the relative importance of the wavelet coeﬃcients of the diﬀerent subbands when we
 introduce distortion in the wavelet domain. Thus, for example, if we decide to
 quantize a wavelet coeﬃcient, the amount of distortion that we are generating in the
 signal domain will depend on the subband where that coeﬃcient is localized. In
 general, low-frequency coeﬃcients are more “important” that high-frequency
 ones.
-</p><!--l. 777--><p class="indent" >   To compute the subband gains we have two options:
+</p><!--l. 805--><p class="indent" >   To compute the subband gains we have two options:
      </p><ol  class="enumerate1" >
      <li 
-  class="enumerate" id="x1-38007x1">The algebraic way. We will need the expressions of the four ﬁlters (two
+  class="enumerate" id="x1-41007x1">The algebraic way. We will need the expressions of the four ﬁlters (two
      anaylsis ﬁlters and two synthesis ﬁlters) and deduce the gains.
      </li>
      <li 
-  class="enumerate" id="x1-38009x2">The algorithmic way. We will need to compute the energy of the impulse response
+  class="enumerate" id="x1-41009x2">The algorithmic way. We will need to compute the energy of the impulse response
      of the inverse transform, when we apply such impulse to each one of the
      subbands of the decomposition. Supposing that, after appliying the DWT to an
      image, the coeﬃcients of the subband HH are the least energetic with an energy
-                                                                  
-
-                                                                  
-     <!--l. 786--><math 
+     <!--l. 814--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mi 
 >x</mi></math>, the subband
-     gain for subband <!--l. 787--><math 
+     gain for subband <!--l. 815--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mi 
 >b</mi></math>
      is computed as <table class="equation"><tr><td> <a 
- id="x1-38010r32"></a>
-     <!--l. 788--><math 
+ id="x1-41010r32"></a>
+                                                                  
+
+                                                                  
+     <!--l. 816--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="block" class="equation">
                                             <msub><mrow 
@@ -3611,7 +3659,7 @@ class="MathClass-bin">∕</mo><mi
 >x</mi><mo 
 class="MathClass-punc">,</mo>
 </math></td><td class="eq-no">(32)</td></tr></table>
-     <!--l. 791--><p class="noindent" >where <!--l. 791--><math 
+     <!--l. 819--><p class="noindent" >where <!--l. 819--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><msub><mrow 
 ><mi 
@@ -3620,22 +3668,22 @@ display="inline" ><msub><mrow
 >b</mi></mrow></msub 
 ></math>
      is the energy of the reconstruction when the impulse signal is localized at
-     <!--l. 792--><math 
+     <!--l. 820--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mi 
 >b</mi></math>.
      Notice that all the gains should be larger than one.</p></li></ol>
-<!--l. 796--><p class="indent" >   This computation can be also applied to MCDWT, by computing the subband gains as a function
-of the number <!--l. 797--><math 
+<!--l. 824--><p class="indent" >   This computation can be also applied to MCDWT, by computing the subband gains as a function
+of the number <!--l. 825--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mi 
 >T</mi></math>
 of temporal decompositions.
 </p>
-   <h3 class="sectionHead"><span class="titlemark">28   </span> <a 
- id="x1-3900028"></a>Quantization in the transform domain</h3>
+   <h3 class="sectionHead"><span class="titlemark">31   </span> <a 
+ id="x1-4200031"></a>Quantization in the transform domain</h3>
      <ul class="itemize1">
-     <li class="itemize">If the transform is orthogonal, by deﬁnition coeﬀs <!--l. 805--><math 
+     <li class="itemize">If the transform is orthogonal, by deﬁnition coeﬀs <!--l. 833--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mrow 
 ><mi 
@@ -3645,20 +3693,17 @@ class="MathClass-open">[</mo><mrow><mi
 class="MathClass-close">]</mo></mrow></mrow></math>
      are uncorrelated. Therefore, a scalar quantizer can performs an optimal
      quantization.</li></ul>
-<!--l. 810--><p class="noindent" >
+<!--l. 838--><p class="noindent" >
 </p>
-   <h3 class="sectionHead"><span class="titlemark">29   </span> <a 
- id="x1-4000029"></a>Bit-planes progression</h3>
-<!--l. 811--><p class="noindent" ><div style="text-align:center;"> <img width=800 src="graphics/bit-plane-trans.svg" /> </div> 
-                                                                  
-
-                                                                  
-</p><!--l. 813--><p class="noindent" >
+   <h3 class="sectionHead"><span class="titlemark">32   </span> <a 
+ id="x1-4300032"></a>Bit-planes progression</h3>
+<!--l. 839--><p class="noindent" ><div style="text-align:center;"> <img width=800 src="graphics/bit-plane-trans.svg" /> </div> 
+</p><!--l. 841--><p class="noindent" >
 </p>
-   <h4 class="subsectionHead"><span class="titlemark">29.1   </span> <a 
- id="x1-4100029.1"></a>Bit allocation (bit-rate control)</h4>
+   <h4 class="subsectionHead"><span class="titlemark">32.1   </span> <a 
+ id="x1-4400032.1"></a>Bit allocation (bit-rate control)</h4>
      <ul class="itemize1">
-     <li class="itemize">In lossless coding, coeﬀs <!--l. 816--><math 
+     <li class="itemize">In lossless coding, coeﬀs <!--l. 844--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mrow 
 ><msub><mrow 
@@ -3672,7 +3717,10 @@ display="inline" ><mrow
      </li>
      <li class="itemize">However, in most situations, a lossy compression is needed and in this
      case, a transform coder must determine, given a maximum number of bits
-     <!--l. 821--><math 
+                                                                  
+
+                                                                  
+     <!--l. 849--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mrow 
 ><mover accent="false" 
@@ -3680,7 +3728,7 @@ class="mml-overline"><mrow><mi
 >R</mi></mrow><mo 
 accent="true">¯</mo></mover></mrow></math>
      (which  is  deﬁned  by  the  compression  ratio  selected  by  the  user),  the
-     number of bits <!--l. 822--><math 
+     number of bits <!--l. 850--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mrow 
 ><mi 
@@ -3688,7 +3736,7 @@ display="inline" ><mrow
 class="MathClass-open">(</mo><mrow><mi 
 >u</mi></mrow><mo 
 class="MathClass-close">)</mo></mrow></mrow></math>
-     used by the quantizer for each coeﬀ <!--l. 823--><math 
+     used by the quantizer for each coeﬀ <!--l. 851--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mrow 
 ><msub><mrow 
@@ -3697,13 +3745,13 @@ display="inline" ><mrow
 ><mi 
 >k</mi></mrow></msub 
 ></mrow></math>.</li></ul>
-<!--l. 826--><p class="noindent" >
+<!--l. 854--><p class="noindent" >
 </p>
-   <h3 class="sectionHead"><span class="titlemark">30   </span> <a 
- id="x1-4200030"></a>Bit allocation based on minimizing the quantization error</h3>
+   <h3 class="sectionHead"><span class="titlemark">33   </span> <a 
+ id="x1-4500033"></a>Bit allocation based on minimizing the quantization error</h3>
      <ul class="itemize1">
      <li class="itemize">In unitary transforms, as a consequence of the energy preserving property,
-     an uniform quantization (i.e. the dividing each coeﬀ <!--l. 832--><math 
+     an uniform quantization (i.e. the dividing each coeﬀ <!--l. 860--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mrow 
 ><msub><mrow 
@@ -3714,24 +3762,21 @@ display="inline" ><mrow
 ></mrow></math>
      by the same quantization step) should provide optimal bit allocation if we
      want to minimize the quantization error (the distortion) in the recostructed
-     signal <!--l. 834--><math 
+     signal <!--l. 862--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mrow 
 ><mi 
 >s</mi></mrow></math>.</li></ul>
-<!--l. 837--><p class="noindent" >
+<!--l. 865--><p class="noindent" >
 </p>
-   <h3 class="sectionHead"><span class="titlemark">31   </span> <a 
- id="x1-4300031"></a>Bit allocation based on minimizing the variance of the quantization
+   <h3 class="sectionHead"><span class="titlemark">34   </span> <a 
+ id="x1-4600034"></a>Bit allocation based on minimizing the variance of the quantization
 error</h3>
      <ul class="itemize1">
      <li class="itemize">Lets assume that the variance of the coeﬀs, deﬁned as
      <table class="equation"><tr><td> <a 
- id="x1-43001r33"></a>
-                                                                  
-
-                                                                  
-     <!--l. 842--><math 
+ id="x1-46001r33"></a>
+     <!--l. 870--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="block" class="equation">
                                        <msubsup><mrow 
@@ -3765,11 +3810,14 @@ class="MathClass-close">)</mo></mrow></mrow><mrow
 ><mstyle mathsize="1.19em"><mfenced separators="" 
 open=")"  close="" ><mrow></mrow></mfenced></mstyle>
 </math></td><td class="eq-no">(33)</td></tr></table>
-     <!--l. 846--><p class="noindent" >(where
+     <!--l. 874--><p class="noindent" >(where
 </p>
      <table class="equation"><tr><td> <a 
- id="x1-43002r34"></a>
-     <!--l. 848--><math 
+ id="x1-46002r34"></a>
+                                                                  
+
+                                                                  
+     <!--l. 876--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="block" class="equation">
                                  <mover accent="false" 
@@ -3803,13 +3851,13 @@ class="MathClass-bin">−</mo><mn>1</mn></mrow></munderover
 >u</mi></mrow></msub 
 >
 </math></td><td class="eq-no">(34)</td></tr></table>
-     <!--l. 852--><p class="noindent" >corresponds to the amount of information provided by each coeﬀ. Therefore,
+     <!--l. 880--><p class="noindent" >corresponds to the amount of information provided by each coeﬀ. Therefore,
      coeﬀs with high variance should be assigned more bits and viceversa.
      </p></li>
      <li class="itemize">Lets deﬁne
      <table class="equation"><tr><td> <a 
- id="x1-43003r35"></a>
-     <!--l. 858--><math 
+ id="x1-46003r35"></a>
+     <!--l. 886--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="block" class="equation">
                                     <mover accent="false" 
@@ -3836,16 +3884,16 @@ class="MathClass-open">(</mo><mrow><mi
 >u</mi></mrow><mo 
 class="MathClass-close">)</mo></mrow>
                                                                                                        <mstyle 
-   id="x1-43004r34"  class="label" ></mstyle><!--endlabel-->
-</math></td><td class="eq-no">(<!--l. 861--><math 
+   id="x1-46004r34"  class="label" ></mstyle><!--endlabel-->
+</math></td><td class="eq-no">(<!--l. 889--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mover accent="false" 
 class="mml-overline"><mrow><mi 
 >R</mi></mrow><mo 
 accent="true">¯</mo></mover></math>)<a 
- id="x1-43005r34"></a></td></tr></table>
-     <!--l. 863--><p class="noindent" >as the (target) average number of bits/coeﬀ, where
-     <!--l. 863--><math 
+ id="x1-46005r34"></a></td></tr></table>
+     <!--l. 891--><p class="noindent" >as the (target) average number of bits/coeﬀ, where
+     <!--l. 891--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mrow 
 ><mi 
@@ -3853,7 +3901,7 @@ display="inline" ><mrow
 class="MathClass-open">(</mo><mrow><mi 
 >u</mi></mrow><mo 
 class="MathClass-close">)</mo></mrow></mrow></math> is the number of bits
-     assigned to coeﬀ <!--l. 864--><math 
+     assigned to coeﬀ <!--l. 892--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mrow 
 ><msub><mrow 
@@ -3862,13 +3910,10 @@ display="inline" ><mrow
 ><mi 
 >u</mi></mrow></msub 
 ></mrow></math>.
-                                                                  
-
-                                                                  
      </p></li>
      <li class="itemize">If the mean square error is as a measure of distortion, the
      variance of the distortion generated by the quantization of a coeﬀ
-     <!--l. 867--><math 
+     <!--l. 895--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mrow 
 ><msub><mrow 
@@ -3880,8 +3925,11 @@ display="inline" ><mrow
      <a 
 href="http://cdn.intechopen.com/pdfs/16267/InTech-Rate_control_in_video_coding.pdf" >can be modeled</a> by
      <table class="equation"><tr><td> <a 
- id="x1-43006r35"></a>
-     <!--l. 871--><math 
+ id="x1-46006r35"></a>
+                                                                  
+
+                                                                  
+     <!--l. 899--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="block" class="equation">
                                  <msubsup><mrow 
@@ -3932,7 +3980,7 @@ class="MathClass-close">)</mo></mrow></mrow></msup
 ><mo 
 class="MathClass-punc">,</mo>
 </math></td><td class="eq-no">(35)</td></tr></table>
-     <!--l. 875--><p class="noindent" >where <!--l. 875--><math 
+     <!--l. 903--><p class="noindent" >where <!--l. 903--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mrow 
 ><msub><mrow 
@@ -3941,18 +3989,18 @@ display="inline" ><mrow
 ><mi 
 >u</mi></mrow></msub 
 ></mrow></math> depends
-     on the frequency <!--l. 875--><math 
+     on the frequency <!--l. 903--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mrow 
 ><mi 
 >u</mi></mrow></math>
      and the quantizer.</p></li></ul>
-<!--l. 878--><p class="noindent" ><a 
+<!--l. 906--><p class="noindent" ><a 
 href="https://nbviewer.jupyter.org/github/vicente-gonzalez-ruiz/image_transformations_for_coding/blob/master/DR_model.ipynb" >DR_model notebook</a>.
 </p>
      <ul class="itemize1">
      <li class="itemize">Assuming an additive distorion metric, the total distortion variance for
-     <!--l. 883--><math 
+     <!--l. 911--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mrow 
 ><msub><mrow 
@@ -3963,8 +4011,8 @@ display="inline" ><mrow
 ></mrow></math>
      bits/coeﬀ is given by
      <table class="equation"><tr><td> <a 
- id="x1-43007r36"></a>
-     <!--l. 885--><math 
+ id="x1-46007r36"></a>
+     <!--l. 913--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="block" class="equation">
 <mi 
@@ -4079,17 +4127,14 @@ class="MathClass-close">)</mo></mrow></mrow></msup
 ><mn>2</mn></mrow></msubsup 
 >
                                                                                                                                 <mstyle 
-   id="x1-43008r35"  class="label" ></mstyle><!--endlabel-->
-</math></td><td class="eq-no">(<!--l. 888--><math 
+   id="x1-46008r35"  class="label" ></mstyle><!--endlabel-->
+</math></td><td class="eq-no">(<!--l. 916--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mi 
 >D</mi></math>)<a 
- id="x1-43009r35"></a></td></tr></table>
-     <!--l. 888--><p class="noindent" >,
-                                                                  
-
-                                                                  
-     </p><!--l. 890--><p class="noindent" >supposing that <!--l. 890--><math 
+ id="x1-46009r35"></a></td></tr></table>
+     <!--l. 916--><p class="noindent" >,
+     </p><!--l. 918--><p class="noindent" >supposing that <!--l. 918--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mrow 
 ><msub><mrow 
@@ -4105,7 +4150,7 @@ class="MathClass-rel">=</mo> <mi
      quantizer is used).
      </p></li>
      <li class="itemize">The objective of the bit-allocation process is to ﬁnd the
-     <!--l. 896--><math 
+     <!--l. 924--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mrow 
 ><msubsup><mrow 
@@ -4123,12 +4168,12 @@ class="MathClass-rel">=</mo><mn>0</mn></mrow><mrow
 >B</mi><mo 
 class="MathClass-bin">−</mo><mn>1</mn></mrow></msubsup 
 ></mrow></math> so that minimize
-     <!--l. 896--><math 
+     <!--l. 924--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mrow 
 ><mi 
 >D</mi></mrow></math> subject to
-     constraint <!--l. 897--><math 
+     constraint <!--l. 925--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mrow 
 ><mover accent="false" 
@@ -4136,8 +4181,11 @@ class="mml-overline"><mrow><mi
 >R</mi></mrow><mo 
 accent="true">¯</mo></mover></mrow></math>:
      <table class="equation"><tr><td> <a 
- id="x1-43010r36"></a>
-     <!--l. 899--><math 
+ id="x1-46010r36"></a>
+                                                                  
+
+                                                                  
+     <!--l. 927--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="block" class="equation">
                                 <munder><mrow 
@@ -4159,7 +4207,7 @@ class="MathClass-bin">−</mo><mn>1</mn></mrow></msubsup
 ></mrow></munder><mi 
 >D</mi><mo 
 class="MathClass-punc">,</mo><mstyle 
-class="text"><mtext  >s.t.</mtext></mstyle><mspace width="0.33em" class="nbsp" /><mover accent="false" 
+class="text"><mtext  >s.t.</mtext></mstyle><mspace width="1em" class="nbsp" /><mover accent="false" 
 class="mml-overline"><mrow><mi 
 >R</mi></mrow><mo 
 accent="true">¯</mo></mover><mo 
@@ -4173,8 +4221,8 @@ href="https://en.wikipedia.org/wiki/Lagrange_multiplier" >Lagrange multipliers</
      </li>
      <li class="itemize">Lets deﬁne the Lagrangian functional
      <table class="equation"><tr><td> <a 
- id="x1-43011r37"></a>
-     <!--l. 910--><math 
+ id="x1-46011r37"></a>
+     <!--l. 938--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="block" class="equation">
 <mi 
@@ -4267,14 +4315,11 @@ open=")"  close="" ><mrow></mrow></mfenced></mstyle><mo
 class="MathClass-punc">,</mo>
 </math></td><td class="eq-no">(37)</td></tr></table>
      </li></ul>
-                                                                  
-
-                                                                  
-<!--l. 915--><p class="indent" >   which taking
+<!--l. 943--><p class="indent" >   which taking
 </p>
    <table class="equation"><tr><td> <a 
- id="x1-43012r38"></a>
-<!--l. 917--><math 
+ id="x1-46012r38"></a>
+<!--l. 945--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="block" class="equation">
                               <mfrac><mrow 
@@ -4290,11 +4335,14 @@ class="MathClass-open">(</mo><mrow><mi
 class="MathClass-close">)</mo></mrow></mrow></mfrac> <mo 
 class="MathClass-rel">=</mo> <mn>0</mn>
 </math></td><td class="eq-no">(38)</td></tr></table>
-<!--l. 921--><p class="indent" >   produces that
+                                                                  
+
+                                                                  
+<!--l. 949--><p class="indent" >   produces that
 </p>
    <table class="equation"><tr><td> <a 
- id="x1-43013r39"></a>
-<!--l. 923--><math 
+ id="x1-46013r39"></a>
+<!--l. 951--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="block" class="equation">
                   <mi 
@@ -4332,17 +4380,17 @@ class="MathClass-bin">−</mo><mfrac><mrow
 >λ</mi><mo 
 class="MathClass-punc">.</mo>
                                                                   <mstyle 
-   id="x1-43014r38"  class="label" ></mstyle><!--endlabel-->
-</math></td><td class="eq-no">(<!--l. 926--><math 
+   id="x1-46014r38"  class="label" ></mstyle><!--endlabel-->
+</math></td><td class="eq-no">(<!--l. 954--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mi 
 >R</mi><mrow ><mo 
 class="MathClass-open">(</mo><mrow><mi 
 >u</mi></mrow><mo 
 class="MathClass-close">)</mo></mrow></math>)<a 
- id="x1-43015r38"></a></td></tr></table>
+ id="x1-46015r38"></a></td></tr></table>
      <ul class="itemize1">
-     <li class="itemize">Substituting <!--l. 930--><math 
+     <li class="itemize">Substituting <!--l. 958--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mrow 
 ><mi 
@@ -4350,7 +4398,7 @@ display="inline" ><mrow
 class="MathClass-open">(</mo><mrow><mi 
 >u</mi></mrow><mo 
 class="MathClass-close">)</mo></mrow></mrow></math>
-     in Eq. (<!--l. 930--><math 
+     in Eq. (<!--l. 958--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mrow 
 ><mover accent="false" 
@@ -4359,11 +4407,8 @@ class="mml-overline"><mrow><mi
 accent="true">¯</mo></mover></mrow></math>),
      we get that
      <table class="equation"><tr><td> <a 
- id="x1-43016r39"></a>
-                                                                  
-
-                                                                  
-     <!--l. 932--><math 
+ id="x1-46016r39"></a>
+     <!--l. 960--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="block" class="equation">
                      <mover accent="false" 
@@ -4417,8 +4462,11 @@ class="MathClass-punc">.</mo>
      </li>
      <li class="itemize">Operating
      <table class="equation"><tr><td> <a 
- id="x1-43017r40"></a>
-     <!--l. 938--><math 
+ id="x1-46017r40"></a>
+                                                                  
+
+                                                                  
+     <!--l. 966--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="block" class="equation">
                            <mi 
@@ -4460,12 +4508,12 @@ accent="true">¯</mo></mover></mrow></msup
 class="MathClass-punc">.</mo>
 </math></td><td class="eq-no">(40)</td></tr></table>
      </li>
-     <li class="itemize">Substituting <!--l. 942--><math 
+     <li class="itemize">Substituting <!--l. 970--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mrow 
 ><mi 
 >λ</mi></mrow></math>
-     in Eq. (<!--l. 942--><math 
+     in Eq. (<!--l. 970--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mrow 
 ><mi 
@@ -4475,8 +4523,8 @@ class="MathClass-open">(</mo><mrow><mi
 class="MathClass-close">)</mo></mrow></mrow></math>),
      we obtain the optimal number of bits for each coeﬀ
      <table class="equation"><tr><td> <a 
- id="x1-43018r41"></a>
-     <!--l. 945--><math 
+ id="x1-46018r41"></a>
+     <!--l. 973--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="block" class="equation">
                            <mi 
@@ -4534,9 +4582,9 @@ class="MathClass-bin">−</mo><mn>1</mn></mrow></munderover
 >B</mi></mrow></mroot></mrow></mfrac><mo 
 class="MathClass-punc">.</mo>
 </math></td><td class="eq-no">(41)</td></tr></table>
-     <!--l. 949--><p class="noindent" >which minimizes the variance of the quantization
+     <!--l. 977--><p class="noindent" >which minimizes the variance of the quantization
      error. Notice that this value depends proportionally on
-     <!--l. 950--><math 
+     <!--l. 978--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mrow 
 ><mover accent="false" 
@@ -4544,7 +4592,7 @@ class="mml-overline"><mrow><mi
 >R</mi></mrow><mo 
 accent="true">¯</mo></mover></mrow></math>
      (the target average bits/coeﬀ), logaritmically on
-     <!--l. 951--><math 
+     <!--l. 979--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mrow 
 ><msub><mrow 
@@ -4559,30 +4607,30 @@ display="inline" ><mrow
 ></mrow></msub 
 ></mrow></math>
      (the variance of the coeﬀ) and log-inversely on the geometric mean of the
+     variances of all coeﬀs.</p></li></ul>
+<!--l. 984--><p class="noindent" >
+</p>
+   <h3 class="sectionHead"><span class="titlemark">35   </span> <a 
+ id="x1-4700035"></a>Encoding</h3>
+     <ul class="itemize1">
+     <li class="itemize">For DCT, usually ZigZag-RLE followed by 0-order entropy coding.
                                                                   
 
                                                                   
-     variances of all coeﬀs.</p></li></ul>
-<!--l. 956--><p class="noindent" >
-</p>
-   <h3 class="sectionHead"><span class="titlemark">32   </span> <a 
- id="x1-4400032"></a>Encoding</h3>
-     <ul class="itemize1">
-     <li class="itemize">For DCT, usually ZigZag-RLE followed by 0-order entropy coding.
      </li>
      <li class="itemize">For DWT, tree coding or block-based coding.</li></ul>
-<!--l. 965--><p class="noindent" >
+<!--l. 993--><p class="noindent" >
 </p>
-   <h3 class="sectionHead"><span class="titlemark">33   </span> <a 
- id="x1-4500033"></a>Code-stream orderings and scalabilities</h3>
+   <h3 class="sectionHead"><span class="titlemark">36   </span> <a 
+ id="x1-4800036"></a>Code-stream orderings and scalabilities</h3>
      <ul class="itemize1">
      <li class="itemize">The order in which the DWT coeﬃcients are decoded determines the type
      of scalability (example with 2 qualities and 3 resolutions):</li></ul>
-<!--l. 973--><p class="noindent" ><div style="text-align:center;"> <img width=800 src="graphics/orderers-and-scalabilities.svg" /> </div> 
+<!--l. 1001--><p class="noindent" ><div style="text-align:center;"> <img width=800 src="graphics/orderers-and-scalabilities.svg" /> </div> 
 </p><!--l. 1--><p class="noindent" >
 </p>
    <h3 class="likesectionHead"><a 
- id="x1-4600033"></a>References</h3>
+ id="x1-4900036"></a>References</h3>
 <!--l. 1--><p class="noindent" >
    </p><div class="thebibliography">
    <p class="bibitem" ><span class="biblabel">
@@ -4601,9 +4649,6 @@ display="inline" ><mrow
 href="https://scholar.google.es/scholar?hl=es&as_sdt=0%2C5&q=A.+Haar.+Zur+Theorie+der+orthogolanen+Funktionen-Systeme.+Mathematische+Annalen%2C+69%3A331%E2%80%93371%2C+1910&btnG=" >Zur   theorie   der   orthogonalen   funktionensysteme</a>.
    <span 
 class="ecti-1000">Mathematische Annalen</span>, 69(3):331–371, 1910.
-                                                                  
-
-                                                                  
    </p>
    <p class="bibitem" ><span class="biblabel">
  [4]<span class="bibsp">   </span></span><a 
@@ -4616,6 +4661,9 @@ class="ecti-1000">Mathematische Annalen</span>, 69(3):331–371, 1910.
 href="https://scholar.google.es/scholar?hl=en&as_sdt=0%2C5&q=Ana+Sovic+and+Damir+Sersic.+Signal+decomposition+methods+for+reducind+drawbacks+of+the+dwt&btnG=" >Signal  Decomposition  Methods  for
    Reducind Drawbacks of the DWT</a>. <span 
 class="ecti-1000">Engineering Review</span>, 32(2):70–77, 2012.
+                                                                  
+
+                                                                  
    </p>
    <p class="bibitem" ><span class="biblabel">
  [6]<span class="bibsp">   </span></span><a 
@@ -4623,10 +4671,17 @@ class="ecti-1000">Engineering Review</span>, 32(2):70–77, 2012.
 href="https://scholar.google.es/scholar?hl=es&as_sdt=0%2C5&q=building+your+own+wavelets+at+home+1997+Sweldens+Schr%C3%B6der&btnG=" >Building your own wavelets at
    home</a>. <span 
 class="ecti-1000">Wavelets in Computer Graphics</span>, 1997.
+   </p>
+   <p class="bibitem" ><span class="biblabel">
+ [7]<span class="bibsp">   </span></span><a 
+ id="Xvetterli1995wavelets"></a>Martin Vetterli and Jelena Kovacevic.  <a 
+href="http://waveletsandsubbandcoding.org/Repository/VetterliKovacevic95_Manuscript.pdf" ><span 
+class="ecti-1000">Wavelets and Subband Coding</span></a>.
+   Prentice-hall, 1995.
 </p>
    </div>
 <a 
- id="Q1-1-47"></a>
+ id="Q1-1-50"></a>
     
 </body> 
 </html>

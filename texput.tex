@@ -609,13 +609,41 @@ where \(Z^{-1}\) represents the one sample delay function.
 \section{$T$-levels 1D-DWT}
 \svg{n_levels_dwt1d}{1000}
 
+\section{Subband indepency~\cite{vetterli1995wavelets}}
+While the subbands are only independent if the input is a Gaussian
+random variable and the filters decorrelate the subbands (the filters
+are ideal), the independence assumption is ofte made because it makes
+he system simpler.
+
+\section{Statistics of the subbands~\cite{vetterli1995wavelets}}
+The PDF of the coefficients of the high-frequency subbands peaks in
+zero and falls off very rapidly. While is it often modeled as a
+Laplacian distribution, it is actually falling off faster. It is more
+adequately fitted with a generalized Gaussian PDF with faster decay
+than the Laplacian PDF.
+
+\section{Subband quantization~\cite{vetterli1995wavelets}}
+Besides the low band compression, which uses known image coding
+methods, the bulk of the compression is obtained by appropiate
+quantization of the high bands. The
+following \mylink{quantization}{quantizers} are typically used:
+\begin{enumerate}
+\item Lloyd quantizers fitted to the PDF of the particular subband.
+\item Deadzone uniform quantizers, since they tend to eliminate what
+  is essentially noise.
+\end{enumerate}
+Because entropy coding is used after quantization, uniform quantizers
+are nearly optimal. Note that VQ could be used in the subbands, but
+its complexity is usually not worthwhile since there is little
+dependence between coefficients anyway.
+
 \section{2D-DWT}    
 \begin{itemize}
 \tightlist
 \item
-  The one-dimensional (1D) DWT is a separable transform. Therefore, the
-  2D DWT can be computed applying the DWT to all the rows of an image
-  and next, to all the columns, or viceversa.
+  The one-dimensional (1D) DWT is a separable transform. Therefore,
+  the 2D DWT can be computed applying the DWT to all the rows of an
+  image and next, to all the columns, or viceversa.
 \end{itemize}
 
 \svg{2D-DWT}{800}
