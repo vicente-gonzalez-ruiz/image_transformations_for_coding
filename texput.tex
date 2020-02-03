@@ -1,3 +1,4 @@
+% Emacs, this is -*-latex-*-
 \title{Image transformations for compression}
 
 \author{Vicente González Ruiz}
@@ -14,10 +15,13 @@
   domain).
 \item
   Transform coding is based on the idea that, in the transform domain,
-  most of the energy of the signal can be compacted in a small number of
-  (transform) coefficients.
+  most of the energy of the signal can be compacted in a small number
+  of (transform) coefficients. This property can be interesting for
+  increasing the coding efficiency.
 \item
-  This property can be interesting for increasing the coding efficiency.
+  Scalar quantization of decorrelated transform coefficients is more
+  efficient than direct scalar quantization of the
+  samples~\cite{vetterli1995wavelets}.
 \end{itemize}
 
 \section{Basic coding steps}
