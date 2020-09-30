@@ -56,47 +56,59 @@
 \begin{enumerate}
 \tightlist
 \item
-  Divide \(s=\{s_n\}_{n=0}^{N-1}\) into \(\lceil N/B \rceil\) blocks
-  \(\{c_1, \cdots, c_{\lceil N/B \rceil}\}\) of \(B\) samples.
+  Divide \(x=\{x_n\}_{n=0}^{N-1}\) into \(\lceil N/B \rceil\) blocks
+  \(\{x_1, \cdots, x_{\lceil N/B \rceil}\}\) of \(B\) samples.
 \end{enumerate}
 
-\section{Transform of a block}
+\section{Transform of a block $x=\{x_n\}_{n=0}^{N-1}$}
 \begin{itemize}
 \item
-  In the forward transform the samples of the block are correlated with
-  (the block is compared to) a set of basis functions
-
+  In the forward transform the samples of the block $x$ are
+  projected (notice that this operation is a
+  \href{https://en.wikipedia.org/wiki/Dot_product}{dot product}) on a
+  set of basis functions
   \begin{equation}
-    \{C_u\}_{u=0}^{B-1} = \sum_{n=0}^{B-1}a_{u,n}c_n.
+    y_n = \sum_{i=0}^{N-1}a_{n,i}x_i,
     \tag{forward\_transform}
   \end{equation}
+  where $\{y_n\}$ is the transformed sequence and $\{x_n\}$ is the
+  original sequence.
 \item
   The backward (inverse) transform restores the original samples
-
   \begin{equation}
-    \{c_n\}_{n=0}^{B-1} = \sum_{u=0}^{B-1}b_{n,u}C_u.
+    x_n = \sum_{i=0}^{N-1}b_{n,i}y_u.
     \tag{inverse\_transform}
   \end{equation}
 \item
   These equations can be written in matrix form as
-
   \begin{equation}
-    C=Ac
+    y = Ax = \begin{bmatrix}
+      a_{0,0} & \cdots & a_{{B-1},0} \\
+      \vdots & & \vdots \\
+      a_{0, B-1} & cdots & a_{B-1, B-1}
+    \end{bmatrix}
+    \begin{bmatrix}
+      x_0 \\
+      \vdots \\
+      x_{N-1},
+    \end{bmatrix}
     \tag{forward\_transform\_matrix\_form}
   \end{equation}
-
+  and
   \begin{equation}
-    c=BC,
+    x=By,
     \tag{inverse\_transform\_matrix\_form}
   \end{equation}
-
   where \(A\) and \(B\) are matrices, being
   \begin{equation}
     \begin{array}{l}
-    [A]_{u,n} = a_{u,n} \\\relax
-    [B]_{n,u} = b_{n,u}.
+    [A]_{i,j} = a_{i,j} \\\relax
+    [B]_{i,j} = b_{i,j}.
     \end{array}
   \end{equation}
+
+  $[A]_i$ is called a basis vector of the transformation matrix $A$. If
+  the transform is orthonormal, they form an orthonormal basis set.
 
 \item
   In transform coding, \(A\) and \(B\) must be inverses of each other
@@ -238,8 +250,8 @@ quality in the images.
 
   \begin{equation}
     \begin{array}{l}
-      C=Ac \\
-      c=A^TC.
+      y=Ax \\
+      x=A^Ty.
     \end{array}
   \end{equation}
 \end{itemize}
@@ -250,9 +262,10 @@ quality in the images.
 \end{equation}
 
 \subsection{Energy conservation}
+Orthonormal transforms are energy preserving.
 \begin{itemize}
 \item
-  if \(A\) is orthonormal (also called \emph{unitary}), the energy of
+  If \(A\) is orthonormal (also called \emph{unitary}), the energy of
   the transformed signal is the equal to the original one:
 
   \begin{equation}
@@ -264,6 +277,9 @@ quality in the images.
 \begin{equation}
   ||C||^2 = C^TC = (Ac)^TAc = c^TA^TAc = c^TIc = c^Tc = ||c||^2.
 \end{equation}
+
+Therefore, the sum of the squares of the transformed sequence is the
+same as the sum of the squares of the original sequence.
 
 \section{\href{https://en.wikipedia.org/wiki/Expected_value}{Expected value}}
 The expected value \(\operatorname{E}[X]\) of a random variable \(X\),
@@ -391,10 +407,10 @@ When \(T()\) can be expressed by a matrix \(X\), we get
   is defined as
 
   \begin{equation}
-    G=\frac{\frac{1}{B}\displaystyle\sum_{u=0}^{B-1}\sigma_{C_u}^2}{\sqrt[B]{\displaystyle\prod_{u=0}^{B-1}\sigma_{C_u}^2}},
+    G=\frac{\frac{1}{N}\displaystyle\sum_{i=0}^{N-1}\sigma_{y_i}^2}{\sqrt[N]{\displaystyle\prod_{i=0}^{N-1}\sigma_{y_i}^2}},
   \end{equation}
 
-  where \(\sigma_{C_u}^2\) is the variance of coeff \(C_u\).
+  where \(\sigma_{y_i}^2\) is the variance of coefficient \(y_i\).
 \end{itemize}
 
 \section{Karhunen-Loéve transform (KLT)}
@@ -415,7 +431,7 @@ When \(T()\) can be expressed by a matrix \(X\), we get
   non-\href{https://en.wikipedia.org/wiki/Stationary_process}{stationary},
   the autocorrelation matrix (or the basis) must be sent to the decoder
   (to run the inverse transform) as side information. However, if
-  \(B=2\), the KLT is
+  \(N=2\), the KLT is
 
   \begin{equation}
     A_{\text{2-KLT}} = \frac{1}{\sqrt{2}}
